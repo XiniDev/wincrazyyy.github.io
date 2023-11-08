@@ -90,13 +90,13 @@ const Homepage: React.FC = () => {
         }
     };
 
-    const [reviewsDot, setReviewsDot] = useState([true, false, false]);
     const [reviewsIndex, setReviewsIndex] = useState(0);
 
     const reviewsSwitch = (e: React.MouseEvent<HTMLDivElement>, left: boolean) => {
         e.stopPropagation();
 
         let index = reviewsIndex;
+        let nodes = (e.target as HTMLDivElement).parentElement!.lastChild!.childNodes;
 
         if (left) {
             if (reviewsIndex > 0) {
@@ -104,26 +104,15 @@ const Homepage: React.FC = () => {
                 index -= 1;
             }
         } else {
-            if (reviewsIndex < 2) {
+            if (reviewsIndex < nodes.length - 4) {
                 setReviewsIndex(reviewsIndex + 1);
                 index += 1;
             }
         }
 
-        switch (index) {
-            case 0:
-                setReviewsDot(() => [true, false, false]);
-                break;
-            case 1:
-                setReviewsDot(() => [false, true, false]);
-                break;
-            case 2:
-                setReviewsDot(() => [false, false, true]);
-                break;
-            default:
-                setReviewsDot(() => [true, false, false]);
-                break;
-        }
+        nodes.forEach(node => {
+            (node as HTMLElement).style.transform = "translateX(-" + (300 * index) + "px)";
+        });
     };
 
     const [fadeDivs, setFadeDivs] = useState([false, false, false]);
@@ -361,11 +350,56 @@ const Homepage: React.FC = () => {
                                 {/* &gt; */}
                             </div>
                             <div className="reviews-box-wrapper">
-                                <div className="reviews-box"></div>
-                                <div className="reviews-box"></div>
-                                <div className="reviews-box"></div>
-                                <div className="reviews-box"></div>
-                                <div className="reviews-box"></div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                    </div>
+                                    <div className="reviews-name">
+                                        Maxwell Cadwell
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                    </div>
+                                    <div className="reviews-name">
+                                        Maxwell Cadwell
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                    </div>
+                                    <div className="reviews-name">
+                                        Maxwell Cadwell
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                    </div>
+                                    <div className="reviews-name">
+                                        Maxwell Cadwell
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                        Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm Lorem ipusm 
+                                    </div>
+                                    <div className="reviews-name">
+                                        Maxwell Cadwell
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
