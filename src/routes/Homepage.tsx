@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import Form from './Form';
+import ShelfBlock from './ShelfBanner';
+import Carousel from './Carousel';
 
 import Winson_Icon_Large_Nobkg from '../images/winson-icon-large-nobkg.png';
 
-import Chevron from '../images/chevron.png';
-
 import Shelf_Image from '../images/shelf-image.png';
-import Carousel_1 from '../images/carousel-1.png';
-import Carousel_2 from '../images/carousel-2.png';
-import Carousel_3 from '../images/carousel-3.png';
 
 const Homepage: React.FC = () => {
     const [hovered, setHovered] = useState<string | null>(null);
@@ -34,85 +30,11 @@ const Homepage: React.FC = () => {
         }
     };
 
-    const [carouselDot, setCarouselDot] = useState([true, false, false]);
-    const [carouselIndex, setCarouselIndex] = useState(0);
-
-    const carouselSwitch = (e: React.MouseEvent<HTMLDivElement>, left: boolean) => {
-        e.stopPropagation();
-
-        let index = carouselIndex;
-        let nodes = (e.target as HTMLDivElement).parentElement!.lastChild!.childNodes;
-
-        if (left) {
-            if (carouselIndex > 0) {
-                setCarouselIndex(carouselIndex - 1);
-                index -= 1;
-            }
-        } else {
-            if (carouselIndex < nodes.length - 1) {
-                setCarouselIndex(carouselIndex + 1);
-                index += 1;
-            }
-        }
-
-        nodes.forEach(node => {
-            (node as HTMLElement).style.transform = "translateX(-" + (100 * index) + "%)";
-        });
-
-        switch (index) {
-            case 0:
-                setCarouselDot(() => [true, false, false]);
-                break;
-            case 1:
-                setCarouselDot(() => [false, true, false]);
-                break;
-            case 2:
-                setCarouselDot(() => [false, false, true]);
-                break;
-            default:
-                setCarouselDot(() => [true, false, false]);
-                break;
-        }
-    };
-
-    const [formActive, setFormActive] = useState(true);
+    const [formActive, setFormActive] = useState(false);
 
     const openForm = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         setFormActive(true);
-    };
-
-    const reviewsRef = useRef(null);
-    const [isMouseDown, setIsMouseDown] = useState(false);
-
-    const mouseCoords = useRef({
-        startX: 0,
-        scrollLeft: 0
-    });
-
-    const handleDragStart = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!reviewsRef.current) return
-        const slider = reviewsRef.current as any;
-        const startX = e.pageX - slider.offsetLeft;
-        const scrollLeft = slider.scrollLeft;
-        mouseCoords.current = { startX, scrollLeft };
-        setIsMouseDown(true);
-        document.body.style.cursor = "grabbing";
-    };
-
-    const handleDragEnd = () => {
-        setIsMouseDown(false);
-        if (!reviewsRef.current) return;
-        document.body.style.cursor = "default";
-    };
-
-    const handleDrag = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isMouseDown || ! reviewsRef.current) return;
-        e.preventDefault();
-        const slider = reviewsRef.current as any;
-        const x = e.pageX - slider.offsetLeft;
-        const walkX = (x - mouseCoords.current.startX) * 1.5;
-        slider.scrollLeft = mouseCoords.current.scrollLeft - walkX;
     };
 
     const [fadeDivs, setFadeDivs] = useState([false, false, false]);
@@ -156,9 +78,8 @@ const Homepage: React.FC = () => {
     }, []);
 
     return (
-        <div className="homepage" onMouseUp={handleDragEnd}>
-            <Header/>
-            <Form formActive={formActive} setFormActive={setFormActive}/>
+        <div className="homepage">
+            <Header formActive={formActive} setFormActive={setFormActive}/>
             <div className="homepage-intro">
                 <div className="homepage-bkg"></div>
                 <div className={`homepage-intro-background ${fadeDivs[2] ? 'homepage-fade-bkg visible' : 'homepage-fade-bkg'}`}></div>
@@ -186,254 +107,87 @@ const Homepage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="two-column not-mobile">
-                <div className="two-column-container">
-                    <div className="two-column-textdiv">
-                        <div className="shelf-wrapper">
-                            <div
-                                className={`shelf-block ${handleShelfHover(true, 'tc-exp-tl', 'tc-exp-tr')}`}
-                                onMouseEnter={() => handleMouseEnter('tc-exp-tl')}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <div className={`shelf-decor ${handleShelfHover(true, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                                    <hr></hr>
-                                    <hr></hr>
-                                </div>
-                                <div className={`shelf-text ${handleShelfHover(true, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                                    <b>Teaching Experience</b>
-                                </div>
-                            </div>
-                            <div
-                                className={`shelf-block ${handleShelfHover(false, 'tc-exp-tl', 'tc-exp-tr')}`}
-                                onMouseEnter={() => handleMouseEnter('tc-exp-tr')}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <div className={`shelf-text ${handleShelfHover(false, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                                    <b>16 years of <span>part-time and full-time</span> tutoring experience</b><span> in Mathematics since 2007.</span>
-                                </div>
-                            </div>
-                            <div
-                                className={`shelf-block ${handleShelfHover(true, 'tc-exp-bl', 'tc-exp-br')}`}
-                                onMouseEnter={() => handleMouseEnter('tc-exp-bl')}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <div className={`shelf-text ${handleShelfHover(true, 'tc-exp-bl', 'tc-exp-br')}`}>
-                                    <b>200+ students, 8000+ lessons, 13000+ hours<div>, ...</div></b><span> from 2017 to 2023 in full-time.</span>
-                                </div>
-                            </div>
-                            <div
-                                className={`shelf-block ${handleShelfHover(false, 'tc-exp-bl', 'tc-exp-br')}`}
-                                onMouseEnter={() => handleMouseEnter('tc-exp-br')}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <div className={`shelf-text ${handleShelfHover(false, 'tc-exp-bl', 'tc-exp-br')}`}>
-                                    <span>Specializing in </span><b>IBDP, A Level, IGCSE, IBMYP<div>, ...</div><span>, HKDSE, AP, SAT, etc.</span></b>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="bannerlist-wrapper">
-                            <div className="bannerlist-left">
-                                <div
-                                    className={`bannerlist-banner ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter('ed-bkg-1')}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <div className={`bannerlist-title ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`}>
-                                        <b>Academic Background</b>
-                                    </div>
-                                    <div className={`bannerlist-text ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`}>
-                                        &#127891; Graduate of City University of Hong Kong with <b>First Class Honours</b>.<br></br><br></br>
-                                        &#128221; Bachelor of <b>Quantitative Finance and Risk Management</b>, minor in <b>Mathematics</b>.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="two-column-textdiv">
-                        <div className="two-column-image">
-                            <img src={Shelf_Image}/>
-                        </div>
-                        <div className="bannerlist-wrapper">
-                            <div className="bannerlist-right">
-                                <div
-                                    className={`bannerlist-banner ${hovered == 'ed-bkg-2' ? 'hovered' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter('ed-bkg-2')}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <div className={`bannerlist-title ${hovered == 'ed-bkg-2' ? 'hovered' : ''}`}>
-                                        <b>HKALE</b>
-                                    </div>
-                                    <div className={`bannerlist-text ${hovered == 'ed-bkg-2' ? 'hovered' : ''}`}>
-                                        Pure Maths <b>(A)<br></br>[Top 4.8%]</b>
-                                    </div>
-                                </div>
-                                <div
-                                    className={`bannerlist-banner ${hovered == 'ed-bkg-3' ? 'hovered' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter('ed-bkg-3')}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <div className={`bannerlist-title ${hovered == 'ed-bkg-3' ? 'hovered' : ''}`}>
-                                        <b>HKCEE</b>
-                                    </div>
-                                    <div className={`bannerlist-text ${hovered == 'ed-bkg-3' ? 'hovered' : ''}`}>
-                                        Add Maths <b>(A)<br></br>[Top 6.0%]</b><br></br><br></br>
-                                        Maths <b>(A)<br></br>[Top 3.1%]</b>
-                                    </div>
-                                </div>
-                                <div
-                                    className={`bannerlist-banner ${hovered == 'ed-bkg-4' ? 'hovered' : ''}`}
-                                    onMouseEnter={() => handleMouseEnter('ed-bkg-4')}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <div className={`bannerlist-title ${hovered == 'ed-bkg-4' ? 'hovered' : ''}`}>
-                                        <b>HKDSE</b>
-                                    </div>
-                                    <div className={`bannerlist-text ${hovered == 'ed-bkg-4' ? 'hovered' : ''}`}>
-                                        Maths M1 <b>(5**)<br></br>[Top 2.9%]</b>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="mobile-sb">
-                <div className="mobile-sb-container">
-                    <div className="mobile-sb-textdiv">
-                        <div className="mobile-s-wrapper">
-                            <div className="mobile-s-block">
-                                <div className="mobile-s-decor">
-                                    <hr></hr>
-                                    <hr></hr>
-                                </div>
-                                <div className="mobile-s-text">
-                                    <b>Teaching Experience</b>
-                                </div>
-                            </div>
-                            <div className="mobile-s-block">
-                                <div className="mobile-s-text">
-                                    <b>16 years of part-time and full-time tutoring experience</b> in Mathematics since 2007.
-                                </div>
-                            </div>
-                            <div className="mobile-s-block">
-                                <div className="mobile-s-text">
-                                    <b>180+ students, 7200+ lessons, 12000+ hours</b> from 2017 to 2023 in full-time.
-                                </div>
-                            </div>
-                            <div className="mobile-s-block">
-                                <div className="mobile-s-text">
-                                    Specializing in <b>IBDP, A Level, IGCSE, IBMYP, HKDSE, AP, SAT, etc.</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="mobile-sb-image">
-                            <img src={Shelf_Image}/>
-                        </div>
-                        <div className="mobile-b-wrapper">
-                            <div className="mobile-b-top">
-                                <div className="mobile-b-banner">
-                                    <div className="mobile-b-title">
-                                        <b>HK Degree</b>
-                                    </div>
-                                    <div className="mobile-b-text">
-                                        Graduate of City University of Hong Kong with <b>First Class Honours</b>.<br></br><br></br>
-                                        Bachelor of <b>Quantitative Finance and Risk Management</b>, minor in <b>Mathematics</b>.
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="mobile-b-bottom">
-                                <div className="mobile-b-banner">
-                                    <div className="mobile-b-title">
-                                        <b>HKALE</b>
-                                    </div>
-                                    <div className="mobile-b-text">
-                                        Pure Mathematics <b>(A) [Top 4.8%]</b>
-                                    </div>
-                                </div>
-                                <div className="mobile-b-banner">
-                                    <div className="mobile-b-title">
-                                        <b>HKCEE</b>
-                                    </div>
-                                    <div className="mobile-b-text">
-                                        Additional Mathematics <b>(A) [Top 6.0%]</b><br></br>
-                                        Mathematics <b>(A) [Top 3.1%]</b>
-                                    </div>
-                                </div>
-                                <div className="mobile-b-banner">
-                                    <div className="mobile-b-title">
-                                        <b>HKDSE</b>
-                                    </div>
-                                    <div className="mobile-b-text">
-                                        Mathematics Module 1 <b>(5**) [Top 2.9%]</b>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div className="body-container">
+                <ShelfBlock/>
             </div>
             <div className="up-down">
                 <div className="up-down-background"></div>
                 <div className="up-down-container">
-                    <div className="carousel">
-                        <div className="carousel-wrapper">
-                            <div
-                                className={`carousel-left ${hovered == 'carousel-left' ? 'hovered' : ''}`}
-                                onMouseEnter={() => handleMouseEnter('carousel-left')}
-                                onMouseLeave={handleMouseLeave}
-                                onClick={(e) => carouselSwitch(e, true)}
-                            >
-                                <img src={Chevron}/>
-                            </div>
-                            <div
-                                className={`carousel-right ${hovered == 'carousel-right' ? 'hovered' : ''}`}
-                                onMouseEnter={() => handleMouseEnter('carousel-right')}
-                                onMouseLeave={handleMouseLeave}
-                                onClick={(e) => carouselSwitch(e, false)}
-                            >
-                                <img src={Chevron}/>
-                            </div>
-                            <div className="carousel-dot-container">
-                                <div className={`carousel-dot ${carouselDot[0] ? 'active' : ''}`}></div>
-                                <div className={`carousel-dot ${carouselDot[1] ? 'active' : ''}`}></div>
-                                <div className={`carousel-dot ${carouselDot[2] ? 'active' : ''}`}></div>
-                            </div>
-                            <div className="carousel-image-wrapper">
-                                <div onClick={(e) => openForm(e)} className="carousel-image">
-                                    <img src={Carousel_1}/>
-                                </div>
-                                <div className="carousel-image">
-                                    <img src={Carousel_2}/>
-                                </div>
-                                <div onClick={(e) => openForm(e)} className="carousel-image">
-                                    <img src={Carousel_3}/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Carousel openForm={openForm}/>
                     <div className="up-down-space"></div>
                     <div className="reviews">
                         <div className="reviews-wrapper">
-                            <div
-                                className="reviews-box-wrapper"
-                                onMouseDown={handleDragStart}
-                                onMouseUp={handleDragEnd}
-                                onMouseMove={handleDrag}
-                                ref={reviewsRef}
-                            >
+                            <div className="reviews-box-wrapper">
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        Winson has helped me improve my math in just one year. 
-                                        He gives me many past papers to do on different topics, and it has improved my math scores drastically. 
-                                        During our lessons, we go through many exercises and questions and I am able to learn a lot. I now have more confidence in math thanks to Winson.
+                                        Mr. Siu is hands down the best math teacher I've come across. His teaching style is crystal clear, with easy-to-follow structures and a stash of super relevant questions.
+                                        What makes him truly exceptional is his strong sense of responsibility and genuine passion for tutoring. He gets a real kick out of seeing his students improve, and that enthusiasm shines through in his teaching.
+                                        Thanks to his guidance, my journey through IBDP Math AAHL has seen significant improvement. I thoroughly enjoy his tutoring sessions every week.
                                     </div>
                                     <div className="reviews-name">
-                                        Nicole Li (2024)
+                                        Jasmine Yang (2023)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [The University of Edinburgh]
                                     </div>
                                 </div>
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        Winson老师的教学方式以以习题练习为主，不断加强记忆深入了解知识点，在课后也会有相应的笔记供学生复习。
+                                        I had the great fortune of being tutored by Winson during my IBDP years, and I can confidently say that he played a pivotal role in my success in Math AAHL. Winson's passion for tutoring is evident in every session.
+                                        What sets him apart is his unique approach to teaching, offering a flexibility that goes beyond the confines of traditional classroom learning.
+                                        He possesses an innate ability to pinpoint specific areas where I needed assistance, tailoring his instruction to address my individual challenges.
+                                        Winson's teaching materials are exceptional; his notes are clear, concise, and remarkably easy to grasp. One standout aspect of his support was the wealth of past paper questions he provided, meticulously sorted by topics and years.
+                                        This not only allowed for comprehensive practice but also facilitated a targeted focus on weaker areas. Thanks to Winson's dedication and effective teaching methods, I not only gained a deeper understanding of the subject but also achieved a stellar 7 in Math AAHL.
+                                        I am truly grateful for his guidance and highly recommend him to anyone seeking a math tutor who goes above and beyond to ensure success.
+                                    </div>
+                                    <div className="reviews-name">
+                                        Alice Gao (2022)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [University College London]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        I’d say that Winson is the best math tutor I’ve ever had. I had him as my tutor for the last year of IBDP. Winson’s teaching style is based on experience: his insistence on learning by practicing past papers is sensible and practical.
+                                        He provides specific past paper questions for each topic separately, and his notes are very useful for final exam revisions. Winson is very patient and experienced.
+                                        His assignments are based on each student’s ability and needs. In the end, Winson successfully helped me reach a grade 7 for Math AAHL. Definitely a good choice to find him for math tutorials!!
+                                    </div>
+                                    <div className="reviews-name">
+                                        Joy Angela Sun (2022)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [The Chinese University of Hong Kong]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Winson was the first and only Math tutor who supervised me throughout my IBDP. We started regular tuition in 2019.
+                                        He is patient, organised and supportive, and his notes and revision material are of great help in exam conditions! With his help, I achieved a grade 7 in Math AAHL.
+                                    </div>
+                                    <div className="reviews-name">
+                                        Vera Jing (2021)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [University College London]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Explanations are concise and easy to understand, with loads of practice questions in which he will guide you through every bit you don't understand.
+                                        Very uplifting and kind, will answer your questions outside of lesson time. 🥺
+                                        100% will recommend, especially with how rigid some school math teachers are with their teaching methods. 👌✨ Couldn't have achieved a grade 7 without him.
+                                    </div>
+                                    <div className="reviews-name">
+                                        Kitty Lam (2020)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [Loughborough University]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Winson老师的教学方式以习题练习为主，不断加强记忆深入了解知识点，在课后也会有相应的笔记供学生复习。
                                         老师一直很用心，包括备课/考前准备等，性格也很热情，教课不死板而且认真，帮助我在IGCSE阶段从F到A得到了提升和飞跃，其中老师量身定做了往年习题易错题以及薄弱知识点单元等，让我得到了很大的帮助。
                                     </div>
                                     <div className="reviews-name">
@@ -442,46 +196,46 @@ const Homepage: React.FC = () => {
                                 </div>
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        Winson helped me a lot in my journey of IBDP mathematics.
-                                        My grade improved from 4 to 7 in exams, and finally got into HKU Dentistry.
-                                        His teaching style and the “by topic” past paper question bank is highly recommended for those who want to have great improvement in grades.
+                                        Finding Winson as my IBDP Math tutor was an incredible stroke of luck! He truly saved me from my struggles with IBDP Math HL, where I couldn't even pass the exam. Thanks to Winson's invaluable support, I achieved a grade 4, just a hair's breadth away from a grade 5.
+                                        I am immensely grateful to him for his exceptional teaching style, which is both enjoyable and easily understandable.
+                                        His fluency in Mandarin, English, and Cantonese was a tremendous asset, as it allowed me to learn in the language I felt most comfortable with. I would recommend him to everyone who is currently suffering from IBDP Math!
+                                    </div>
+                                    <div className="reviews-name">
+                                        Vivian Chen (2018)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [Istituto Marangoni London]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Winson helped me a lot in my IBDP mathematics journey. My grades improved from 4 to 7 for exams, which was enough to get me into HKU Dentistry.
+                                        His teaching style and the “by topic” past paper question bank is highly recommended for those who are seeking to improve their grades and succeed in IBDP mathematics.
                                     </div>
                                     <div className="reviews-name">
                                         David Zhang (2020)
                                     </div>
+                                    <div className="reviews-uni">
+                                        [The University of Hong Kong]
+                                    </div>
                                 </div>
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        Winson's tutoring helped me immensely during the period of the Covid online class, which enabled me to obtain a 7 in IB Maths AA HL (predicted grade) and dreamed uni offers.
-                                        Especially for student who wasn't exactly an active learner, I was able to follow his path and finish all the assignment/pastpaper.
-                                        The lesson notes he provided with sufficiently detailed formula and key words have been a major source for revision material in every quiz, test and IB Exam &gt;&lt;
+                                        Winson's tutoring helped me immensely during the period of the Covid online class, which enabled me to obtain a Predicted Grade 7 in IBDP Math AAHL and dreamed university offers.
+                                        Especially for someone who wasn't exactly an active learner, I was able to follow his path and finish all the assignment/past papers.
+                                        The lesson notes he provided with comprehensively detailed formula and key words have been a major source for revision material in every quiz, test and IBDP Exam  &gt;&lt;
                                     </div>
                                     <div className="reviews-name">
                                         Judy Wei (2021)
                                     </div>
-                                </div>
-                                <div className="reviews-box">
-                                    <div className="reviews-description">
-                                        Explanations are concise and easy to understand, with loads of practice questions in which he will guide you through every bit you don't understand. 
-                                        Very uplifting and kind, will answer your questions outside of lesson time 🥺. 
-                                        100% will recommend, especially with how rigid some school math teachers are with their teaching methods 👌✨ Couldn't have achieved a 7 without him.
-                                    </div>
-                                    <div className="reviews-name">
-                                        Kitty Lam (2020)
+                                    <div className="reviews-uni">
+                                        [The Chinese University of Hong Kong]
                                     </div>
                                 </div>
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        他对待每个学生的教育方式都独一档，一个半小时的课程丝毫不含糊。
-                                    </div>
-                                    <div className="reviews-name">
-                                        Alan Chen (2024)
-                                    </div>
-                                </div>
-                                <div className="reviews-box">
-                                    <div className="reviews-description">
-                                        我认为Winson教学方法简洁明了，令人轻松理解复杂的数学概念。他耐心地解答我的问题，并且给予了很多实用的技巧和策略。
-                                        通过他的指导，我在数学方面的自信心得到了提升，并且在考试中取得了很大的进步。我非常感激他的帮助，他是一位出色的数学老师！
+                                        我认为Winson教学方法简洁明了，令人头疼且复杂的数学概念，通过老师的讲解变得十分易于理解。我的疑问都得到了耐心的解答，并且给予了我很多实用的解题技巧及策略。
+                                        通过他的辅导，我在数学领域的进步与日俱增，并最终在考试中取得了优异的成绩。我非常感激他的帮助，他是一位十分出色的数学老师！
                                     </div>
                                     <div className="reviews-name">
                                         Coco Cheng (2024)
@@ -489,19 +243,9 @@ const Homepage: React.FC = () => {
                                 </div>
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        Mr. Siu is hands down the best math teacher I've come across. His teaching style is crystal clear, with easy-to-follow structures and a stash of super relevant questions. 
-                                        What makes him truly exceptional is his strong sense of responsibility and genuine passion for tutoring. He gets a real kick out of seeing his students improve, and that enthusiasm shines through in his teaching. 
-                                        Thanks to his guidance, my journey through IB AA HL mathematics has seen significant improvement. I thoroughly enjoy his tutoring sessions every week.
-                                    </div>
-                                    <div className="reviews-name">
-                                        Jasmine Yang (2023)
-                                    </div>
-                                </div>
-                                <div className="reviews-box">
-                                    <div className="reviews-description">
-                                        Winson has a unique teaching approach that I greatly admire. During his classes, he presents topics in his own distinctive way, which differs significantly from the school's standard teaching methods. 
-                                        Additionally, Winson diligently compiles valuable past paper questions for practice before and after each class, a task that often takes him several days to complete. 
-                                        Working closely with Winson has been instrumental in helping me maintain an A* level throughout my A Level studies.
+                                        Winson has a unique teaching approach that I greatly admire. During his classes, he presents topics in his own distinctive way, which differs significantly from the school's standard teaching methods.
+                                        Additionally, Winson diligently compiles valuable past paper questions for practice before and after each class, a task that often takes him several days to complete.
+                                        Working closely with Winson has been instrumental in helping me maintain an A* throughout my A Level studies.
                                     </div>
                                     <div className="reviews-name">
                                         Ken Chen (2024)
@@ -509,28 +253,9 @@ const Homepage: React.FC = () => {
                                 </div>
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        Mr. Siu's teaching method is very efficient, he is patient as well. 
-                                        Following Mr. Siu in class, I also successfully improved my IGCSE grade from C to A.
-                                    </div>
-                                    <div className="reviews-name">
-                                        Anonymous
-                                    </div>
-                                </div>
-                                <div className="reviews-box">
-                                    <div className="reviews-description">
-                                        I'd say that Winson could be the best math tutor I've ever had. I had him as my tutor for the last year of IB. Winson's teaching style is learning by practicing past papers. 
-                                        He will provide specific past paper questions for each topic separately, and the notes he provided are very useful for final exam revisions. Winson is very patient and experienced. 
-                                        All assignments he provided are based on each student's ability and needs. In the end, Winson successfully supported me to reach a 7 for Math AA HL. Definitely a good choice to find him for math tutorials!!
-                                    </div>
-                                    <div className="reviews-name">
-                                        Joy Angela Sun (2022)
-                                    </div>
-                                </div>
-                                <div className="reviews-box">
-                                    <div className="reviews-description">
-                                        I have been taught by Mr. Winson for 5 months. My result have been improved for 2 grades. His learning style is always touched with the syllabus and he always feel free to discuss questions to you after lesson. 
-                                        His lesson note is one the best criteria to achieve your aim grade. The notes is full of previous past paper and question that are commonly asked. Moreover Mr. Winson is a very patient and responsible teacher. 
-                                        I truly recommend him to every student who were struggling in Mathematics right now.
+                                        I have been taught by Winson for 5 months. My result has been improved by 2 grades. His teaching always stays close to the syllabus, and he is always free to discuss questions with you after the lesson.
+                                        His notes are one of the best tools to achieve your target grade. They are full of previous past paper questions that are commonly asked. Moreover, Winson is a very patient and responsible teacher.
+                                        I truly recommend him to every student who are struggling with mathematics right now.
                                     </div>
                                     <div className="reviews-name">
                                         Casey Chan (2023)
@@ -538,12 +263,59 @@ const Homepage: React.FC = () => {
                                 </div>
                                 <div className="reviews-box">
                                     <div className="reviews-description">
-                                        Finding Winson as my IB Math tutor was an incredible stroke of luck! He truly saved me from my struggles with IB Higher Level Math, where I couldn't even pass the exam. 
-                                        Thanks to Winson's invaluable support, I achieved a grade 4, just a hair's breadth away from a grade 5. I am immensely grateful to him for his exceptional teaching style, which is both enjoyable and easily understandable. 
-                                        His fluency in Mandarin, English, and Cantonese was a tremendous asset, as it allowed me to learn in the language I felt most comfortable with. I would recommend him to everyone who is currently suffering from IB Math!
+                                        Winson has helped me improve my math in just one year. He gives me many past papers to do on different topics, and it has improved my math scores drastically.
+                                        During our lessons, we go through many exercises and questions and I am able to learn a lot. I now have more confidence in math thanks to Winson.
                                     </div>
                                     <div className="reviews-name">
-                                        Vivian Chen (2018)
+                                        Nicole Li (2024)
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Winson老师非常厉害！老师在我整个IBDP期间为我提供了很多帮助。通过他的数学补课，我得以从最初难堪的分数，提升至我个人十分满意的成绩！
+                                        在往后的大学课程中，老师也都不遗余力地辅导我拿到了很好的成绩！IBDP Math不管是SL或者HL都可以放心的交给Winson老师辅导！🤩🤩
+                                    </div>
+                                    <div className="reviews-name">
+                                        Connie Feng (2021)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [The Hong Kong University of Science and Technology]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Winson is a great Math Tutor who is able to break down concepts easily and apply his learning into practical exam questions.
+                                        He carefully procures exam questions in a neatly formatted workbook full of practice questions for every lesson.
+                                        I personally find his way of teaching to be passionate and careful, and as a result, was able to do my best in IBDP Math SL.
+                                    </div>
+                                    <div className="reviews-name">
+                                        Aidan Cheung (2019)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [The University of Warwick]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        I took Winson’s class for over a year and his teaching is definitely one of the best!
+                                        His classes were super worth it and certainly enhanced my math performance in high school.
+                                        Highly recommended!
+                                    </div>
+                                    <div className="reviews-name">
+                                        Kahlina Lam (2020)
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Winson老师是一位满怀责任心的数学老师。他会在课堂中先带领我学习及总结单元知识，接下来将挑选合适的题目以供我练习。
+                                        如果期间有任何不解，老师都会针对性地进行详细的讲解。一节课中70%时间学生做题；30%时间老师讲课，这是Winson老师独特的教学方式。
+                                        Winson老师亦会在课后为我整理好Past Paper Booklet，以便我课后进行复习及巩固。在老师的帮助下，我每次的数学考试皆取得了6-7的分数。
+                                    </div>
+                                    <div className="reviews-name">
+                                        Anonymous (2023)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [The University of Hong Kong]
                                     </div>
                                 </div>
                             </div>
@@ -551,7 +323,7 @@ const Homepage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer openForm={openForm}/>
         </div>
     );
 }

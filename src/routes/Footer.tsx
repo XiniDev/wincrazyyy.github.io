@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 import Double_Chevron from '../images/double-chevron.png';
 
-const Footer: React.FC = () => {
+type FooterProp = {
+    openForm: (e: React.MouseEvent<HTMLDivElement>) => void;
+}
+
+const Footer: React.FC<FooterProp> = ({ openForm }) => {
     const [hovered, setHovered] = useState<string | null>(null);
 
     const handleMouseEnter = (item: string) => {
@@ -38,7 +42,7 @@ const Footer: React.FC = () => {
                 className={`footer-signup ${hovered == 'signup' ? 'hovered' : ''}`}
                 onMouseEnter={() => handleMouseEnter('signup')}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => window.open('https://forms.gle/BUR95a7xUGkqg8ts5')}
+                onClick={(e) => openForm(e)}
             >
                 Book Now!
             </div>

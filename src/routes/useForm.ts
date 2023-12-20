@@ -3,6 +3,12 @@ import { ReactElement, useState } from "react";
 export function useForm(steps: ReactElement[]) {
     const [currStepIndex, setCurrStepIndex] = useState(0);
 
+    function reset(){
+        setCurrStepIndex(i => {
+            return 0;
+        });
+    }
+
     function back(){
         setCurrStepIndex(i => {
             return (i <= 0) ? i : i - 1;
@@ -28,5 +34,6 @@ export function useForm(steps: ReactElement[]) {
         goTo,
         back,
         next,
+        reset,
     }
 }

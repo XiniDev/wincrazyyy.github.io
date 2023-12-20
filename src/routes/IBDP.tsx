@@ -6,7 +6,6 @@ import Winson_Icon_Square from '../images/winson-icon-square.png';
 import Winson_Icon_Round from '../images/winson-icon-round.png';
 
 const IBDP: React.FC = () => {
-
     const [hovered, setHovered] = useState<string | null>(null);
 
     const handleMouseEnter = (item: string) => {
@@ -46,6 +45,13 @@ const IBDP: React.FC = () => {
         return finalClass;
     };
 
+    const [formActive, setFormActive] = useState(false);
+
+    const openForm = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        setFormActive(true);
+    };
+
     useEffect(() => {
         const handleResize = () => {
             const index = (document.getElementsByClassName("info-tab-titles-wrapper")[0].firstChild as HTMLElement).className.includes("1") ? 0 : 1;
@@ -61,7 +67,7 @@ const IBDP: React.FC = () => {
 
     return (
         <div className="page">
-            <Header/>
+            <Header formActive={formActive} setFormActive={setFormActive}/>
             <div className="syllabus-intro">
                 <div className="syllabus-intro-container">
                     <div className="syllabus-intro-title">
@@ -281,7 +287,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-1')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        2 students
+                                        2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-1' ? 'hovered' : ''}`}>
                                         Micky (2018), Mary (2022)
@@ -291,7 +297,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-2')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        5 students
+                                        5&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-2' ? 'hovered' : ''}`}>
                                         Taylor (2019), Vera (2021), Ivy (2021), Cici (2022), Alice (2022)
@@ -301,7 +307,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-3')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        4 students
+                                        4&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-3' ? 'hovered' : ''}`}>
                                         Janice (2021), Hebe (2021), Joy (2022), Ethan (2022)
@@ -311,7 +317,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-4')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        2 students
+                                        2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-4' ? 'hovered' : ''}`}>
                                         Evelyn (2018), Anthony (2019)
@@ -321,7 +327,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-5')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        2 students
+                                        2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-5' ? 'hovered' : ''}`}>
                                         Lucia (2018), Fiona (2022)&nbsp;<b>[both in 3 months]</b>
@@ -331,7 +337,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-6')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        1 student
+                                        1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-6' ? 'hovered' : ''}`}>
                                         Jasmine (2023)
@@ -341,7 +347,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-7')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        2 students
+                                        2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-7' ? 'hovered' : ''}`}>
                                         Kelly (2018), Owen (2021)&nbsp;<b>[both in 1 month]</b>
@@ -351,7 +357,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-8')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        1 student
+                                        1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-8' ? 'hovered' : ''}`}>
                                         Justin (2020), Judy (2021), ChungTin (2022)
@@ -361,7 +367,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-1-9')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        1 student
+                                        1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-9' ? 'hovered' : ''}`}>
                                         Vivian (2018)&nbsp;<b>[in 5 months]</b>
@@ -406,7 +412,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-2-1')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        3 students
+                                        3&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-1' ? 'hovered' : ''}`}>
                                         Jenny (2020), Kitty (2020), Rachael (2020)
@@ -416,7 +422,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-2-2')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        3 students
+                                        3&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-2' ? 'hovered' : ''}`}>
                                         Chloe (2020), Alexandra (2022), Cassie (2023)
@@ -426,7 +432,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-2-3')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        1 student
+                                        1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-3' ? 'hovered' : ''}`}>
                                         Sharon (2023)&nbsp;<b>[in 1.5 month]</b>
@@ -436,7 +442,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-2-4')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        3 students
+                                        3&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-4' ? 'hovered' : ''}`}>
                                         Aidan (2019), David (2020), Jasmine (2023)
@@ -446,7 +452,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-2-5')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        1 student
+                                        1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-5' ? 'hovered' : ''}`}>
                                         Connie (2021)
@@ -456,7 +462,7 @@ const IBDP: React.FC = () => {
                                         onMouseEnter={() => handleMouseEnter('exr-2-6')}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        1 student
+                                        1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-6' ? 'hovered' : ''}`}>
                                         Dora (2021)
@@ -466,9 +472,11 @@ const IBDP: React.FC = () => {
                             <div className="signature-reviews-wrapper">
                                 <div className="signature-reviews-box">
                                     <div className="reviews-description">
-                                        首先，Winson在IBDP课程的熟练度等等我就不多赘述了，可能是因为我曾就读的学校老师非常水的原因，所以非常需要一个老师帮我查漏补缺，不然我大考的时侯可能就得望着没做几道题的卷子无语凝噎、默默流泪了。
-                                        我个人认为数学本身是实践大于理论、需要保持手感的一门科目，所以自己很适用于Winson让学生直接在课上实操Past Papers，并以Past Papers为例总结做题方法的教学方式；又鉴于我本人需要监督者推动学习的性格，课上安排的比对作业以及改错环节也让我更愿意在课后抽出时间学习个人并不喜欢的科目。
-                                        虽然过程有些痛苦，但苦尽甘来，我在IBDP的最后阶段成功取得了满意的成绩。总体来说，很推荐正在suffer in math的IBer们尝试尝试Winson的课程~
+                                        Winson老师对于IBDP课程的熟练度我相信是大家有目共睹的，因此便不多赘述了。
+                                        或许是因为曾教导过我的学校数学老师非常水（不负责）的原因，我迫切地需要一个合适的数学老师帮我查漏补缺，不然我大考的时侯可能就得望着没做几道题的卷子无语凝噎、默默流泪了。
+                                        我个人认为数学本身是一门实践大于理论，并需时刻保持手感的科目。
+                                        因此我与Winson老师让学生直接实操Past Paper的教学方式十分契合，且迅速总结出Past Papers的做题方式；鉴于我本人需要监督以推动学习的性格，课上的比对作业以及改错环节使我更愿意在课后抽出时间学习这个并不讨人喜欢的科目。
+                                        虽然学习数学的过程有些痛苦，但终究是苦尽甘来——我在IBDP的最后阶段成功取得了满意的成绩。总体来说，很推荐正在suffer in math的IBer们尝试尝试Winson的课程~
                                     </div>
                                     <div className="reviews-name">
                                         Sharon Deng (2023)
@@ -482,7 +490,7 @@ const IBDP: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer openForm={openForm}/>
         </div>
     );
 }

@@ -7,7 +7,7 @@ type FormWrapperProps = {
 
 export function FormWrapper({title, children} : FormWrapperProps) {
     return <>
-        <div className="form-subtitle">{title}</div>
+        <div className="form-title">{title}</div>
         <div className="form-input-wrapper">{children}</div>
     </>
 }

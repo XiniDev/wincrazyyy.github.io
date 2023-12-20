@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import ScrollToTop from './routes/ScrollToTop';
 import Homepage from './routes/Homepage';
 import IBDP from './routes/IBDP';
 import ALevel from './routes/ALevel';
@@ -10,6 +11,7 @@ function App() {
     return (
         <div className="App">
             <Router basename={process.env.PUBLIC_URL}>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Homepage />}/>
                     <Route path="/ibdp" element={<IBDP />}/>

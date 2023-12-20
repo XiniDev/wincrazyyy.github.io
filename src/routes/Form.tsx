@@ -14,19 +14,33 @@ type FormProp = {
 }
 
 type FormData = {
-    phoneNo: string;
+    contactMethod: string;
+    countryCode: string;
+    contact: string;
     firstName: string;
     lastName: string;
     schoolName: string;
     syllabus: string;
+    subSyllabus: string;
+    noteTaking: string;
+    currResult: string;
+    expResult: string;
+    referral: string;
 }
 
 const INITIAL_DATA = {
-    phoneNo: "",
+    contactMethod: "",
+    countryCode: "852",
+    contact: "",
     firstName: "",
     lastName: "",
     schoolName: "",
-    syllabus: "ibdp",
+    syllabus: "",
+    subSyllabus: "",
+    noteTaking: "",
+    currResult: "",
+    expResult: "",
+    referral: "",
 }
 
 const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
@@ -43,7 +57,7 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
         });
     }
 
-    const { steps, currStepIndex, step, isFirstStep, isLastStep, back, next} = useForm([
+    const { steps, currStepIndex, step, isFirstStep, isLastStep, back, next, reset} = useForm([
         <UserForm {...data} updateFields={updateFields} />,
         <SyllabusForm {...data} updateFields={updateFields} />,
         <MiscForm {...data} updateFields={updateFields} />,
@@ -52,7 +66,11 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
         if (!isLastStep) return next();
-        alert("success");
+        alert("Success");
+    
+        setData(INITIAL_DATA);
+        setFormActive(false);
+        reset();
     };
 
     return (
@@ -65,9 +83,6 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
                 >
                     <img src={Cross}/>
                 </div>
-                {/* <div className="form-title">
-                    Book a Lesson Now!
-                </div> */}
                 <form onSubmit={(e) => onSubmit(e)}> 
                     <div className="form-details-container">
                         <div className="form-counter">

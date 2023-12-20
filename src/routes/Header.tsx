@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Form from './Form';
 
 import Winson_Icon_Round from '../images/winson-icon-round-nobkg.png';
 import Menu_Icon from '../images/menu-icon.png';
 
-const Header: React.FC = () => {
+type HeaderProp = {
+    formActive: boolean;
+    setFormActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
     const [hovered, setHovered] = useState<string | null>(null);
 
     const handleMouseEnter = (item: string) => {
@@ -14,6 +20,11 @@ const Header: React.FC = () => {
     const handleMouseLeave = () => {
         setHovered(null);
     }
+
+    const openForm = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        setFormActive(true);
+    };
 
     const [menuOpen, setMenuOpen] = useState(false);
     const [transparent, setTransparent] = useState(false);
@@ -29,7 +40,6 @@ const Header: React.FC = () => {
     };
 
     const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [hidden, setHidden] = useState(false);
 
     const [fadeDivs, setFadeDivs] = useState(false);
 
@@ -53,14 +63,6 @@ const Header: React.FC = () => {
         const handleScroll = () => {
             const currentScrollPos = window.scrollY;
 
-            if (prevScrollPos > currentScrollPos || currentScrollPos < 50) {
-                setHidden(false);
-                setMenuOpen(false);
-            } else {
-                setHidden(true);
-                setMenuOpen(false);
-            }
-
             if (currentURL == '/') {
                 if (currentScrollPos < window.innerHeight - 80) {
                     setTransparent(true)
@@ -79,7 +81,8 @@ const Header: React.FC = () => {
     }, [prevScrollPos]);
 
     return (
-        <div className={`header ${hidden ? 'hidden' : ''} ${transparent ? 'transparent' : ''} ${currentURL == '/' ? (fadeDivs ? 'header-fade visible' : 'header-fade') : ''}`}>
+        <div className={`header ${transparent ? 'transparent' : ''} ${currentURL == '/' ? (fadeDivs ? 'header-fade visible' : 'header-fade') : ''}`}>
+            <Form formActive={formActive} setFormActive={setFormActive}/>
             <div className={`header-container ${menuOpen ? 'open' : ''}`}>
                 <Link 
                     to ="/"
@@ -131,7 +134,7 @@ const Header: React.FC = () => {
                         className={`header-link ${hovered == 'signup' ? 'hovered' : ''} ${menuOpen ? 'open' : ''}`}
                         onMouseEnter={() => handleMouseEnter('signup')}
                         onMouseLeave={handleMouseLeave}
-                        onClick ={() => window.open('https://forms.gle/BUR95a7xUGkqg8ts5')}
+                        onClick ={(e) => openForm(e)}
                     >
                         Book a Lesson!
                     </div>
