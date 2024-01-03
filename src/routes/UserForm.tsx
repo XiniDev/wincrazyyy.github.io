@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FormWrapper } from "./FormWrapper";
-import Select, { ActionMeta, OnChangeValue } from "react-select";
+import Select, { ActionMeta, CSSObjectWithLabel, OnChangeValue } from "react-select";
 
 type OptionType = {
     value: string;
@@ -47,10 +47,10 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
     const contactMethodOptions: OptionType[] = [
         { value: 'whatsapp', label: "WhatsApp" },
         { value: 'wechat', label: "WeChat" }
-    ]
+    ];
 
-    const contactMethodOnChange = (option: OnChangeValue<OptionType, false> | null, actionMeta: ActionMeta<OptionType>) => {
-        const selectedContactMethod = option?.value;
+    const contactMethodOnChange = (newValue: OnChangeValue<OptionType, false> | null, actionMeta: ActionMeta<OptionType>) => {
+        const selectedContactMethod = newValue?.value;
         updateFields({ contactMethod: selectedContactMethod, contact: "", countryCode: "852" });
         setShowContact(true);
     }
@@ -63,7 +63,7 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
                         <>
                             <div className="form-input-column">
                                 <label>WhatsApp: *</label>
-                                <div className="form-input-row">
+                                <div className="form-input-whatsapp">
                                     <input
                                             className="form-input-country-code"
                                             required
@@ -73,11 +73,11 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
                                             onChange={handleCountryCodeChange}
                                         />
                                     <input
-                                        className="form-input-whatsapp"
                                         autoFocus
                                         required
                                         type="text"
                                         value={contact}
+                                        size={1}
                                         onChange={handleWhatsAppChange}
                                     />
                                 </div>
@@ -124,11 +124,21 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
         <FormWrapper title="User Details">
             <label>Contact Method: *</label>
             <Select
+                className="form-input-select"
                 autoFocus
                 required
-                // value={contactMethod}
+                value={contactMethodOptions.find(option => option.value == contactMethod)}
                 options={contactMethodOptions}
                 onChange={contactMethodOnChange}
+                menuPortalTarget={document.body}
+                styles={{
+                    menuPortal: (base, _): CSSObjectWithLabel => ({
+                        ...base,
+                        zIndex: 9999,
+                        fontSize: "24px",
+                    } as CSSObjectWithLabel),
+                }}
+                menuPosition={'fixed'}
             ></Select>
             {renderContactOptions()}
             <div className="form-input-row">

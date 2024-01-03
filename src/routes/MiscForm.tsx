@@ -1,5 +1,5 @@
 import { FormWrapper } from "./FormWrapper";
-import Select, { ActionMeta, OnChangeValue } from "react-select";
+import Select, { ActionMeta, CSSObjectWithLabel, OnChangeValue } from "react-select";
 
 type OptionType = {
     value: string;
@@ -42,27 +42,39 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
         <FormWrapper title="Other Details">
             <label>Which note taking app do you use on iPad? *</label>
             <Select
+                className="form-input-select"
                 required
-                // value={subSyllabus || ""}
+                value={noteTakingOptions.find(option => option.value == noteTaking)}
                 options={noteTakingOptions}
                 onChange={handleNoteTaking}
+                menuPortalTarget={document.body}
+                styles={{
+                    menuPortal: (base, _): CSSObjectWithLabel => ({
+                        ...base,
+                        zIndex: 9999,
+                        fontSize: "24px",
+                    } as CSSObjectWithLabel),
+                }}
+                menuPosition={'fixed'}
             ></Select>
             <div className="form-input-row">
                 <div className="form-input-column">
-                    <label>Current Math Result (before tutorial): *</label>
+                    <label>Current Math Result: *</label>
                     <input
                         required
                         type="text"
                         value={currResult}
+                        size={1}
                         onChange={e => updateFields({ currResult: e.target.value })}
                     />
                 </div>
                 <div className="form-input-column">
-                    <label>Expected Math Result (after tutorial): *</label>
+                    <label>Expected Math Result: *</label>
                     <input
                         required
                         type="text"
                         value={expResult}
+                        size={1}
                         onChange={e => updateFields({ expResult: e.target.value })}
                     />
                 </div>

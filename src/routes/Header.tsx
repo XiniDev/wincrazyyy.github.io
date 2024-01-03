@@ -92,10 +92,11 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                     Winson Siu
                 </Link>
                 <div
-                    className={`mobile-header-links ${menuOpen ? 'open' : ''}`}
+                    className="mobile-header-links"
                     onClick={(e) => handleMenu(e)}
                 >
-                    <img src={Menu_Icon}/>
+                    <div>Menu</div>
+                    <img className={menuOpen ? 'open' : ''} src={Menu_Icon}/>
                 </div>
                 <div className={`header-links mobile-hidden-header ${menuOpen ? 'open' : ''}`}>
                     <Link
@@ -120,7 +121,7 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                         onMouseEnter={() => handleMouseEnter('a-level')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        A Level
+                        A-Level
                     </Link>
                     <Link
                         to ="/igcse"

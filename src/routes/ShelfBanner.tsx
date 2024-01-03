@@ -46,7 +46,7 @@ const ShelfBlock: React.FC = () => {
                     onMouseLeave={handleMouseLeave}
                 >
                     <div className={`shelf-text ${handleShelfHover(false, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                        <b>16 years of <span>part-time and full-time</span> tutoring experience</b><span> in Mathematics since 2007.</span>
+                        <b>17 years of <span>part-time and full-time</span> tutoring experience</b><div>,<br></br> ...</div><span> in Mathematics since 2007.</span>
                     </div>
                 </div>
                 <div
@@ -97,7 +97,7 @@ const ShelfBlock: React.FC = () => {
                             <b>HKALE</b>
                         </div>
                         <div className={`bannerlist-text ${hovered == 'ed-bkg-2' ? 'hovered' : ''}`}>
-                            Pure Maths <b>(A)<div>[Top 4.8%]</div></b>
+                            Pure Math <b>(A)<div>[Top 4.8%]</div></b>
                         </div>
                     </div>
                     <div
@@ -109,8 +109,8 @@ const ShelfBlock: React.FC = () => {
                             <b>HKCEE</b>
                         </div>
                         <div className={`bannerlist-text ${hovered == 'ed-bkg-3' ? 'hovered' : ''}`}>
-                            Add Maths <b>(A) <div>[Top 6.0%]</div><br></br></b><br></br>
-                            Maths <b>(A)<div>[Top 3.1%]</div></b>
+                            Add Math <b>(A) <div>[Top 6.0%]</div><br></br></b><br></br>
+                            Math <b>(A)<div>[Top 3.1%]</div></b>
                         </div>
                     </div>
                     <div
@@ -122,7 +122,7 @@ const ShelfBlock: React.FC = () => {
                             <b>HKDSE</b>
                         </div>
                         <div className={`bannerlist-text ${hovered == 'ed-bkg-4' ? 'hovered' : ''}`}>
-                            Maths M1 <b>(5**)<div>[Top 2.9%]</div></b>
+                            Math M1 <b>(5**)<div>[Top 2.9%]</div></b>
                         </div>
                     </div>
                 </div>

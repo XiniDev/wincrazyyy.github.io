@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-import Winson_Icon_Square from '../images/winson-icon-square.png';
-import Winson_Icon_Round from '../images/winson-icon-round.png';
+import StudentsFrom from './StudentsFrom';
 
 const IBDP: React.FC = () => {
     const [hovered, setHovered] = useState<string | null>(null);
@@ -75,8 +74,7 @@ const IBDP: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="up-down-column">
-                <div className="up-down-background-banner background-blue"></div>
+            <div className="up-down-column background-blue">
                 <div className="up-down-container">
                     <div className="up-down-textdiv">
                         <div className="rotlist-wrapper">
@@ -87,7 +85,7 @@ const IBDP: React.FC = () => {
                             >
                                 <div className={`rotlist-point-shade shade-blue-1 ${hovered == 'co-dsc-1' ? 'hovered' : ''}`}></div>
                                 <div className={`rotlist-point-text ${hovered == 'co-dsc-1' ? 'hovered' : ''}`}>
-                                    <b>Past papers questions</b> sorted by topic
+                                    2008 - 2023 <b>Past papers questions</b> sorted by topic
                                 </div>
                             </div>
                             <div
@@ -290,7 +288,7 @@ const IBDP: React.FC = () => {
                                         2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-1' ? 'hovered' : ''}`}>
-                                        Micky (2018), Mary (2022)
+                                        Micky Wang (2018), Mary Guan (2022)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(6, 7)} ${hovered == 'exr-1-2' ? 'hovered' : ''}`}
@@ -300,7 +298,7 @@ const IBDP: React.FC = () => {
                                         5&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-2' ? 'hovered' : ''}`}>
-                                        Taylor (2019), Vera (2021), Ivy (2021), Cici (2022), Alice (2022)
+                                        Taylor Reis (2019), Vera Jing (2021), Ivy Liu (2021), Cici Jin (2022), Alice Gao (2022)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(5, 7)} ${hovered == 'exr-1-3' ? 'hovered' : ''}`}
@@ -310,7 +308,7 @@ const IBDP: React.FC = () => {
                                         4&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-3' ? 'hovered' : ''}`}>
-                                        Janice (2021), Hebe (2021), Joy (2022), Ethan (2022)
+                                        Janice Au Yeung (2021), Hebe Jim (2021), Joy Sun (2022), Ethan Chan (2022)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(5, 6)} ${hovered == 'exr-1-4' ? 'hovered' : ''}`}
@@ -320,7 +318,7 @@ const IBDP: React.FC = () => {
                                         2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-4' ? 'hovered' : ''}`}>
-                                        Evelyn (2018), Anthony (2019)
+                                        Evelyn Lin (2018), Anthony Leung (2019)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(3, 6)} exam-row-highlight ${hovered == 'exr-1-5' ? 'hovered' : ''}`}
@@ -330,7 +328,7 @@ const IBDP: React.FC = () => {
                                         2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-5' ? 'hovered' : ''}`}>
-                                        Lucia (2018), Fiona (2022)&nbsp;<b>[both in 3 months]</b>
+                                        Lucia Zhu (2018), Fiona Wan (2022)&nbsp;<b>[both in 3 months]</b>
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(2, 6)} ${hovered == 'exr-1-6' ? 'hovered' : ''}`}
@@ -340,7 +338,7 @@ const IBDP: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-6' ? 'hovered' : ''}`}>
-                                        Jasmine (2023)
+                                        Jasmine Yang (2023)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(3, 5)} ${hovered == 'exr-1-7' ? 'hovered' : ''}`}
@@ -350,7 +348,7 @@ const IBDP: React.FC = () => {
                                         2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-7' ? 'hovered' : ''}`}>
-                                        Kelly (2018), Owen (2021)&nbsp;<b>[both in 1 month]</b>
+                                        Kelly Gu (2018), Owen Zhao (2021)&nbsp;<b>[both in 1 month]</b>
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(2, 5)} ${hovered == 'exr-1-8' ? 'hovered' : ''}`}
@@ -360,7 +358,7 @@ const IBDP: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-8' ? 'hovered' : ''}`}>
-                                        Justin (2020), Judy (2021), ChungTin (2022)
+                                        Justin Chan (2020), Judy Wei (2021), Chung Tin Chan (2022)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(1, 4)} ${hovered == 'exr-1-9' ? 'hovered' : ''}`}
@@ -370,7 +368,7 @@ const IBDP: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-9' ? 'hovered' : ''}`}>
-                                        Vivian (2018)&nbsp;<b>[in 5 months]</b>
+                                        Vivian Chen (2018)&nbsp;<b>[in 5 months]</b>
                                     </div>
                                 </div>
                             </div>
@@ -415,7 +413,7 @@ const IBDP: React.FC = () => {
                                         3&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-1' ? 'hovered' : ''}`}>
-                                        Jenny (2020), Kitty (2020), Rachael (2020)
+                                        Jenny Huang (2020), Kitty Lam (2020), Rachel Lee (2020)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(5, 7)} ${hovered == 'exr-2-2' ? 'hovered' : ''}`}
@@ -425,7 +423,7 @@ const IBDP: React.FC = () => {
                                         3&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-2' ? 'hovered' : ''}`}>
-                                        Chloe (2020), Alexandra (2022), Cassie (2023)
+                                        Chloe Cheng (2020), Alexandra Wong (2022), Cassie Luo (2023)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(3, 7)} exam-row-highlight ${hovered == 'exr-2-3' ? 'hovered' : ''}`}
@@ -435,7 +433,7 @@ const IBDP: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-3' ? 'hovered' : ''}`}>
-                                        Sharon (2023)&nbsp;<b>[in 1.5 month]</b>
+                                        Sharon Deng (2023)&nbsp;<b>[in 1.5 month]</b>
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(4, 6)} ${hovered == 'exr-2-4' ? 'hovered' : ''}`}
@@ -445,7 +443,7 @@ const IBDP: React.FC = () => {
                                         3&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-4' ? 'hovered' : ''}`}>
-                                        Aidan (2019), David (2020), Jasmine (2023)
+                                        Aidan Cheung (2019), David Zhang (2020), Jasmine Hung (2023)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(2, 5)} ${hovered == 'exr-2-5' ? 'hovered' : ''}`}
@@ -455,7 +453,7 @@ const IBDP: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-5' ? 'hovered' : ''}`}>
-                                        Connie (2021)
+                                        Connie Feng (2021)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(1, 4)} ${hovered == 'exr-2-6' ? 'hovered' : ''}`}
@@ -465,7 +463,7 @@ const IBDP: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-6' ? 'hovered' : ''}`}>
-                                        Dora (2021)
+                                        Dora Dai (2021)
                                     </div>
                                 </div>
                             </div>
@@ -490,6 +488,7 @@ const IBDP: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <StudentsFrom/>
             <Footer openForm={openForm}/>
         </div>
     );

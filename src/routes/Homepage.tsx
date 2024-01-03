@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import Counter from './Counter';
 import ShelfBlock from './ShelfBanner';
 import Carousel from './Carousel';
+import Pricing from './Pricing';
 
 import Winson_Icon_Large_Nobkg from '../images/winson-icon-large-nobkg.png';
 
@@ -62,7 +64,7 @@ const Homepage: React.FC = () => {
     useEffect(() => {
         const handleScroll = () => {
             const vh = window.innerHeight;
-            const threshold = vh / 2 - 200;
+            const threshold = vh / 2;
 
             if (window.scrollY < threshold) {
                 setHideDivs(false);
@@ -88,6 +90,7 @@ const Homepage: React.FC = () => {
                         <div className={`homepage-intro-img ${fadeDivs[0] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}>
                             <img src={Winson_Icon_Large_Nobkg}></img>
                         </div>
+                        <Counter fadeDiv={fadeDivs[0]} hideDiv={hideDivs} />
                         <div className={`homepage-intro-title ${fadeDivs[0] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}>
                             <span>W</span>INSON <span>S</span>IU
                         </div>
@@ -114,6 +117,8 @@ const Homepage: React.FC = () => {
                 <div className="up-down-background"></div>
                 <div className="up-down-container">
                     <Carousel openForm={openForm}/>
+                    <div className="up-down-space"></div>
+                    <Pricing openForm={openForm}/>
                     <div className="up-down-space"></div>
                     <div className="reviews">
                         <div className="reviews-wrapper">
@@ -245,7 +250,7 @@ const Homepage: React.FC = () => {
                                     <div className="reviews-description">
                                         Winson has a unique teaching approach that I greatly admire. During his classes, he presents topics in his own distinctive way, which differs significantly from the school's standard teaching methods.
                                         Additionally, Winson diligently compiles valuable past paper questions for practice before and after each class, a task that often takes him several days to complete.
-                                        Working closely with Winson has been instrumental in helping me maintain an A* throughout my A Level studies.
+                                        Working closely with Winson has been instrumental in helping me maintain an A* throughout my A-Level studies.
                                     </div>
                                     <div className="reviews-name">
                                         Ken Chen (2024)
@@ -293,6 +298,19 @@ const Homepage: React.FC = () => {
                                     </div>
                                     <div className="reviews-uni">
                                         [The University of Warwick]
+                                    </div>
+                                </div>
+                                <div className="reviews-box">
+                                    <div className="reviews-description">
+                                        Winson is a patient tutor and is well prepared for every lesson which maximises the time spent in class.
+                                        He provides a lot of past paper questions and different tips that has well equipped me for my IBDP exams.
+                                        I got a 6 in Math AISL and couldn’t have done it without him.
+                                    </div>
+                                    <div className="reviews-name">
+                                        Jasmine Hung (2023)
+                                    </div>
+                                    <div className="reviews-uni">
+                                        [University of Westminster]
                                     </div>
                                 </div>
                                 <div className="reviews-box">

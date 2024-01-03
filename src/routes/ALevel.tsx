@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-import Winson_Icon_Square from '../images/winson-icon-square.png';
-
 const ALevel: React.FC = () => {
     const [hovered, setHovered] = useState<string | null>(null);
 
@@ -41,8 +39,7 @@ const ALevel: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="up-down-column">
-                <div className="up-down-background-banner background-orange"></div>
+            <div className="up-down-column background-orange">
                 <div className="up-down-container">
                     <div className="up-down-textdiv">
                         <div className="rotlist-wrapper">
@@ -54,7 +51,7 @@ const ALevel: React.FC = () => {
                             >
                                 <div className={`rotlist-point-shade shade-orange-2 ${hovered == 'co-dsc-1' ? 'hovered' : ''}`}></div>
                                 <div className={`rotlist-point-text ${hovered == 'co-dsc-1' ? 'hovered' : ''}`}>
-                                    <b>Past papers questions</b> sorted by topic
+                                    2008 - 2023 <b>Past papers questions</b> sorted by topic
                                 </div>
                             </div>
                             <div
@@ -64,7 +61,7 @@ const ALevel: React.FC = () => {
                             >
                                 <div className={`rotlist-point-shade shade-orange-2 ${hovered == 'co-dsc-2' ? 'hovered' : ''}`}></div>
                                 <div className={`rotlist-point-text ${hovered == 'co-dsc-2' ? 'hovered' : ''}`}>
-                                    One student entered <b>University of Cambridge</b> with <b>double Math A*</b>
+                                    One student entered <b>University of Cambridge</b> with <b>two A*s in Math</b>
                                 </div>
                             </div>
                             <div
@@ -74,7 +71,7 @@ const ALevel: React.FC = () => {
                             >
                                 <div className={`rotlist-point-shade shade-orange-2 ${hovered == 'co-dsc-3' ? 'hovered' : ''}`}></div>
                                 <div className={`rotlist-point-text ${hovered == 'co-dsc-3' ? 'hovered' : ''}`}>
-                                    All students achieved <b>Grade A or A*</b>
+                                    All students achieved <b>Grade A* or A</b>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +88,7 @@ const ALevel: React.FC = () => {
                         <div className="exam-wrapper">
                             <div className="exam-table">
                                 <div className="exam-catagory">
-                                    Edexcel (YFM01) / Cambridge (9231) / AQA (7367) <b>Further Math</b>:
+                                    Edexcel (IAL) / Cambridge (9231) / AQA (7367) <b>Further Math</b>:
                                 </div>
                                 <div className="exam-grid-numbers">
                                     <div>F</div>
@@ -104,7 +101,7 @@ const ALevel: React.FC = () => {
                                 </div>
                                 <div className="exam-grid">
                                     <div className={`exam-row ${setExamRow(1, 7)} exam-row-highlight`}>
-                                        <b>Bill (2021)</b>, Michelle (2021)
+                                        <b>Bill Ting (2021)</b>, Michelle Chan (2021)
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +125,7 @@ const ALevel: React.FC = () => {
                             </div>
                             <div className="exam-table">
                                 <div className="exam-catagory">
-                                    Edexcel (YMA01, 9MA0) / Cambridge (9709) / AQA (7357) / OCR (H240) <b>Math</b>:
+                                    Edexcel (IAL, AL) / Cambridge (9709) / AQA (7357) / OCR (H240) <b>Math</b>:
                                 </div>
                                 <div className="exam-grid-numbers">
                                     <div>F</div>
@@ -141,13 +138,13 @@ const ALevel: React.FC = () => {
                                 </div>
                                 <div className="exam-grid">
                                     <div className={`exam-row ${setExamRow(5, 7)}`}>
-                                        Michelle (2021)
+                                        Michelle Chan (2021)
                                     </div>
                                     <div className={`exam-row ${setExamRow(1, 7)} exam-row-highlight`}>
-                                        <b>Bill (2021)</b>, DongHao (2023)
+                                        <b>Bill Ting (2021)</b>, DongHao Zhang (2023)
                                     </div>
                                     <div className={`exam-row ${setExamRow(1, 6)}`}>
-                                        Quintin (2023)
+                                        Quintin Leung (2023)
                                     </div>
                                 </div>
                             </div>

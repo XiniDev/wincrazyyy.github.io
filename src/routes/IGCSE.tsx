@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-import Winson_Icon_Square from '../images/winson-icon-square.png';
-
 const IGCSE: React.FC = () => {
     const [hovered, setHovered] = useState<string | null>(null);
 
@@ -41,8 +39,7 @@ const IGCSE: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="up-down-column">
-                <div className="up-down-background-banner background-purple"></div>
+            <div className="up-down-column background-purple">
                 <div className="up-down-container">
                     <div className="up-down-textdiv">
                         <div className="rotlist-wrapper">
@@ -53,7 +50,7 @@ const IGCSE: React.FC = () => {
                             >
                                 <div className={`rotlist-point-shade shade-pink-1 ${hovered == 'co-dsc-1' ? 'hovered' : ''}`}></div>
                                 <div className={`rotlist-point-text ${hovered == 'co-dsc-1' ? 'hovered' : ''}`}>
-                                    <b>Past papers questions</b> sorted by topic
+                                    2014 - 2023 <b>Past papers questions</b> sorted by topic
                                 </div>
                             </div>
                             <div
@@ -119,7 +116,7 @@ const IGCSE: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-1' ? 'hovered' : ''}`}>
-                                        Emily (2018)&nbsp;<b>[in 2 months]</b>
+                                        Emily Lau (2018)&nbsp;<b>[in 2 months]</b>
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(5, 6)} ${hovered == 'exr-1-2' ? 'hovered' : ''}`}
@@ -129,7 +126,7 @@ const IGCSE: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-2' ? 'hovered' : ''}`}>
-                                        Jacky (2022)
+                                        Jacky Nie (2022)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(4, 6)} ${hovered == 'exr-1-3' ? 'hovered' : ''}`}
@@ -139,7 +136,7 @@ const IGCSE: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-3' ? 'hovered' : ''}`}>
-                                        James (2022)
+                                        James Chow (2022)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(3, 5)} ${hovered == 'exr-1-4' ? 'hovered' : ''}`}
@@ -149,7 +146,7 @@ const IGCSE: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-1-4' ? 'hovered' : ''}`}>
-                                        Catherine (2021)
+                                        Catherine Li (2021)
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +181,7 @@ const IGCSE: React.FC = () => {
                                         4&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-1' ? 'hovered' : ''}`}>
-                                        Jacky (2021), Catherine (2021), DongHao (2022), James (2022)
+                                        Jacky Nie (2021), Catherine Li (2021), DongHao Zhang (2022), James Chow (2022)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(4, 6)} ${hovered == 'exr-2-2' ? 'hovered' : ''}`}
@@ -194,7 +191,7 @@ const IGCSE: React.FC = () => {
                                         3&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-2' ? 'hovered' : ''}`}>
-                                        Jessica (2019), Ken (2022), Evelyn (2023)
+                                        Jessica Zhuo (2019), Ken Chen (2022), Evelyn Zhang (2023)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(2, 6)} ${hovered == 'exr-2-3' ? 'hovered' : ''}`}
@@ -204,7 +201,7 @@ const IGCSE: React.FC = () => {
                                         1&nbsp;<span>student</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-3' ? 'hovered' : ''}`}>
-                                        Gordon (2023)
+                                        Gordon Lo (2023)
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(1, 6)} exam-row-highlight ${hovered == 'exr-2-4' ? 'hovered' : ''}`}
@@ -214,7 +211,7 @@ const IGCSE: React.FC = () => {
                                         2&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-4' ? 'hovered' : ''}`}>
-                                        Cissie (2023), Kelly (2023)&nbsp;<b>[in 1 year]</b>
+                                        Cissie Ching (2023), Kelly Li (2023)&nbsp;<b>[in 1 year]</b>
                                     </div>
                                     <div
                                         className={`exam-row ${setExamRow(3, 5)} ${hovered == 'exr-2-5' ? 'hovered' : ''}`}
@@ -224,17 +221,17 @@ const IGCSE: React.FC = () => {
                                         4&nbsp;<span>students</span><div>&#128100;</div>
                                     </div>
                                     <div className={`exam-row-description ${hovered == 'exr-2-5' ? 'hovered' : ''}`}>
-                                        Kitty (2018), Geaena (2019), Alice (2019), Casey (2023)
+                                        Kitty Lam (2018), Geaena Zhu (2019), Alice Yan (2019), Casey Chan (2023)
                                     </div>
                                 </div>
                             </div>
                             <div className="signature-reviews-wrapper">
                                 <div className="signature-reviews-box">
                                     <div className="reviews-description">
-                                        我已经和Winson老师上了超过两年的课，从IGCSE到现在的A Level。很明显，他的补课对我受用很大，我的数学成绩从原先的倒数得到了很大的提升。
-                                        我会坚持继续上课的最大的原因是我能感受到老师的用心和冲劲，这是我在其他老师上找不到的。Winson老师会很用心的备课，准备笔记题集，寻找最适合学生的学习方式，他在这上面花费的时间我相信远远比课时要多。
-                                        这麽久以来我最大的感触就是安心，不需要担忧拿不到好成绩，只需要上课时认真听，刷老师的题集，完成作业就能有很不错的成果，这点是我和朋友们的共同感受。
-                                        老师是很有耐心的，即使他讲了十次我都听不懂，他也能做到语气不改的重複解答哈哈哈，所以Winson老师对我们来说更像是战友和定心针，让我觉得数学也没那麽难学懂了 ^o^
+                                        我与Winson老师已然上了超过两年的课，从IGCSE到目前的A-Level。扪心自问，他的教导对我受益颇丰，我的数学成绩从原先的倒数，到名列前茅，皆归功于老师。
+                                        使我始终选择Winson老师上课的最大的原因便是我能感受到老师对我的用心及冲劲，这是其他辅导老师难以给予的。Winson老师对于备课一向严谨，他用心制作笔记及题集，以此寻找最适合学生的学习方式。
+                                        我相信老师在为学生备课花费的时间远比课时要多。因此，上课以来我最大的感触便是安心。我并不需要担忧最终拿不到好成绩，只需要上课时认真听，并闲时练习老师准备的题集及作业，便能有令人满意的成果，这点是我和朋友们的共同感受。
+                                        Winson老师对学生的提问具有十足的耐心，即使讲了五次十次我都听不懂，他也能做到语气不改的重複解答哈哈哈，所以Winson老师对我们来说更像是战友和定心针，让我觉得数学也没那麽难学懂了 ^o^
                                     </div>
                                     <div className="reviews-name">
                                         Kelly Li (2023)

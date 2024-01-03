@@ -7,6 +7,7 @@ import Cross from '../images/cross.png';
 import { UserForm } from './UserForm';
 import { SyllabusForm } from './SyllabusForm';
 import { MiscForm } from './MiscForm';
+import emailjs from '@emailjs/browser';
  
 type FormProp = {
     formActive: boolean;
@@ -22,6 +23,7 @@ type FormData = {
     schoolName: string;
     syllabus: string;
     subSyllabus: string;
+    pricing: string;
     noteTaking: string;
     currResult: string;
     expResult: string;
@@ -37,6 +39,7 @@ const INITIAL_DATA = {
     schoolName: "",
     syllabus: "",
     subSyllabus: "",
+    pricing: "",
     noteTaking: "",
     currResult: "",
     expResult: "",
@@ -44,6 +47,8 @@ const INITIAL_DATA = {
 }
 
 const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
+    useEffect(() => emailjs.init("gib2jZLcxQapdRDOq"), []);
+
     const closeForm = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         setFormActive(false);
@@ -63,11 +68,34 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
         <MiscForm {...data} updateFields={updateFields} />,
     ]);
 
-    const onSubmit = (e: FormEvent) => {
+    const onSubmit = async (e: FormEvent) => {
         e.preventDefault();
         if (!isLastStep) return next();
-        alert("Success");
-    
+
+        const serviceId = "service_lx2x1nd";
+        const templateId = "template_kgnn1o9";
+
+        try {
+            await emailjs.send(serviceId, templateId, {
+                contactMethod: data.contactMethod,
+                countryCode: data.countryCode,
+                contact: data.contact,
+                firstName: data.firstName,
+                lastName: data.lastName,
+                schoolName: data.schoolName,
+                syllabus: data.syllabus,
+                subSyllabus: data.subSyllabus,
+                pricing: data.pricing,
+                noteTaking: data.noteTaking,
+                currResult: data.currResult,
+                expResult: data.expResult,
+                referral: data.referral,
+            });
+            alert("email successfully sent check inbox");
+        } catch (error) {
+            console.log(error);
+        };
+
         setData(INITIAL_DATA);
         setFormActive(false);
         reset();
