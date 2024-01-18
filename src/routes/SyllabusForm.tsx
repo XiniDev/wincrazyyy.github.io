@@ -47,13 +47,15 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
     ]
 
     const alevelOptions: OptionType[] = [
-        { value: "yfm01", label: "IAL Edexcel Further Math (YFM01)" },
-        { value: "9231", label: "IAL Cambridge Further Math (9231)" },
-        { value: "7367", label: "AL AQA Further Math (7367)" },
-        { value: "yma01", label: "IAL Edexcel Math (YMA01)" },
-        { value: "9709", label: "IAL Cambridge Math (9709)" },
+        { value: "YFM01", label: "IAL Edexcel Further Math (YFM01)" },
+        { value: "YMA01", label: "IAL Edexcel Math (YMA01)" },
+        { value: "9FM0", label: "AL Edexcel Further Math (9FM0)" },
         { value: "9MA0", label: "AL Edexcel Math (9MA0)" },
+        { value: "9231", label: "CAIE Cambridge Further Math (9231)" },
+        { value: "9709", label: "CAIE Cambridge Math (9709)" },
+        { value: "7367", label: "AL AQA Further Math (7367)" },
         { value: "7357", label: "AL AQA Math (7357)" },
+        { value: "H245", label: "AL OCR Further Math A (H245)" },
         { value: "H240", label: "AL OCR Math A (H240)" },
         { value: "alothers", label: "Others" },
     ]
@@ -64,7 +66,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
         { value: "0580", label: "Cambridge Math (0580)" },
         { value: "4PM1", label: "Edexcel Math (4PM1)" },
         { value: "4PM0", label: "Edexcel Further Math (4PM0)" },
-        { value: "ibmyp", label: "IBMYP" },
+        { value: "ibmyp", label: "IBMYP / Pre-IB" },
     ]
 
     const pricingOptions: OptionType[] = [
@@ -167,7 +169,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
     };
 
     return (
-        <FormWrapper title="Syllabus Details">
+        <FormWrapper title="Tutoring Details">
             <label>Tutoring Syllabus: *</label>
             <Select
                 className="form-input-select"

@@ -1,0 +1,102 @@
+{
+    "3points": [
+        "2014 - 2023 **Past Paper questions** sorted by topic",
+        "Two students improved from **Grade F to A in a year**",
+        "All students achieved **Grade B or above**"
+    ],
+    "exam": {
+        "title": "Grade ~~Improvements~~ Graph",
+        "examCategories": [
+            "Cambridge **Additional Math** (0606), Edexcel **Further Math** (4PM0):",
+            "Cambridge **International Math** (0607), Cambridge **Math** (0580), Edexcel **Math** (4PM1):"
+        ],
+        "examGridNumbers": [
+            [ "F", "E", "D", "C", "B", "A", "A*" ],
+            [ "3", "4", "5", "6", "7", "8", "9" ]
+        ],
+        "examRow": [
+            [
+                {
+                    "gradeFrom": "B",
+                    "gradeTo": "A*",
+                    "names": [ "Emily Lau (2018)" ],
+                    "highlight": true,
+                    "remarks": "in 2 months"
+                },
+                {
+                    "gradeFrom": "B",
+                    "gradeTo": "A",
+                    "names": [ "Jacky Nie (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "C",
+                    "gradeTo": "A",
+                    "names": [ "James Chow (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "D",
+                    "gradeTo": "B",
+                    "names": [ "Catherine Li (2021)" ],
+                    "highlight": false,
+                    "remarks": ""
+                }
+            ],
+            [
+                {
+                    "gradeFrom": "B",
+                    "gradeTo": "A*",
+                    "names": [ "Jacky Nie (2021)", "Catherine Li (2021)", "Bill Zhang (2022)", "James Chow (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "C",
+                    "gradeTo": "A",
+                    "names": [ "Jessica Zhuo (2019)", "Ken Chen (2022)", "Evelyn Zhang (2023)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "E",
+                    "gradeTo": "A",
+                    "names": [ "Gordon Lo (2023)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "F",
+                    "gradeTo": "A",
+                    "names": [ "Cissie Ching (2023)", "Kelly Li (2023)" ],
+                    "highlight": true,
+                    "remarks": "in 1 year"
+                },
+                {
+                    "gradeFrom": "D",
+                    "gradeTo": "B",
+                    "names": [ "Kitty Lam (2018)", "Geaena Zhu (2019)", "Alice Yan (2019)", "Casey Chan (2023)" ],
+                    "highlight": false,
+                    "remarks": ""
+                }
+            ]
+        ],
+        "signatureReview": [
+            [],
+            [
+                {
+                    "description": "我与Winson老师已然上了超过两年的课，从IGCSE到目前的A-Level。扪心自问，他的教导对我受益颇丰，我的数学成绩从原先的倒数，到名列前茅，皆归功于老师。使我始终选择Winson老师上课的最大的原因便是我能感受到老师对我的用心及冲劲，这是其他辅导老师难以给予的。Winson老师对于备课一向严谨，他用心制作笔记及题集，以此寻找最适合学生的学习方式。我相信老师在为学生备课花费的时间远比课时要多。因此，上课以来我最大的感触便是安心。我并不需要担忧最终拿不到好成绩，只需要上课时认真听，并闲时练习老师准备的题集及作业，便能有令人满意的成果，这点是我和朋友们的共同感受。Winson老师对学生的提问具有十足的耐心，即使讲了五次十次我都听不懂，他也能做到语气不改的重複解答哈哈哈，所以Winson老师对我们来说更像是战友和定心针，让我觉得数学也没那麽难学懂了 ^o^",
+                    "name": "Kelly Li (2023)",
+                    "university": ""
+                },
+                {
+                    "description": "My impression of Mr. Siu over the years had never truly changed. He is a kind and reliable mentor who is the reason why I enjoy doing mathematics so much. Before I met him, mathematics was my worst subject and I remembered hating every second of it in class. But ever since year 9 when I went to him for tuition, things have significantly changed for the better as I made tremendous progress by learning his ways of tackling specific problems and putting in a lot of effort. Not only did I find a new sense of purpose in doing math, but I even began to enjoy it, all because of Mr. Siu’s unique way of teaching, which is learning the key concepts of each topic and applying this knowledge to past-paper questions. This is a very efficient way of learning and I really do appreciate having lessons with Mr. Siu.",
+                    "name": "Gordon Lo (2023)",
+                    "university": ""
+                }
+            ]
+        ]
+    }
+}

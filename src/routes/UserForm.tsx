@@ -121,7 +121,7 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
     };
 
     return (
-        <FormWrapper title="User Details">
+        <FormWrapper title="Student Details">
             <label>Contact Method: *</label>
             <Select
                 className="form-input-select"

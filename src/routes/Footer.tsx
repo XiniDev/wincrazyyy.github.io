@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Book_Now from '../images/book_now.png';
+import Book_Now from '../images/drawings/stickers/Book_Now.png';
 
 type FooterProp = {
     openForm: (e: React.MouseEvent<HTMLDivElement>) => void;

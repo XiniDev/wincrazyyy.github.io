@@ -6,11 +6,13 @@
     --shade-white-3: #E1E1E1;
     --shade-grey-t1: rgba(51, 51, 51, .1);
     --shade-grey-t2: rgba(51, 51, 51, .2);
+    --shade-grey-t3: rgba(51, 51, 51, .3);
     --shade-grey-t5: rgba(51, 51, 51, .5);
     --shade-grey-t9: rgba(51, 51, 51, .9);
     --shade-blue-1: #B4C8F2;
     --shade-blue-2: #98D6FF;
     --shade-blue-3: #C898FF;
+    --shade-blue-4: #2150af;
     --shade-pink-1: #CDBAE5;
     --shade-pink-2: #E6A9D7;
     --shade-pink-3: #FF98C8;
@@ -253,7 +255,7 @@
 .homepage-intro-background {
     width: 100%;
     height: 100vh;
-    background: url(images/website-banner.png) no-repeat center center fixed;
+    background: url(images/drawings/banners/Winson_Website_Banner.png) no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     z-index: -10;
@@ -266,13 +268,13 @@
 }
 
 .homepage-fade-bkg.visible {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .homepage-intro-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
     margin: 0px auto;
@@ -280,6 +282,7 @@
 }
 
 .homepage-intro-textdiv {
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -287,27 +290,32 @@
 }
 
 .homepage-intro-img {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 800px;
     height: 800px;
     margin-top: -300px;
-    margin-bottom: -350px;
+    margin-bottom: -320px;
 }
 
 .homepage-intro-img > img {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
 }
 
 .homepage-intro-title {
-    color: white;
+    color: var(--shade-red);
     font-size: 192px;
     font-family: "Nanum_Myeongjo";
     text-shadow:
-        -2px 2px 0 var(--shade-pink-2),
-        2px 2px 0 var(--shade-red),
-        2px -2px 0 var(--shade-blue-2),
-        -2px -2px 0 var(--shade-blue-3);
+        -4px 2px 0 var(--shade-pink-2),
+        -8px 4px 0 var(--shade-pink-2),
+        -12px 6px 0 var(--shade-pink-2),
+        -16px 8px 0 var(--shade-pink-2);
+        /* 4px 2px 0 var(--shade-orange-2),
+        4px -2px 0 var(--shade-blue-2),
+        -4px -2px 0 var(--shade-blue-3); */
 }
 
 .homepage-intro-title > span {
@@ -318,7 +326,7 @@
     display: flex;
     align-items: center;
     margin-top: -20px;
-    color: white;
+    color: var(--shade-blue-4);
     font-size: 32px;
     font-family: "Nanum_Myeongjo";
     text-shadow:
@@ -331,7 +339,7 @@
 .homepage-intro-subtitle > hr:nth-child(1) {
     width: 96px;
     margin: 0px 10px 0px 0px;
-    border: 2px solid white;
+    border: 2px solid var(--shade-blue-4);
     box-shadow:
         -1px 1px 0 var(--shade-pink-2),
         1px 1px 0 var(--shade-red),
@@ -342,7 +350,7 @@
 .homepage-intro-subtitle > hr:nth-child(2) {
     width: 96px;
     margin: 0px 0px 0px 10px;
-    border: 2px solid white;
+    border: 2px solid var(--shade-blue-4);
     box-shadow:
         -1px 1px 0 var(--shade-pink-2),
         1px 1px 0 var(--shade-red),
@@ -354,12 +362,13 @@
     padding: 20px 200px;
     margin-top: 20px;
     border: 2px solid white;
-    background-color: var(--shade-grey-t1);
+    background-color: var(--shade-grey-t2);
     color: white;
     font-family: "Nanum_Myeongjo";
     font-size: 32px;
     cursor: pointer;
     transition:
+        background-color 0.3s ease-in-out,
         transform 0.3s ease-in-out;
 }
 
@@ -377,7 +386,8 @@
 }
 
 .homepage-intro-booknow.hovered {
-    transform: scale(1.1);
+    background-color: var(--shade-grey-t5);
+    transform: scale(1.05);
 }
 
 @media (hover: none) {
@@ -393,7 +403,7 @@
         width: 100%;
         height: 100%;
         z-index: -10;
-        background: url(images/website-banner.png) no-repeat center center;
+        background: url(images/drawings/banners/Winson_Website_Banner.png) no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -405,10 +415,15 @@
     .homepage-intro-title {
         font-size: 144px;
         text-shadow:
+            -2px 1px 0 var(--shade-pink-2),
+            -4px 2px 0 var(--shade-pink-2),
+            -6px 3px 0 var(--shade-pink-2),
+            -8px 4px 0 var(--shade-pink-2);
+        /* text-shadow:
             -1px 1px 0 var(--shade-pink-2),
             1px 1px 0 var(--shade-red),
             1px -1px 0 var(--shade-blue-2),
-            -1px -1px 0 var(--shade-blue-3);
+            -1px -1px 0 var(--shade-blue-3); */
     }
 
     .homepage-intro-title > span {
@@ -457,11 +472,10 @@
 
 @media only screen and (max-width: 1080px) {
     .homepage-intro-img {
-        display: block;
         width: 600px;
         height: 600px;
         margin-top: -200px;
-        margin-bottom: -250px;
+        margin-bottom: -220px;
     }
 
     .homepage-intro-title {
@@ -473,7 +487,7 @@
     }
 
     .homepage-intro-subtitle {
-        font-size: 16px;
+        font-size: 24px;
         margin-top: -10px;
     }
     
@@ -490,17 +504,16 @@
     .homepage-intro-booknow {
         padding: 10px 100px;
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 24px;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .homepage-intro-img {
-        display: block;
         width: 500px;
         height: 500px;
         margin-top: -250px;
-        margin-bottom: -150px;
+        margin-bottom: -80px;
     }
 
     .homepage-intro-img > img {
@@ -548,13 +561,13 @@
     }
 }
 
-@media only screen and (min-width: 1600px) and (max-height: 900px) {
+@media only screen and (min-width: 1600px) and (max-height: 960px) {
     .homepage-intro-img {
         display: none;
     }
 }
 
-@media only screen and (min-width: 1080px) and (max-height: 900px) {
+@media only screen and (min-width: 1080px) and (max-height: 1080px) {
     .homepage-intro-img {
         width: 400px;
         height: 400px;
@@ -563,13 +576,13 @@
     }
 }
 
-@media only screen and (min-width: 1080px) and (max-height: 760px) {
+@media only screen and (min-width: 1080px) and (max-height: 960px) {
     .homepage-intro-img {
         display: none;
     }
 }
 
-@media only screen and (max-height: 640px) {
+@media only screen and (max-height: 760px) {
     .homepage-intro-img {
         display: none;
     }
@@ -584,13 +597,13 @@
     width: 100%;
     font-family: "Nanum Myeongjo";
     font-weight: bold;
-    color: white;
+    color: var(--shade-blue-4);
     font-size: 40px;
-    text-shadow:
+    /* text-shadow:
         -1px 1px 0 var(--shade-pink-2),
         1px 1px 0 var(--shade-red),
         1px -1px 0 var(--shade-blue-2),
-        -1px -1px 0 var(--shade-blue-3);
+        -1px -1px 0 var(--shade-blue-3); */
     z-index: 100;
 }
 
@@ -599,11 +612,11 @@
         margin-top: 110px;
         margin-bottom: -40px;
         font-size: 32px;
-        text-shadow:
+        /* text-shadow:
             -0.5px 0.5px 0 var(--shade-pink-2),
             0.5px 0.5px 0 var(--shade-red),
             0.5px -0.5px 0 var(--shade-blue-2),
-            -0.5px -0.5px 0 var(--shade-blue-3);
+            -0.5px -0.5px 0 var(--shade-blue-3); */
     }
 }
 
@@ -2623,6 +2636,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 20px;
     width: 33%;
     margin: 30px 0px;
@@ -2647,7 +2661,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white;
+    background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 500;
     opacity: 1;
@@ -2667,9 +2681,23 @@
 }
 
 .header.transparent {
-    background-color: transparent;
+    background: var(--shade-grey-t1);
     box-shadow: none;
 }
+
+/* slightly transparent fallback */
+.header.transparent {
+    background-color: rgba(255, 255, 255, .5);
+}
+  
+/* if backdrop support: very transparent and blurred */
+/* @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .header.transparent {
+        background-color: rgba(255, 255, 255, .2);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+} */
 
 .header-container {
     width: 1440px;
@@ -2740,6 +2768,30 @@
 }
 
 @media only screen and (max-width: 1600px) {
+    .header-winson-icon {
+        font-size: 15px;
+        font-family: "Lato";
+        padding: 0px 15px;
+    }
+    
+    .header-winson-icon > img {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+    }
+
+    .header-container {
+        width: 100%;
+    }
+
+    .header-link {
+        font-size: 15px;
+        width: 150px;
+        height: 60px;
+    }
+}
+
+@media only screen and (max-height: 1200px) {
     .header-winson-icon {
         font-size: 15px;
         font-family: "Lato";
@@ -3191,7 +3243,7 @@
         font-size: 48px;
     }
 
-    .ibdp-profile-title > span {
+    .ibdp-profile-title span {
         display: none;
     }
 }

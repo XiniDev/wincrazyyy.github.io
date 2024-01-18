@@ -27,7 +27,7 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
     };
 
     const noteTakingOptions: OptionType[] = [
-        { value: "goodnotes", label: "Good Notes" },
+        { value: "goodnotes", label: "Goodnotes" },
         { value: "notability", label: "Notability" },
         { value: "notipad", label: "Not Using iPad" },
         { value: "others", label: "Others" },
@@ -40,7 +40,7 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
 
     return (
         <FormWrapper title="Other Details">
-            <label>Which note taking app do you use on iPad? *</label>
+            <label>Note Taking App on iPad: *</label>
             <Select
                 className="form-input-select"
                 required

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Form from './Form';
 
-import Winson_Icon_Round from '../images/winson-icon-round-nobkg.png';
+import Logo from '../images/drawings/logo/logo_transparent.png';
 import Menu_Icon from '../images/menu-icon.png';
 
 type HeaderProp = {
@@ -84,11 +84,11 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
         <div className={`header ${transparent ? 'transparent' : ''} ${currentURL == '/' ? (fadeDivs ? 'header-fade visible' : 'header-fade') : ''}`}>
             <Form formActive={formActive} setFormActive={setFormActive}/>
             <div className={`header-container ${menuOpen ? 'open' : ''}`}>
-                <Link 
+                <Link
                     to ="/"
                     className="header-winson-icon"
                 >
-                    <img src={Winson_Icon_Round}/>
+                    <img src={Logo}/>
                     Winson Siu
                 </Link>
                 <div

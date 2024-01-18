@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Shelf_Image from '../images/shelf-image.png';
+import Shelf_Image from '../images/drawings/student/student_illustration.png';
 
 const ShelfBlock: React.FC = () => {
     const [hovered, setHovered] = useState<string | null>(null);
@@ -46,7 +46,7 @@ const ShelfBlock: React.FC = () => {
                     onMouseLeave={handleMouseLeave}
                 >
                     <div className={`shelf-text ${handleShelfHover(false, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                        <b>17 years of <span>part-time and full-time</span> tutoring experience</b><div>,<br></br> ...</div><span> in Mathematics since 2007.</span>
+                        <b>17 years of <span>part-time and full-time</span> tutoring experience</b><div>,<br></br> ...</div><span> in Mathematics.</span>
                     </div>
                 </div>
                 <div
@@ -55,7 +55,7 @@ const ShelfBlock: React.FC = () => {
                     onMouseLeave={handleMouseLeave}
                 >
                     <div className={`shelf-text ${handleShelfHover(true, 'tc-exp-bl', 'tc-exp-br')}`}>
-                        <b>200+ students, 8000+ lessons, 13000+ hours<div>, ...</div></b><span> from 2017 to 2023 in full-time.</span>
+                        <b>200+ students, 7700+ lessons, 12800+ hours<div>, ...</div></b><span> from 2018 to 2023 in full-time.</span>
                     </div>
                 </div>
                 <div
@@ -64,7 +64,7 @@ const ShelfBlock: React.FC = () => {
                     onMouseLeave={handleMouseLeave}
                 >
                     <div className={`shelf-text ${handleShelfHover(false, 'tc-exp-bl', 'tc-exp-br')}`}>
-                        <span>Specializing in </span><b>IBDP, A Level, IGCSE, IBMYP<div>, ...</div><span>, HKDSE, AP, SAT, etc.</span></b>
+                        <span>Specializing in </span><b>IBDP, A Level, IGCSE, IBMYP<div>, ...</div><span>, HKDSE etc.</span></b>
                     </div>
                 </div>
             </div>

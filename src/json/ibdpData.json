@@ -1,0 +1,193 @@
+{
+    "3points": [
+        "2008 - 2023 **Past Paper questions** sorted by topic",
+        "One AASL student improved from **Grade 3 to 7 in 1.5 months**",
+        "Over 50% students achieved **Grade 7**"
+    ],
+    "iaProfile": {
+        "title": "~~Internal Assessment (~~IA~~)~~ Guidance",
+        "infoTabTitles": ["Lesson Structure", "IA Topics"],
+        "list": [
+            [
+                "**Customizes IA topics** to align with individual student interests",
+                "Integrates knowledge **beyond standard curriculum** for enhanced grades",
+                "Guides students to produce **high-quality, unique essays** efficiently within lesson time",
+                "Achieved **successful outcomes for over 50 students** from 2020 to 2023",
+                "**Effectively boosts Predicted Grades** and makes a positive impression on teachers",
+                "**Minimized the need for extra work outside of lessons**"
+            ],
+            [
+                "**Ancient Math in Modern Times**:%%Uncover how modern techniques breathe new life into solving ancient mathematical puzzles",
+                "**Sports and Mathematics**:%%Explore the intriguing relationship between athletic performance and mathematical principles, like optimizing sports equipment",
+                "**Environmental Math**:%%Tackle environmental challenges and natural phenomena with insightful mathematical analysis",
+                "**Mathematics in Society**:%%Explore socio-economic issues through mathematical methodologies, understanding the world in numbers",
+                "**Geometry in Everyday Life**:%%Investigate common objects through a mathematical lens, revealing hidden geometrical wonders",
+                "**Artistic Math**:%%Unleash creativity through mathematical patterns and designs, blending art with equations",
+                "**Astronomy and Mathematics**:%%Delve into the celestial realm, using math to model the complex interactions of planets and stars",
+                "**Practical Problem-Solving**:%%Apply math to everyday scenarios, from game strategies to efficient division of resources",
+                "**Math in Engineering**:%%From designing roller coasters to solving structural problems, discover the application of math in engineering"
+            ]
+        ]
+    },
+    "exam": {
+        "title": "Grade ~~Improvements~~ Graph",
+        "examCategories": [
+            "Math **HL / AAHL / AIHL**:",
+            "Math **SL / AASL / AISL**:"
+        ],
+        "examGridNumbers": [
+            [ "1", "2", "3", "4", "5", "6", "7" ]
+        ],
+        "examRow": [
+            [
+                {
+                    "gradeFrom": "7",
+                    "gradeTo": "7",
+                    "names": [ "Micky Wang (2018)", "Mary Guan (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "6",
+                    "gradeTo": "7",
+                    "names": [ "Taylor Reis (2019)", "Vera Jing (2021)", "Ivy Liu (2021)", "Cici Jin (2022)", "Alice Gao (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "5",
+                    "gradeTo": "7",
+                    "names": [ "Janice Au Yeung (2021)", "Hebe Jim (2021)", "Joy Angela Sun (2022)", "Ethan Chan (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "5",
+                    "gradeTo": "6",
+                    "names": [ "Evelyn Lin (2018)", "Anthony Leung (2019)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "3",
+                    "gradeTo": "6",
+                    "names": [ "Lucia Zhu (2018)", "Fiona Wan (2022)" ],
+                    "highlight": true,
+                    "remarks": "both in 3 months"
+                },
+                {
+                    "gradeFrom": "2",
+                    "gradeTo": "6",
+                    "names": [ "Jasmine Yang (2023)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "3",
+                    "gradeTo": "5",
+                    "names": [ "Kelly Gu (2018)", "Owen Zhao (2021)" ],
+                    "highlight": false,
+                    "remarks": "both in 1 month"
+                },
+                {
+                    "gradeFrom": "2",
+                    "gradeTo": "5",
+                    "names": [ "Justin Chan (2020)", "Judy Wei (2021)", "Chung Tin Chan (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "1",
+                    "gradeTo": "4",
+                    "names": [ "Vivian Chen (2018)" ],
+                    "highlight": false,
+                    "remarks": "in 5 months"
+                }
+            ],
+            [
+                {
+                    "gradeFrom": "6",
+                    "gradeTo": "7",
+                    "names": [ "Jenny Huang (2020)", "Kitty Lam (2020)", "Rachel Lee (2020)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "5",
+                    "gradeTo": "7",
+                    "names": [ "Chloe Cheng (2020)", "Alexandra Wong (2022)", "Cassie Luo (2023)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "3",
+                    "gradeTo": "7",
+                    "names": [ "Sharon Deng (2023)" ],
+                    "highlight": true,
+                    "remarks": "in 1.5 month"
+                },
+                {
+                    "gradeFrom": "4",
+                    "gradeTo": "6",
+                    "names": [ "Aidan Cheung (2019)", "David Zhang (2020)", "Jasmine Hung (2023)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "2",
+                    "gradeTo": "5",
+                    "names": [ "Connie Feng (2021)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "1",
+                    "gradeTo": "4",
+                    "names": [ "Dora Dai (2021)" ],
+                    "highlight": false,
+                    "remarks": ""
+                }
+            ]
+        ],
+        "signatureReview": [
+            [
+                {
+                    "description": "When I received my disappointing grade, I knew I had to get help immediately. Winson is very familiar with the IBDP exam details, including all the past papers questioning styles, exam techniques, and key points. He is an excellent tutor who knows how to customize an appropriate learning plan. He quickly spotted my weaknesses and trained me with past papers. All I had to do was follow his plan and finish his assigned homework. Winson also provided his own notes by sorting and organizing important concepts in a methodical and logical manner. I got the chance to learn quickly and systematically, all by heart. When I was taking my final IBDP exam, I understood all the questions and thus felt confident. Within only 3 months, I successfully increased my Math HL grade from 3 to 6.",
+                    "name": "Lucia Zhu (2018)",
+                    "university": "The University of Hong Kong"
+                }
+            ],
+            [
+                {
+                    "description": "Winson老师对于IBDP课程的熟练度我相信是大家有目共睹的，因此便不多赘述了。或许是因为曾教导过我的学校数学老师非常水（不负责）的原因，我迫切地需要一个合适的数学老师帮我查漏补缺，不然我大考的时侯可能就得望着没做几道题的卷子无语凝噎、默默流泪了。我个人认为数学本身是一门实践大于理论，并需时刻保持手感的科目。因此我与Winson老师让学生直接实操Past Paper的教学方式十分契合，且迅速总结出Past Papers的做题方式；鉴于我本人需要监督以推动学习的性格，课上的比对作业以及改错环节使我更愿意在课后抽出时间学习这个并不讨人喜欢的科目。虽然学习数学的过程有些痛苦，但终究是苦尽甘来——我在IBDP的最后阶段成功取得了7分的成绩。总体来说，很推荐正在suffer in math的IBer们尝试尝试Winson的课程~",
+                    "name": "Sharon Deng (2023)",
+                    "university": "The University of Hong Kong"
+                }
+            ]
+        ]
+    },
+    "schools": [
+        "Yew Chung International School",
+        "Diocesan Boys' School",
+        "St. Paul's Co-educational College",
+        "Li Po Chun United World College",
+        "Po Leung Kuk Choi Kai Yau School",
+        "St. Stephen's College",
+        "German Swiss International School",
+        "The Independent Schools Foundation Academy",
+        "Victoria Shanghai Academy",
+        "ESF King George V School",
+        "ESF Sha Tin College",
+        "ESF Island School",
+        "ESF West Island School",
+        "ESF Discovery College",
+        "Chinese International School",
+        "Canadian International School of Hong Kong",
+        "Singapore International School (Hong Kong)",
+        "French International School of Hong Kong",
+        "Australian International School Hong Kong",
+        "Harrow International School Hong Kong",
+        "American School Hong Kong",
+        "Kiangsu-Chekiang College International Section"
+    ]
+}

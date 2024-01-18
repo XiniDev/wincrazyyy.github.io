@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import Chevron from '../images/chevron.png';
 
-import Carousel_1 from '../images/carousel-1.png';
-import Carousel_2 from '../images/carousel-2.png';
-import Carousel_3 from '../images/carousel-3.png';
+import Carousel_1 from '../images/drawings/carousels/carousel-1.png';
+import Carousel_2 from '../images/drawings/carousels/carousel-2.png';
+import Carousel_3 from '../images/drawings/carousels/carousel-3.png';
 
 type CarouselProp = {
     openForm: (e: React.MouseEvent<HTMLDivElement>) => void;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { formatString } from './Utils';
 
 import Chevron from '../images/chevron.png';
 import Tick_Mark from '../images/tick-mark.png';
@@ -9,62 +10,33 @@ import Prediction_Mark from '../images/prediction-mark.png';
 import Money_Mark from '../images/money-mark.png';
 import Money_Gold_Mark from '../images/money-gold-mark.png';
 
-type PricingOfferType = {
+export type PricingType = {
+    name: string;
+    price: number;
+    perX: string;
+    highlight: boolean;
+    pricingOffers: PricingOfferType[];
+};
+
+export type PricingOfferType = {
     offer: string;
     check: number;
 };
 
 type PricingProp = {
     openForm: (e: React.MouseEvent<HTMLDivElement>) => void;
+    pricing: PricingType[];
 }
 
-const Pricing: React.FC<PricingProp> = ({ openForm }) => {
+const Pricing: React.FC<PricingProp> = ({ openForm, pricing }) => {
     const [hovered, setHovered] = useState<string | null>(null);
 
     const handleMouseEnter = (item: string) => {
         setHovered(item);
-    }
+    };
 
     const handleMouseLeave = () => {
         setHovered(null);
-    }
-
-    const starterPricingOffers: PricingOfferType[] = [
-        { offer: "Limited online correspondence", check: 1 },
-        { offer: "8 short questions with **step by step solutions** provided weekly", check: 1 },
-        { offer: "No online lessons", check: 0 },
-    ];
-
-    const premiumPricingOffers: PricingOfferType[] = [
-        { offer: "Online correspondence", check: 1 },
-        { offer: "16 short questions and 4 long questions with **step by step solutions** provided weekly", check: 1 },
-        { offer: "4 online lessons of 90 minutes", check: 1 },
-        { offer: "Monthly by topic summary", check: 1 },
-        { offer: "Math IA topic setup & guidance until completion", check: 1 },
-        { offer: "Expected grade improvement of 1 grade or better (e.g. from 5 to 6 in IBDP or from B to A in A-Level)", check: 1 },
-        { offer: "Rebate of up to **HKD 1500** per student referred", check: 5 },
-    ];
-
-    const elitePricingOffers: PricingOfferType[] = [
-        { offer: "**Priority** online correspondence", check: 2 },
-        { offer: "**Unlimited access** to tailor made past paper practice **step by step solutions**", check: 2 },
-        { offer: "8 online lessons of 90 minutes with **custom lesson time allocation**", check: 2 },
-        { offer: "**Professional complete** topic summaries", check: 2 },
-        { offer: "Math IA topic setup & guidance until completion", check: 1 },
-        { offer: "Expected grade improvement of **2 grades or better** (e.g. from 5 to 7 in IBDP or from B to A* in A-Level)", check: 2 },
-        { offer: "School mock exam prediction", check: 4 },
-        { offer: "Goodnotes 6 one-time payment", check: 3 },
-        { offer: "Rebate of up to **HKD 4000** per student referred", check: 6 },
-    ];
-
-    const renderBoldText = (text: string) => {
-        return text.split('**').map((part, index) => {
-            return index % 2 === 0 ? (
-                <span key={index}>{part}</span>
-            ) : (
-                <b key={index}>{part}</b>
-            );
-        });
     };
 
     const handlePricingOffers = (pricingOffers: PricingOfferType[]) => {
@@ -99,7 +71,7 @@ const Pricing: React.FC<PricingProp> = ({ openForm }) => {
             htmlPricingOffers.push(
                 <div className="pricing-offers">
                     <div className="pricing-offers-text">
-                        {renderBoldText(pricingOffers[i].offer)}
+                        {formatString(pricingOffers[i].offer)}
                     </div>
                     <div className="pricing-offers-check">
                         <img src={markSrc}></img>
@@ -152,14 +124,14 @@ const Pricing: React.FC<PricingProp> = ({ openForm }) => {
                 </div>
             </>
         );
-    }
+    };
 
     return (
         <div className="pricing">
             <div className="pricing-wrapper">
-                {renderPriceBox("Starter", 200, "/WK", false, starterPricingOffers, pricingActives[0])}
-                {renderPriceBox("Premium", 6480, "/4L", true, premiumPricingOffers, pricingActives[1])}
-                {renderPriceBox("Elite", 14880, "/8L", false, elitePricingOffers, pricingActives[2])}
+                {renderPriceBox(pricing[0].name, pricing[0].price, pricing[0].perX, pricing[0].highlight, pricing[0].pricingOffers, pricingActives[0])}
+                {renderPriceBox(pricing[1].name, pricing[1].price, pricing[1].perX, pricing[1].highlight, pricing[1].pricingOffers, pricingActives[1])}
+                {renderPriceBox(pricing[2].name, pricing[2].price, pricing[2].perX, pricing[2].highlight, pricing[2].pricingOffers, pricingActives[2])}
                 <div
                     className={`pricing-left ${hovered == 'carousel-left' ? 'hovered' : ''}`}
                     onMouseEnter={() => handleMouseEnter('carousel-left')}

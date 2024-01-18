@@ -1,32 +1,12 @@
 import React from 'react';
 
-const StudentsFrom: React.FC = () => {
-    const schools: string[] = [
-        "Yew Chung International School",
-        "Diocesan Boys' School",
-        "St. Paul's Co-educational College",
-        "Li Po Chun United World College",
-        "Po Leung Kuk Choi Kai Yau School",
-        "St. Stephen's College",
-        "German Swiss International School",
-        "The Independent Schools Foundation Academy",
-        "Victoria Shanghai Academy",
-        "ESF King George V School",
-        "ESF Sha Tin College",
-        "ESF Island School",
-        "ESF West Island School",
-        "ESF Discovery College",
-        "Chinese International School",
-        "Canadian International School of Hong Kong",
-        "Singapore International School (Hong Kong)",
-        "French International School of Hong Kong",
-        "Australian International School Hong Kong",
-        "Harrow International School Hong Kong",
-        "American School Hong Kong",
-        "Kiangsu-Chekiang College International Section",
-    ];
+type StudentsFromProp = {
+    schools: string[];
+}
 
-    const handleStudentsFrom = (schools: string[]) => {
+const StudentsFrom: React.FC<StudentsFromProp> = ({ schools }) => {
+
+    const handleStudentsFrom = () => {
         const htmlSchools = [];
         for (let i = 0; i < schools.length; i++) {
             htmlSchools.push(
@@ -44,7 +24,7 @@ const StudentsFrom: React.FC = () => {
                 </div>
                 <div className="up-down-textdiv">
                     <ul className="students-from">
-                        {handleStudentsFrom(schools)}
+                        {handleStudentsFrom()}
                     </ul>
                 </div>
             </div>
