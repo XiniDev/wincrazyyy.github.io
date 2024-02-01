@@ -1,0 +1,38 @@
+{
+    "content": {
+        "shelfItems": [
+            "**Teaching Experience**",
+            "**17 years of ~~part-time and full-time~~ tutoring experience**--,%% ...--~~ in Mathematics.~~",
+            "**200+ students, 7800+ lessons, 12800+ hours--, ...--**~~ from 2018 to 2023 in full-time.~~",
+            "~~Specializing in ~~**IBDP, A-Level, IGCSE, IBMYP--, ...--~~, HKDSE etc.~~**"
+        ],
+        "bannerItems": [
+            {
+                "title": "**Academic Background**",
+                "description": [
+                    "&#127891; Graduate of City University of Hong Kong with **First Class Honours**.",
+                    "&#128221; Bachelor of **Quantitative Finance and Risk Management**, minor in **Mathematics**."
+                ]
+            },
+            {
+                "title": "**HKALE**",
+                "description": [
+                    "Pure Math **(A)--[Top 4.8%]--**"
+                ]
+            },
+            {
+                "title": "**HKCEE**",
+                "description": [
+                    "Add Math **(A) --[Top 6.0%]--**",
+                    "Math **(A)--[Top 3.1%]--**"
+                ]
+            },
+            {
+                "title": "**HKDSE**",
+                "description": [
+                    "Math M1 **(5☆☆)--[Top 2.9%]--**"
+                ]
+            }
+        ]
+    }
+}

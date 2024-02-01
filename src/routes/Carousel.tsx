@@ -62,7 +62,7 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
         const changeSlide = setInterval(() => {
             const newIndex = (carouselIndex + 1) % carouselDot.length;
             autoCarouselSwitch(newIndex);
-        }, 5000);
+        }, 7000);
         
         return () => {
             clearInterval(changeSlide);

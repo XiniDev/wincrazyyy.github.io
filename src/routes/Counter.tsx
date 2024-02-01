@@ -29,7 +29,7 @@ const Counter: React.FC<CounterProp> = ({ fadeDiv, hideDiv, hours }) => {
     }, [hours, duration]);
 
     return (
-        <div className={`counter-wrapper ${fadeDiv ? (hideDiv ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}>
+        <div className={`counter-wrapper homepage-text-shadow-2 ${fadeDiv ? (hideDiv ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}>
             <div>
                 {count}+ Tutoring Hours
             </div>

@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                     className="header-winson-icon"
                 >
                     <img src={Logo}/>
-                    Winson Siu
+                    WSMATH
                 </Link>
                 <div
                     className="mobile-header-links"

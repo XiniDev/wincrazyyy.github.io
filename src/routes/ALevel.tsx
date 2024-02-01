@@ -24,7 +24,7 @@ const ALevel: React.FC = () => {
             <div className="syllabus-intro">
                 <div className="syllabus-intro-container">
                     <div className="syllabus-intro-title">
-                        AS & A-Level (Year 12-13)
+                        A-Level (Year 12-13)
                     </div>
                 </div>
             </div>

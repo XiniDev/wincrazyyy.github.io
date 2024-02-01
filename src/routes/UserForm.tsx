@@ -127,6 +127,7 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
                 className="form-input-select"
                 autoFocus
                 required
+                isSearchable={false}
                 value={contactMethodOptions.find(option => option.value == contactMethod)}
                 options={contactMethodOptions}
                 onChange={contactMethodOnChange}

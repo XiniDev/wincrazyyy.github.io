@@ -44,6 +44,7 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
             <Select
                 className="form-input-select"
                 required
+                isSearchable={false}
                 value={noteTakingOptions.find(option => option.value == noteTaking)}
                 options={noteTakingOptions}
                 onChange={handleNoteTaking}

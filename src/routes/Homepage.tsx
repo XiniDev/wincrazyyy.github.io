@@ -9,10 +9,12 @@ import Reviews from './Reviews';
 
 import Logo from '../images/drawings/logo/logo_transparent.png';
 
+import shelfBannerData from '../json/shelfBannerData.json';
 import pricingData from '../json/pricingData.json';
 import reviewsData from '../json/reviewsData.json';
 
 const Homepage: React.FC = () => {
+    const shelfBanner = shelfBannerData.content;
     const pricing = pricingData.pricing;
     const reviews = reviewsData.reviews;
     const hours = 12900;
@@ -29,7 +31,7 @@ const Homepage: React.FC = () => {
             <Header formActive={formActive} setFormActive={setFormActive}/>
             <Intro openForm={openForm} logo={Logo} hours={hours}/>
             <div className="body-container">
-                <ShelfBanner/>
+                <ShelfBanner content={shelfBanner}/>
             </div>
             <div className="up-down">
                 <div className="up-down-background"></div>

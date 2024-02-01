@@ -90,6 +90,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
                             <Select
                                 className="form-input-select"
                                 required
+                                isSearchable={false}
                                 value={ibdpOptions.find(option => option.value == subSyllabus)}
                                 options={ibdpOptions}
                                 onChange={handleSubSyllabusOnChange}
@@ -112,6 +113,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
                             <Select
                                 className="form-input-select"
                                 required
+                                isSearchable={false}
                                 value={alevelOptions.find(option => option.value == subSyllabus)}
                                 options={alevelOptions}
                                 onChange={handleSubSyllabusOnChange}
@@ -134,6 +136,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
                             <Select
                                 className="form-input-select"
                                 required
+                                isSearchable={false}
                                 value={igcseOptions.find(option => option.value == subSyllabus)}
                                 options={igcseOptions}
                                 onChange={handleSubSyllabusOnChange}
@@ -175,6 +178,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
                 className="form-input-select"
                 autoFocus
                 required
+                isSearchable={false}
                 value={syllabusOptions.find(option => option.value == syllabus)}
                 options={syllabusOptions}
                 onChange={handleSyllabusOnChange}
@@ -194,6 +198,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
                 className="form-input-select"
                 autoFocus
                 required
+                isSearchable={false}
                 value={pricingOptions.find(option => option.value == pricing)}
                 options={pricingOptions}
                 onChange={handlePricingOnChange}

@@ -1,7 +1,7 @@
 {
   "name": "wincrazyyy.github.io",
   "version": "0.1.0",
-  "homepage": "https://wincrazyyy.github.io",
+  "homepage": "https://www.wsmath.com",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.11.0",

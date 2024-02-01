@@ -1,8 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { formatStringWithClass } from './Utils';
 
 import Shelf_Image from '../images/drawings/student/student_illustration.png';
 
-const ShelfBlock: React.FC = () => {
+export type BannerItemType = {
+    title: string;
+    description: string[];
+}
+
+export type ShelfBannerType = {
+    shelfItems: string[];
+    bannerItems: BannerItemType[];
+};
+
+type ShelfBannerProp = {
+    content: ShelfBannerType;
+}
+
+const ShelfBanner: React.FC<ShelfBannerProp> = ({ content }) => {
     const [hovered, setHovered] = useState<string | null>(null);
 
     const handleMouseEnter = (item: string) => {
@@ -24,111 +39,111 @@ const ShelfBlock: React.FC = () => {
         }
     };
 
-    return (
-        <div className="shelf-banner-wrapper">
+    const handleShelf = () => {
+        const hoverID = ['tc-exp-tl', 'tc-exp-tr', 'tc-exp-bl', 'tc-exp-br'];
+        const htmlShelf = [];
+        const htmlShelfDecor = (
+            <div className={`shelf-decor ${handleShelfHover(true, hoverID[0], hoverID[1])}`}>
+                <hr></hr>
+                <hr></hr>
+            </div>
+        );
+        for (let i = 0; i < 4; i++) {
+            const left: boolean = i % 2 == 0 ? true : false;
+            const id1: number = i - 2 < 0 ? 0 : 2;
+            const id2: number = i - 2 < 0 ? 1 : 3;
+            htmlShelf.push(
+                <div
+                    className={`shelf-block ${handleShelfHover(left, hoverID[id1], hoverID[id2])}`}
+                    onMouseEnter={() => handleMouseEnter(hoverID[i])}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {i == 0 ? htmlShelfDecor : (<></>)}
+                    {formatStringWithClass(content.shelfItems[i], `shelf-text ${handleShelfHover(left, hoverID[id1], hoverID[id2])}`)}
+                </div>
+            );
+        }
+        return htmlShelf;
+    };
+
+    const renderShelf = () => {
+        const htmlShelf = handleShelf();
+
+        return (
             <div className="shelf-wrapper">
+                {htmlShelf}
+            </div>
+        );
+    };
+
+    const handleBannerLeft = () => {
+        const htmlBannerLeft = [];
+        let bannerDescription = content.bannerItems[0].description[0];
+        for (let i = 1; i < content.bannerItems[0].description.length; i++) {
+            bannerDescription += "--%%--";
+            bannerDescription += content.bannerItems[0].description[i];
+        }
+        htmlBannerLeft.push(
+            <div
+                className={`bannerlist-banner ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`}
+                onMouseEnter={() => handleMouseEnter('ed-bkg-1')}
+                onMouseLeave={handleMouseLeave}
+            >
+                {formatStringWithClass(content.bannerItems[0].title, `bannerlist-title ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`)}
+                {formatStringWithClass(bannerDescription, `bannerlist-text ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`)}
+            </div>
+        );
+        return htmlBannerLeft;
+    };
+
+    const handleBannerRight = () => {
+        const htmlBannerRight = [];
+        for (let i = 1; i < 4; i++) {
+            let hoverID = 'ed-bkg-' + (i + 1);
+            let bannerDescription = content.bannerItems[i].description[0];
+            for (let j = 1; j < content.bannerItems[i].description.length; j++) {
+                bannerDescription += "--%%--";
+                bannerDescription += content.bannerItems[i].description[j];
+            }
+            htmlBannerRight.push(
                 <div
-                    className={`shelf-block ${handleShelfHover(true, 'tc-exp-tl', 'tc-exp-tr')}`}
-                    onMouseEnter={() => handleMouseEnter('tc-exp-tl')}
+                    className={`bannerlist-banner ${hovered == hoverID ? 'hovered' : ''}`}
+                    onMouseEnter={() => handleMouseEnter(hoverID)}
                     onMouseLeave={handleMouseLeave}
                 >
-                    <div className={`shelf-decor ${handleShelfHover(true, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                        <hr></hr>
-                        <hr></hr>
-                    </div>
-                    <div className={`shelf-text ${handleShelfHover(true, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                        <b>Teaching Experience</b>
-                    </div>
+                    {formatStringWithClass(content.bannerItems[i].title, `bannerlist-title ${hovered == hoverID ? 'hovered' : ''}`)}
+                    {formatStringWithClass(bannerDescription, `bannerlist-text ${hovered == hoverID ? 'hovered' : ''}`)}
                 </div>
-                <div
-                    className={`shelf-block ${handleShelfHover(false, 'tc-exp-tl', 'tc-exp-tr')}`}
-                    onMouseEnter={() => handleMouseEnter('tc-exp-tr')}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <div className={`shelf-text ${handleShelfHover(false, 'tc-exp-tl', 'tc-exp-tr')}`}>
-                        <b>17 years of <span>part-time and full-time</span> tutoring experience</b><div>,<br></br> ...</div><span> in Mathematics.</span>
-                    </div>
+            );
+        }
+        return htmlBannerRight;
+    };
+
+    const renderBanner = () => {
+        const htmlBannerLeft = handleBannerLeft();
+        const htmlBannerRight = handleBannerRight();
+
+        return (
+            <div className="bannerlist-wrapper">
+                <div className="bannerlist-left">
+                    {htmlBannerLeft}
                 </div>
-                <div
-                    className={`shelf-block ${handleShelfHover(true, 'tc-exp-bl', 'tc-exp-br')}`}
-                    onMouseEnter={() => handleMouseEnter('tc-exp-bl')}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <div className={`shelf-text ${handleShelfHover(true, 'tc-exp-bl', 'tc-exp-br')}`}>
-                        <b>200+ students, 7700+ lessons, 12800+ hours<div>, ...</div></b><span> from 2018 to 2023 in full-time.</span>
-                    </div>
-                </div>
-                <div
-                    className={`shelf-block ${handleShelfHover(false, 'tc-exp-bl', 'tc-exp-br')}`}
-                    onMouseEnter={() => handleMouseEnter('tc-exp-br')}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <div className={`shelf-text ${handleShelfHover(false, 'tc-exp-bl', 'tc-exp-br')}`}>
-                        <span>Specializing in </span><b>IBDP, A Level, IGCSE, IBMYP<div>, ...</div><span>, HKDSE etc.</span></b>
-                    </div>
+                <div className="bannerlist-right">
+                    {htmlBannerRight}
                 </div>
             </div>
+        );
+    };
+
+    return (
+        <div className="shelf-banner-wrapper">
+            {renderShelf()}
             <div className="shelf-block-image">
                 <img src={Shelf_Image}/>
             </div>
-            <div className="bannerlist-wrapper">
-                <div className="bannerlist-left">
-                    <div
-                        className={`bannerlist-banner ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`}
-                        onMouseEnter={() => handleMouseEnter('ed-bkg-1')}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <div className={`bannerlist-title ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`}>
-                            <b>Academic Background</b>
-                        </div>
-                        <div className={`bannerlist-text ${hovered == 'ed-bkg-1' ? 'hovered' : ''}`}>
-                            &#127891; Graduate of City University of Hong Kong with <b>First Class Honours</b>.<div><br></br></div>
-                            &#128221; Bachelor of <b>Quantitative Finance and Risk Management</b>, minor in <b>Mathematics</b>.
-                        </div>
-                    </div>
-                </div>
-                <div className="bannerlist-right">
-                    <div
-                        className={`bannerlist-banner ${hovered == 'ed-bkg-2' ? 'hovered' : ''}`}
-                        onMouseEnter={() => handleMouseEnter('ed-bkg-2')}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <div className={`bannerlist-title ${hovered == 'ed-bkg-2' ? 'hovered' : ''}`}>
-                            <b>HKALE</b>
-                        </div>
-                        <div className={`bannerlist-text ${hovered == 'ed-bkg-2' ? 'hovered' : ''}`}>
-                            Pure Math <b>(A)<div>[Top 4.8%]</div></b>
-                        </div>
-                    </div>
-                    <div
-                        className={`bannerlist-banner ${hovered == 'ed-bkg-3' ? 'hovered' : ''}`}
-                        onMouseEnter={() => handleMouseEnter('ed-bkg-3')}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <div className={`bannerlist-title ${hovered == 'ed-bkg-3' ? 'hovered' : ''}`}>
-                            <b>HKCEE</b>
-                        </div>
-                        <div className={`bannerlist-text ${hovered == 'ed-bkg-3' ? 'hovered' : ''}`}>
-                            Add Math <b>(A) <div>[Top 6.0%]</div><br></br></b><br></br>
-                            Math <b>(A)<div>[Top 3.1%]</div></b>
-                        </div>
-                    </div>
-                    <div
-                        className={`bannerlist-banner ${hovered == 'ed-bkg-4' ? 'hovered' : ''}`}
-                        onMouseEnter={() => handleMouseEnter('ed-bkg-4')}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <div className={`bannerlist-title ${hovered == 'ed-bkg-4' ? 'hovered' : ''}`}>
-                            <b>HKDSE</b>
-                        </div>
-                        <div className={`bannerlist-text ${hovered == 'ed-bkg-4' ? 'hovered' : ''}`}>
-                            Math M1 <b>(5**)<div>[Top 2.9%]</div></b>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {renderBanner()}
         </div>
     );
 };
 
-export default ShelfBlock;
+export default ShelfBanner;
