@@ -23,6 +23,8 @@
     --grad-pink: linear-gradient(-60deg, var(--shade-pink-2) 0%, var(--shade-pink-3) 100%);
     --grad-purple: linear-gradient(-60deg, var(--shade-blue-3) 0%, var(--shade-pink-1) 100%);
     --grad-orange: linear-gradient(-60deg, var(--shade-orange-1) 0%, var(--shade-orange-2) 100%);
+    --intro-background: url(images/drawings/banners/Winson_Website_Banner_Compressed_2.png);
+    --intro-background-mobile: url(images/drawings/banners/Winson_Website_Banner_Compressed_3.png);
 }
 
 /* fonts */
@@ -256,7 +258,7 @@
 .homepage-intro-background {
     width: 100%;
     height: 100vh;
-    background: url(images/drawings/banners/Winson_Website_Banner_Compressed.png) no-repeat center center fixed;
+    background: var(--intro-background) no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     z-index: -10;
@@ -275,15 +277,15 @@
 .homepage-intro-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 100%;
     margin: 0px auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .homepage-intro-textdiv {
-    margin-top: 250px;
+    margin-top: -250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -292,10 +294,9 @@
 
 .homepage-intro-img {
     display: none;
-    width: 500px;
-    height: 500px;
-    margin-top: -250px;
-    margin-bottom: -80px;
+    margin-top: -500px;
+    width: 400px;
+    height: 400px;
 }
 
 .homepage-intro-img > img {
@@ -329,14 +330,16 @@
 
 .homepage-triangle {
     position: absolute;
-    top: 230px;
-    margin-left: -50px;
     width: 0px;
     height: 0px;
     border-style: solid;
     border-width: 0 800px 500px 600px;
     border-color: transparent transparent var(--shade-blue-t) transparent;
-    transform: rotate(335deg);
+    top: -230px;
+    bottom: 0;
+    margin: auto 0 auto -50px;
+    transform:
+        rotate(335deg);
 }
 
 .homepage-rect-mobile {
@@ -403,7 +406,7 @@
         width: 100%;
         height: 100%;
         z-index: -10;
-        background: url(images/drawings/banners/Winson_Website_Banner.png) no-repeat center center;
+        background: var(--intro-background-mobile) no-repeat center center;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -473,7 +476,7 @@
     }
 
     .homepage-intro-textdiv {
-        margin-top: 320px;
+        margin-top: 220px;
     }
 
     .homepage-intro-title {
@@ -516,10 +519,13 @@
     }
 
     .homepage-rect-mobile {
-        display: block;
-        top: 230px;
+        /* top: 230px; */
+        top: -130px;
+        bottom: 0;
+        margin: auto 0;
         width: 60%;
         height: 600px;
+        display: block;
     }
 }
 
@@ -565,14 +571,25 @@
     }
 
     .homepage-rect-mobile {
-        top: 230px;
+        /* top: 230px; */
+        top: -130px;
+        bottom: 0;
+        margin: auto 0;
         width: 60%;
-        height: 500px;
+        height: 600px;
         display: block;
     }
 }
 
-@media only screen and (min-width: 1600px) and (max-height: 1080px) {
+/* @media only screen and (min-width: 1600px) and (max-height: 1080px) {
+    .homepage-intro-textdiv {
+        margin-top: 150px;
+    }
+
+    .homepage-triangle {
+        top: 130px;
+    }
+
     .homepage-intro-img {
         width: 500px;
         height: 500px;
@@ -625,10 +642,6 @@
         top: 250px;
         height: 300px;
     }
-
-    .homepage-intro-textdiv {
-        margin-top: 220px;
-    }
 }
 
 @media only screen and (max-width: 768px) and  (max-height: 760px) {
@@ -645,7 +658,7 @@
     }
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-height: 960px) {
     .homepage-intro-img {
         display: none;
     }
@@ -656,12 +669,13 @@
     }
 
     .homepage-intro-textdiv {
-        margin-top: 220px;
+        margin-top: 100px;
     }
-}
 
-@media only screen and (max-height: 400px) {
-}
+    .homepage-triangle {
+        top: 80px;
+    }
+} */
 
 .counter-wrapper {
     margin-top: 125px;
@@ -697,8 +711,8 @@
 
 @media only screen and (max-width: 1080px) {
     .counter-wrapper {
-        margin-top: 75px;
-        margin-bottom: -10px;
+        margin-top: 20px;
+        margin-bottom: 0px;
         font-size: 30px;
     }
 }
@@ -1763,7 +1777,6 @@
     --gap: 10px;
     --columns: 3;
     width: 1440px;
-    max-height: 2000px;
     padding-bottom: 25px;
     display: flex;
     flex-direction: column;
@@ -1825,7 +1838,6 @@
         --gap: 10px;
         --columns: 2;
         width: 100%;
-        max-height: 2200px;
     }
     
     .reviews-box {
@@ -1846,36 +1858,11 @@
     }
 }
 
-@media only screen and (max-width: 1500px) {
-    .reviews-box-wrapper {
-        max-height: 2300px;
-    }
-}
-
-@media only screen and (max-width: 1400px) {
-    .reviews-box-wrapper {
-        max-height: 2400px;
-    }
-}
-
-@media only screen and (max-width: 1300px) {
-    .reviews-box-wrapper {
-        max-height: 2550px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .reviews-box-wrapper {
-        max-height: 2700px;
-    }
-}
-
 @media only screen and (max-width: 1080px) {
     .reviews-box-wrapper {
         --gap: 10px;
         --columns: 1;
         width: 100%;
-        max-height: 100%;
     }
 }
 
@@ -2794,7 +2781,7 @@
     align-items: center;
     text-align: center;
     font-size: 20px;
-    font-family: "Lato";
+    font-family: "Nanum Myeongjo";
     padding: 0px 20px;
     cursor: pointer;
     text-decoration: none;
@@ -2918,15 +2905,25 @@
 
 .footer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: flex-end;
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0px;
+    right: 0px;
     width: 100%;
     user-select: none;
     transition: bottom 0.3s ease-in-out;
+}
+
+.footer-share {
+    display: flex;
+    z-index: 500;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease-in-out;
 }
 
 .footer-signup {
@@ -2934,6 +2931,8 @@
     justify-content: center;
     align-items: center;
     z-index: 500;
+    margin-bottom: 10px;
+    margin-right: 10px;
     cursor: pointer;
     transition:
         transform 0.3s ease-in-out;

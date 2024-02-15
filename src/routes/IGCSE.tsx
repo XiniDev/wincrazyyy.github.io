@@ -24,7 +24,7 @@ const IGCSE: React.FC = () => {
             <div className="syllabus-intro">
                 <div className="syllabus-intro-container">
                     <div className="syllabus-intro-title">
-                        IGCSE (Year 10-11)
+                        IGCSE <span>(Year 10-11)</span>
                     </div>
                 </div>
             </div>

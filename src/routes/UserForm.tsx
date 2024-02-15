@@ -7,6 +7,21 @@ type OptionType = {
     label: string;
 };
 
+type OptionExtendedType = {
+    value: string;
+    label: string;
+    text: string;
+};
+
+export type UserFormDataType = {
+    title: string;
+    contactMethod: string;
+    contactMethodOptions: OptionExtendedType[];
+    firstName: string;
+    lastName: string;
+    schoolName: string;
+};
+
 type UserData = {
     contactMethod: string;
     countryCode: string;
@@ -18,9 +33,10 @@ type UserData = {
 
 type UserFormProps = UserData & {
     updateFields: (fields: Partial<UserData>) => void;
+    userFormData: UserFormDataType;
 };
 
-export function UserForm({ contactMethod, countryCode, contact, firstName, lastName, schoolName, updateFields }: UserFormProps) {
+export function UserForm({ contactMethod, countryCode, contact, firstName, lastName, schoolName, updateFields, userFormData }: UserFormProps) {
     const [showContact, setShowContact] = useState(true);
 
     const handleCountryCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,10 +60,10 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
         updateFields({ contact: selectedContact });
     };
 
-    const contactMethodOptions: OptionType[] = [
-        { value: 'whatsapp', label: "WhatsApp" },
-        { value: 'wechat', label: "WeChat" }
-    ];
+    const contactMethodOptions: OptionType[] = userFormData.contactMethodOptions.map((option) => ({
+        value: option.value,
+        label: option.label,
+    }));
 
     const contactMethodOnChange = (newValue: OnChangeValue<OptionType, false> | null, actionMeta: ActionMeta<OptionType>) => {
         const selectedContactMethod = newValue?.value;
@@ -56,22 +72,22 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
     }
 
     const renderContactOptions = () => {
-        if (showContact) {
+        if (contactMethodOptions.find(option => option.value == contactMethod) && showContact) {
             switch (contactMethod) {
                 case "whatsapp":
                     return (
                         <>
                             <div className="form-input-column">
-                                <label>WhatsApp: *</label>
+                                <label>{userFormData.contactMethodOptions.find(option => option.value == contactMethod)?.text}: *</label>
                                 <div className="form-input-whatsapp">
                                     <input
-                                            className="form-input-country-code"
-                                            required
-                                            type="text"
-                                            value={countryCode}
-                                            size={1}
-                                            onChange={handleCountryCodeChange}
-                                        />
+                                        className="form-input-country-code"
+                                        required
+                                        type="text"
+                                        value={countryCode}
+                                        size={1}
+                                        onChange={handleCountryCodeChange}
+                                    />
                                     <input
                                         autoFocus
                                         required
@@ -84,10 +100,10 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
                             </div>
                         </>
                     );
-                case "wechat":
+                default:
                     return (
                         <>
-                            <label>WeChat ID: *</label>
+                            <label>{userFormData.contactMethodOptions.find(option => option.value == contactMethod)?.text}: *</label>
                             <input
                                 autoFocus
                                 required
@@ -97,8 +113,6 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
                             />
                         </>
                     );
-                default:
-                    return null;
             }
         }
         return null;
@@ -121,8 +135,8 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
     };
 
     return (
-        <FormWrapper title="Student Details">
-            <label>Contact Method: *</label>
+        <FormWrapper title={userFormData.title}>
+            <label>{userFormData.contactMethod}: *</label>
             <Select
                 className="form-input-select"
                 autoFocus
@@ -144,7 +158,7 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
             {renderContactOptions()}
             <div className="form-input-row">
                 <div className="form-input-column">
-                    <label>First Name: *</label>
+                    <label>{userFormData.firstName}: *</label>
                     <input
                         required
                         type="text"
@@ -154,7 +168,7 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
                     />
                 </div>
                 <div className="form-input-column">
-                    <label>Last Name: *</label>
+                    <label>{userFormData.lastName}: *</label>
                     <input
                         required
                         type="text"
@@ -164,7 +178,7 @@ export function UserForm({ contactMethod, countryCode, contact, firstName, lastN
                     />
                 </div>
             </div>
-            <label>School Name: *</label>
+            <label>{userFormData.schoolName}: *</label>
             <input
                 required
                 type="text"

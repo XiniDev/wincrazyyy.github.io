@@ -43,21 +43,21 @@
                 {
                     "gradeFrom": "7",
                     "gradeTo": "7",
-                    "names": [ "Micky Wang (2018)", "Mary Guan (2022)" ],
+                    "names": [ "Mickey Wang (2018)", "Mary Guan (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "6",
                     "gradeTo": "7",
-                    "names": [ "Taylor Reis (2019)", "Vera Jing (2021)", "Ivy Liu (2021)", "Cici Jin (2022)", "Alice Gao (2022)" ],
+                    "names": [ "Taylor (2019)", "Vera Jing (2021)", "Ivy Liu (2021)", "Cici Jin (2022)", "Alice Gao (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "5",
                     "gradeTo": "7",
-                    "names": [ "Janice Au Yeung (2021)", "Hebe Jim (2021)", "Joy Angela Sun (2022)", "Ethan Chan (2022)" ],
+                    "names": [ "Janice (2021)", "Hebe Jim (2021)", "Joy Angela Sun (2022)", "Ethan Chan (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
@@ -71,7 +71,7 @@
                 {
                     "gradeFrom": "3",
                     "gradeTo": "6",
-                    "names": [ "Lucia Zhu (2018)", "Fiona Wan (2022)" ],
+                    "names": [ "Lucia Zhu (2018)", "Fiona (2022)" ],
                     "highlight": true,
                     "remarks": "both in 3 months"
                 },
@@ -85,14 +85,14 @@
                 {
                     "gradeFrom": "3",
                     "gradeTo": "5",
-                    "names": [ "Kelly Gu (2018)", "Owen Zhao (2021)" ],
+                    "names": [ "Kelly (2018)", "Owen (2021)" ],
                     "highlight": false,
                     "remarks": "both in 1 month"
                 },
                 {
                     "gradeFrom": "2",
                     "gradeTo": "5",
-                    "names": [ "Justin Chan (2020)", "Judy Wei (2021)", "Chung Tin Chan (2022)" ],
+                    "names": [ "Justin (2020)", "Judy Wei (2021)", "Chung Tin (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
@@ -136,14 +136,14 @@
                 {
                     "gradeFrom": "2",
                     "gradeTo": "5",
-                    "names": [ "Connie Feng (2021)" ],
+                    "names": [ "Connie (2021)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "1",
                     "gradeTo": "4",
-                    "names": [ "Dora Dai (2021)" ],
+                    "names": [ "Dora (2021)" ],
                     "highlight": false,
                     "remarks": ""
                 }

@@ -4,14 +4,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { useForm } from './useForm';
 
 import Cross from '../images/cross.png';
-import { UserForm } from './UserForm';
-import { SyllabusForm } from './SyllabusForm';
-import { MiscForm } from './MiscForm';
+import { UserForm, UserFormDataType } from './UserForm';
+import { SyllabusForm, SyllabusFormDataType } from './SyllabusForm';
+import { MiscForm, MiscFormDataType } from './MiscForm';
 import emailjs from '@emailjs/browser';
- 
+
+import pricingData from '../json/pricingData.json';
+
+type FormType = {
+    userForm: UserFormDataType;
+    syllabusForm: SyllabusFormDataType;
+    miscForm: MiscFormDataType;
+}
+
 type FormProp = {
     formActive: boolean;
     setFormActive: React.Dispatch<React.SetStateAction<boolean>>;
+    formData: FormType;
 }
 
 type FormData = {
@@ -46,7 +55,11 @@ const INITIAL_DATA = {
     referral: "",
 }
 
-const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
+const Form: React.FC<FormProp> = ({ formActive, setFormActive, formData }) => {
+    const userFormData = formData.userForm;
+    const syllabusFormData = formData.syllabusForm;
+    const miscFormData = formData.miscForm;
+
     useEffect(() => emailjs.init("gib2jZLcxQapdRDOq"), []);
 
     const closeForm = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -63,9 +76,9 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
     }
 
     const { steps, currStepIndex, step, isFirstStep, isLastStep, back, next, reset} = useForm([
-        <UserForm {...data} updateFields={updateFields} />,
-        <SyllabusForm {...data} updateFields={updateFields} />,
-        <MiscForm {...data} updateFields={updateFields} />,
+        <UserForm {...data} updateFields={updateFields} userFormData={userFormData} />,
+        <SyllabusForm {...data} updateFields={updateFields} syllabusFormData={syllabusFormData} />,
+        <MiscForm {...data} updateFields={updateFields} miscFormData={miscFormData} />,
     ]);
 
     const onSubmit = async (e: FormEvent) => {
@@ -91,7 +104,26 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
                 expResult: data.expResult,
                 referral: data.referral,
             });
-            alert("email successfully sent check inbox");
+    
+            alert("Email successfully sent. Check inbox.");
+
+            const mappedPricing = pricingData.pricing.map(item => ({
+                name: (item.name).toLowerCase(),
+                price: item.price,
+                mult: item.perX,
+            }));
+
+            let value = 100;
+            const item = mappedPricing.find(item => item.name === data.pricing);
+            if (item) value = item.price / item.mult;
+
+            // Google Ads conversion tracking
+            window.gtag('event', 'conversion', {
+                'send_to': 'AW-11487159496/tU7KCPHN848ZEMjJwOUq',
+                'value': value,
+                'currency': 'HKD',
+                'transaction_id': `${data.firstName}-${data.lastName}-${data.contact}`
+            });
         } catch (error) {
             console.log(error);
         };
@@ -100,6 +132,7 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive }) => {
         setFormActive(false);
         reset();
     };
+    
 
     return (
         <div className={`form ${formActive ? 'active' : ''}`}>

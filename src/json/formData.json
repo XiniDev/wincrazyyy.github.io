@@ -1,0 +1,81 @@
+{
+    "userForm": {
+        "title": "Student Details",
+        "contactMethod": "Contact Method",
+        "contactMethodOptions": [
+            { "value": "whatsapp", "label": "WhatsApp", "text": "WhatsApp" },
+            { "value": "wechat", "label": "WeChat", "text": "WeChat ID" }
+        ],
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "schoolName": "School Name"
+    },
+    "syllabusForm": {
+        "title": "Tutoring Details",
+        "syllabus": "Tutoring Syllabus",
+        "syllabusOptions": [
+            { "value": "ibdp", "label": "IBDP", "text": "IBDP Curriculum" },
+            { "value": "alevel", "label": "A-Level", "text": "A-Level Curriculum" },
+            { "value": "igcse", "label": "IGCSE / IBMYP", "text": "IGCSE / IBMYP Curriculum" },
+            { "value": "others", "label": "Others", "text": "Please Specify" }
+        ],
+        "subSyllabusOptions": [
+            {
+                "value": "ibdp",
+                "options": [
+                    { "value": "aahl", "label": "AAHL" },
+                    { "value": "aasl", "label": "AASL" },
+                    { "value": "aihl", "label": "AIHL" },
+                    { "value": "aisl", "label": "AISL" },
+                    { "value": "ia", "label": "Math IA" }
+                ]
+            },
+            {
+                "value": "alevel",
+                "options": [
+                    { "value": "YFM01", "label": "IAL Edexcel Further Math (YFM01)" },
+                    { "value": "YMA01", "label": "IAL Edexcel Math (YMA01)" },
+                    { "value": "9FM0", "label": "AL Edexcel Further Math (9FM0)" },
+                    { "value": "9MA0", "label": "AL Edexcel Math (9MA0)" },
+                    { "value": "9231", "label": "CAIE Cambridge Further Math (9231)" },
+                    { "value": "9709", "label": "CAIE Cambridge Math (9709)" },
+                    { "value": "7367", "label": "AL AQA Further Math (7367)" },
+                    { "value": "7357", "label": "AL AQA Math (7357)" },
+                    { "value": "H245", "label": "AL OCR Further Math A (H245)" },
+                    { "value": "H240", "label": "AL OCR Math A (H240)" },
+                    { "value": "alothers", "label": "Others" }
+                ]
+            },
+            {
+                "value": "igcse",
+                "options": [
+                    { "value": "0607", "label": "Cambridge International Math (0607)" },
+                    { "value": "0606", "label": "Cambridge Additional Math (0606)" },
+                    { "value": "0580", "label": "Cambridge Math (0580)" },
+                    { "value": "4PM1", "label": "Edexcel Math (4PM1)" },
+                    { "value": "4PM0", "label": "Edexcel Further Math (4PM0)" },
+                    { "value": "ibmyp", "label": "IBMYP / Pre-IB" }
+                ]
+            }
+        ],
+        "pricing": "Pricing Option",
+        "pricingOptions": [
+            { "value": "starter", "label": "Starter (HKD 200 per week)" },
+            { "value": "premium", "label": "Premium (HKD 6480 per 4 lessons)" },
+            { "value": "elite", "label": "Elite (HKD 14880 per 8 lessons)" }
+        ]
+    },
+    "miscForm": {
+        "title": "Other Details",
+        "noteTaking": "Note Taking App on iPad",
+        "noteTakingOptions": [
+            { "value": "goodnotes", "label": "Goodnotes" },
+            { "value": "notability", "label": "Notability" },
+            { "value": "notipad", "label": "Not Using iPad" },
+            { "value": "others", "label": "Others" }
+        ],
+        "currentResult": "Current Math Result",
+        "expectedResult": "Expected Math Result",
+        "referral": "Referral Name (if applicable)"
+    }
+}

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import Chevron from '../images/chevron.png';
 
-import Carousel_1 from '../images/drawings/carousels/carousel-1.png';
-import Carousel_2 from '../images/drawings/carousels/carousel-2.png';
-import Carousel_3 from '../images/drawings/carousels/carousel-3.png';
+import Carousel_1 from '../images/drawings/carousels/carousel-1-compressed.png';
+import Carousel_2 from '../images/drawings/carousels/carousel-2-compressed.png';
+import Carousel_3 from '../images/drawings/carousels/carousel-3-compressed.png';
 
 type CarouselProp = {
     openForm: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -78,7 +78,7 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
                     onMouseLeave={handleMouseLeave}
                     onClick={(e) => carouselSwitch(e, true)}
                 >
-                    <img src={Chevron}/>
+                    <img src={Chevron} loading="lazy"/>
                 </div>
                 <div
                     className={`carousel-right ${hovered == 'carousel-right' ? 'hovered' : ''}`}
@@ -86,7 +86,7 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
                     onMouseLeave={handleMouseLeave}
                     onClick={(e) => carouselSwitch(e, false)}
                 >
-                    <img src={Chevron}/>
+                    <img src={Chevron} loading="lazy"/>
                 </div>
                 <div className="carousel-dot-container">
                     {carouselDot.map((dot, idx) => (
@@ -99,13 +99,13 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
                 </div>
                 <div className="carousel-image-wrapper">
                     <div onClick={(e) => openForm(e)} className="carousel-image">
-                        <img src={Carousel_1}/>
+                        <img src={Carousel_1} loading="lazy"/>
                     </div>
                     <div className="carousel-image">
-                        <img src={Carousel_2}/>
+                        <img src={Carousel_2} loading="lazy"/>
                     </div>
                     <div onClick={(e) => openForm(e)} className="carousel-image">
-                        <img src={Carousel_3}/>
+                        <img src={Carousel_3} loading="lazy"/>
                     </div>
                 </div>
             </div>

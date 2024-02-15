@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Form from './Form';
 
-import Logo from '../images/drawings/logo/logo_transparent.png';
+import Logo from '../images/drawings/logo/logo_transparent_256.png';
 import Menu_Icon from '../images/menu-icon.png';
+
+import formData from '../json/formData.json';
 
 type HeaderProp = {
     formActive: boolean;
@@ -82,7 +84,7 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
 
     return (
         <div className={`header ${transparent ? 'transparent' : ''} ${currentURL == '/' ? (fadeDivs ? 'header-fade visible' : 'header-fade') : ''}`}>
-            <Form formActive={formActive} setFormActive={setFormActive}/>
+            <Form formActive={formActive} setFormActive={setFormActive} formData={formData}/>
             <div className={`header-container ${menuOpen ? 'open' : ''}`}>
                 <Link
                     to ="/"

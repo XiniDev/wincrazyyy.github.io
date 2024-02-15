@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import Book_Now from '../images/drawings/stickers/Book_Now.png';
+import TwitterShareButton from './TwitterShareButton'
+
+import Book_Now from '../images/drawings/stickers/Book_Now_Compressed.png';
 
 type FooterProp = {
     openForm: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -30,6 +32,14 @@ const Footer: React.FC<FooterProp> = ({ openForm }) => {
 
     return (
         <div className={`footer ${footerVisible ? 'visible' : ''}`}>
+            <div
+                className={`footer-share ${hovered == 'share' ? 'hovered' : ''}`}
+                onMouseEnter={() => handleMouseEnter('share')}
+                onMouseLeave={handleMouseLeave}
+                onClick={(e) => openForm(e)}
+            >
+                <TwitterShareButton />
+            </div>
             <div
                 className={`footer-signup ${hovered == 'signup' ? 'hovered' : ''}`}
                 onMouseEnter={() => handleMouseEnter('signup')}

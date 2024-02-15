@@ -6,6 +6,15 @@ type OptionType = {
     label: string;
 };
 
+export type MiscFormDataType = {
+    title: string;
+    noteTaking: string;
+    noteTakingOptions: OptionType[];
+    currentResult: string;
+    expectedResult: string;
+    referral: string;
+};
+
 type MiscData = {
     noteTaking: string;
     currResult: string;
@@ -15,9 +24,10 @@ type MiscData = {
 
 type MiscFormProps = MiscData & {
     updateFields: (fields: Partial<MiscData>) => void;
+    miscFormData: MiscFormDataType;
 };
 
-export function MiscForm({ noteTaking, currResult, expResult, referral, updateFields }: MiscFormProps) {
+export function MiscForm({ noteTaking, currResult, expResult, referral, updateFields, miscFormData }: MiscFormProps) {
     const handleReferralChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const alphabeticRegex = /^[A-Za-z]*$/;
         const inputVal = e.target.value;
@@ -26,12 +36,7 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
         }
     };
 
-    const noteTakingOptions: OptionType[] = [
-        { value: "goodnotes", label: "Goodnotes" },
-        { value: "notability", label: "Notability" },
-        { value: "notipad", label: "Not Using iPad" },
-        { value: "others", label: "Others" },
-    ]
+    const noteTakingOptions: OptionType[] = miscFormData.noteTakingOptions;
 
     const handleNoteTaking = (option: OnChangeValue<OptionType, false> | null, actionMeta: ActionMeta<OptionType>) => {
         const selectedNoteTaking = option?.value;
@@ -39,8 +44,8 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
     }
 
     return (
-        <FormWrapper title="Other Details">
-            <label>Note Taking App on iPad: *</label>
+        <FormWrapper title={miscFormData.title}>
+            <label>{miscFormData.noteTaking}: *</label>
             <Select
                 className="form-input-select"
                 required
@@ -60,7 +65,7 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
             ></Select>
             <div className="form-input-row">
                 <div className="form-input-column">
-                    <label>Current Math Result: *</label>
+                    <label>{miscFormData.currentResult}: *</label>
                     <input
                         required
                         type="text"
@@ -70,7 +75,7 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
                     />
                 </div>
                 <div className="form-input-column">
-                    <label>Expected Math Result: *</label>
+                    <label>{miscFormData.expectedResult}: *</label>
                     <input
                         required
                         type="text"
@@ -80,7 +85,7 @@ export function MiscForm({ noteTaking, currResult, expResult, referral, updateFi
                     />
                 </div>
             </div>
-            <label>Referral Name (if applicable):</label>
+            <label>{miscFormData.referral}:</label>
             <input
                 type="text"
                 value={referral}

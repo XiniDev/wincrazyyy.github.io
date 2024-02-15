@@ -7,6 +7,27 @@ type OptionType = {
     label: string;
 };
 
+type OptionExtendedType = {
+    value: string;
+    label: string;
+    text: string;
+};
+
+type OptionListType = {
+    value: string;
+    options: OptionType[];
+};
+
+export type SyllabusFormDataType = {
+    title: string;
+    syllabus: string;
+    syllabusOptions: OptionExtendedType[];
+    subSyllabusOptions: OptionListType[];
+    pricing: string;
+    pricingOptions: OptionType[];
+};
+
+
 type SyllabusData = {
     syllabus: string;
     subSyllabus: string;
@@ -15,17 +36,16 @@ type SyllabusData = {
 
 type SyllabusFormProps = SyllabusData & {
     updateFields: (fields: Partial<SyllabusData>) => void;
+    syllabusFormData: SyllabusFormDataType;
 };
 
-export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: SyllabusFormProps) {
+export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields, syllabusFormData }: SyllabusFormProps) {
     const [showSubSyllabus, setShowSubSyllabus] = useState(true);
 
-    const syllabusOptions: OptionType[] = [
-        { value: "ibdp", label: "IBDP" },
-        { value: "alevel", label: "A-Level" },
-        { value: "igcse", label: "IGCSE / IBMYP" },
-        { value: "others", label: "Others" },
-    ]
+    const syllabusOptions: OptionType[] = syllabusFormData.syllabusOptions.map((option) => ({
+        value: option.value,
+        label: option.label,
+    }));
 
     const handleSyllabusOnChange = (option: OnChangeValue<OptionType, false> | null, actionMeta: ActionMeta<OptionType>) => {
         const selectedSyllabus = option?.value;
@@ -38,42 +58,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
         updateFields({ subSyllabus: selectedSubSyllabus });
     };
 
-    const ibdpOptions: OptionType[] = [
-        { value: "aahl", label: "AAHL" },
-        { value: "aasl", label: "AASL" },
-        { value: "aihl", label: "AIHL" },
-        { value: "aisl", label: "AISL" },
-        { value: "ia", label: "Math IA" },
-    ]
-
-    const alevelOptions: OptionType[] = [
-        { value: "YFM01", label: "IAL Edexcel Further Math (YFM01)" },
-        { value: "YMA01", label: "IAL Edexcel Math (YMA01)" },
-        { value: "9FM0", label: "AL Edexcel Further Math (9FM0)" },
-        { value: "9MA0", label: "AL Edexcel Math (9MA0)" },
-        { value: "9231", label: "CAIE Cambridge Further Math (9231)" },
-        { value: "9709", label: "CAIE Cambridge Math (9709)" },
-        { value: "7367", label: "AL AQA Further Math (7367)" },
-        { value: "7357", label: "AL AQA Math (7357)" },
-        { value: "H245", label: "AL OCR Further Math A (H245)" },
-        { value: "H240", label: "AL OCR Math A (H240)" },
-        { value: "alothers", label: "Others" },
-    ]
-
-    const igcseOptions: OptionType[] = [
-        { value: "0607", label: "Cambridge International Math (0607)" },
-        { value: "0606", label: "Cambridge Additional Math (0606)" },
-        { value: "0580", label: "Cambridge Math (0580)" },
-        { value: "4PM1", label: "Edexcel Math (4PM1)" },
-        { value: "4PM0", label: "Edexcel Further Math (4PM0)" },
-        { value: "ibmyp", label: "IBMYP / Pre-IB" },
-    ]
-
-    const pricingOptions: OptionType[] = [
-        { value: "starter", label: "Starter (HKD 200 per week)" },
-        { value: "premium", label: "Premium (HKD 6480 per 4 lessons)" },
-        { value: "elite", label: "Elite (HKD 14880 per 8 lessons)" },
-    ]
+    const pricingOptions: OptionType[] = syllabusFormData.pricingOptions;
 
     const handlePricingOnChange = (option: OnChangeValue<OptionType, false> | null, actionMeta: ActionMeta<OptionType>) => {
         const selectedPricing = option?.value;
@@ -81,81 +66,12 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
     }
 
     const renderSubSyllabusOptions = () => {
-        if (showSubSyllabus) {
+        if (syllabusOptions.find(option => option.value == syllabus) && showSubSyllabus) {
             switch (syllabus) {
-                case "ibdp":
-                    return (
-                        <>
-                            <label>IBDP Curriculum: *</label>
-                            <Select
-                                className="form-input-select"
-                                required
-                                isSearchable={false}
-                                value={ibdpOptions.find(option => option.value == subSyllabus)}
-                                options={ibdpOptions}
-                                onChange={handleSubSyllabusOnChange}
-                                menuPortalTarget={document.body}
-                                styles={{
-                                    menuPortal: (base, _): CSSObjectWithLabel => ({
-                                        ...base,
-                                        zIndex: 9999,
-                                        fontSize: "24px",
-                                    } as CSSObjectWithLabel),
-                                }}
-                                menuPosition={'fixed'}
-                            ></Select>
-                        </>
-                    );
-                case "alevel":
-                    return (
-                        <>
-                            <label>A-Level Curriculum: *</label>
-                            <Select
-                                className="form-input-select"
-                                required
-                                isSearchable={false}
-                                value={alevelOptions.find(option => option.value == subSyllabus)}
-                                options={alevelOptions}
-                                onChange={handleSubSyllabusOnChange}
-                                menuPortalTarget={document.body}
-                                styles={{
-                                    menuPortal: (base, _): CSSObjectWithLabel => ({
-                                        ...base,
-                                        zIndex: 9999,
-                                        fontSize: "24px",
-                                    } as CSSObjectWithLabel),
-                                }}
-                                menuPosition={'fixed'}
-                            ></Select>
-                        </>
-                    );
-                case "igcse":
-                    return (
-                        <>
-                            <label>IGCSE / IBMYP Curriculum: *</label>
-                            <Select
-                                className="form-input-select"
-                                required
-                                isSearchable={false}
-                                value={igcseOptions.find(option => option.value == subSyllabus)}
-                                options={igcseOptions}
-                                onChange={handleSubSyllabusOnChange}
-                                menuPortalTarget={document.body}
-                                styles={{
-                                    menuPortal: (base, _): CSSObjectWithLabel => ({
-                                        ...base,
-                                        zIndex: 9999,
-                                        fontSize: "24px",
-                                    } as CSSObjectWithLabel),
-                                }}
-                                menuPosition={'fixed'}
-                            ></Select>
-                        </>
-                    );
                 case "others":
                     return (
                         <>
-                            <label>Please Specify: *</label>
+                            <label>{syllabusFormData.syllabusOptions.find(option => option.value == syllabus)?.text}: *</label>
                             <input
                                 required
                                 type="text"
@@ -165,15 +81,36 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
                         </>
                     );
                 default:
-                    return null;
+                    return (
+                        <>
+                            <label>{syllabusFormData.syllabusOptions.find(option => option.value == syllabus)?.text}: *</label>
+                            <Select
+                                className="form-input-select"
+                                required
+                                isSearchable={false}
+                                value={syllabusFormData.subSyllabusOptions.find(option => option.value == syllabus)?.options.find(option => option.value == subSyllabus)}
+                                options={syllabusFormData.subSyllabusOptions.find(option => option.value == syllabus)?.options}
+                                onChange={handleSubSyllabusOnChange}
+                                menuPortalTarget={document.body}
+                                styles={{
+                                    menuPortal: (base, _): CSSObjectWithLabel => ({
+                                        ...base,
+                                        zIndex: 9999,
+                                        fontSize: "24px",
+                                    } as CSSObjectWithLabel),
+                                }}
+                                menuPosition={'fixed'}
+                            ></Select>
+                        </>
+                    );
             }
         }
         return null;
     };
 
     return (
-        <FormWrapper title="Tutoring Details">
-            <label>Tutoring Syllabus: *</label>
+        <FormWrapper title={syllabusFormData.title}>
+            <label>{syllabusFormData.syllabus}: *</label>
             <Select
                 className="form-input-select"
                 autoFocus
@@ -193,7 +130,7 @@ export function SyllabusForm({ syllabus, subSyllabus, pricing, updateFields }: S
                 menuPosition={'fixed'}
             ></Select>
             {renderSubSyllabusOptions()}
-            <label>Pricing Option: *</label>
+            <label>{syllabusFormData.pricing}: *</label>
             <Select
                 className="form-input-select"
                 autoFocus

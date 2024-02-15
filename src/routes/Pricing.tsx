@@ -13,7 +13,7 @@ import Money_Gold_Mark from '../images/money-gold-mark.png';
 export type PricingType = {
     name: string;
     price: number;
-    perX: string;
+    perX: number;
     highlight: boolean;
     pricingOffers: PricingOfferType[];
 };
@@ -102,8 +102,11 @@ const Pricing: React.FC<PricingProp> = ({ openForm, pricing }) => {
         setPricingActives(newActivesArray);
     };
 
-    const renderPriceBox = (title: string, price: number, per: string, highlight: boolean, pricingOffers: PricingOfferType[], active: boolean) => {
+    const renderPriceBox = (title: string, price: number, per: number, highlight: boolean, pricingOffers: PricingOfferType[], active: boolean) => {
         const htmlPricingOffers = handlePricingOffers(pricingOffers);
+        
+        let perStr = "/WK";
+        if (per != 1) perStr = `/${per}L`;
 
         return (
             <>
@@ -112,7 +115,7 @@ const Pricing: React.FC<PricingProp> = ({ openForm, pricing }) => {
                         {title}
                     </div>
                     <div className={`pricing-price ${highlight ? 'pricing-highlight' : ''}`}>
-                        <span>HKD</span>{price}<span>{per}</span>
+                        <span>HKD</span>{price}<span>{perStr}</span>
                     </div>
                     {htmlPricingOffers}
                     <div

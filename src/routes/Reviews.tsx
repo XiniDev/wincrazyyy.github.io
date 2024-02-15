@@ -1,5 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { formatString } from './Utils';
+
+interface StyleState {
+    maxHeight?: string;
+    [key: string]: string | undefined;
+}
 
 export type ReviewType = {
     description: string;
@@ -12,6 +17,37 @@ type ReviewsProp = {
 }
 
 const Reviews: React.FC<ReviewsProp> = ({ reviews }) => {
+    const [style, setStyle] = useState<StyleState>({});
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            let newStyle:StyleState = {};
+            let columns;
+            if (window.innerWidth > 1600) {
+                newStyle.maxHeight = `${reviews.length / 3 * 370}px`;
+                columns = 3;
+            }
+            else if (window.innerWidth > 1080) {
+                newStyle.maxHeight = `${reviews.length / 2 * (250 + (160 - window.innerWidth / 10) * 1.2)}px`;
+                columns = 2;
+            }
+            else {
+                newStyle.maxHeight = `${100}%`;
+                columns = 1;
+            }
+
+            setStyle(newStyle);
+            if(containerRef.current) {
+                containerRef.current.style.setProperty('--columns', columns.toString());
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, [reviews.length]);
+
     const handleReviews = () => {
         const htmlReviewBox = [];
 
@@ -37,11 +73,14 @@ const Reviews: React.FC<ReviewsProp> = ({ reviews }) => {
 
     const renderReviews = () => {
         return (
-            <div className="reviews-box-wrapper">
+            <div
+                className="reviews-box-wrapper"
+                ref={containerRef}
+                style={style}>
                 {handleReviews()}
             </div>
         );
-    }
+    };
 
     return (
         <div className="reviews">

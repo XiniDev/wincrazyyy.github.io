@@ -3,7 +3,7 @@
         {
             "name": "Starter",
             "price": 200,
-            "perX": "/WK",
+            "perX": 1,
             "highlight": false,
             "pricingOffers": [
                 { "offer": "Limited online correspondence", "check": 1 },
@@ -14,7 +14,7 @@
         {
             "name": "Premium",
             "price": 6480,
-            "perX": "/4L",
+            "perX": 4,
             "highlight": true,
             "pricingOffers": [
                 { "offer": "Online correspondence", "check": 1 },
@@ -29,7 +29,7 @@
         {
             "name": "Elite",
             "price": 14880,
-            "perX": "/8L",
+            "perX": 8,
             "highlight": false,
             "pricingOffers": [
                 { "offer": "**Priority** online correspondence", "check": 2 },

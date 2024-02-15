@@ -47,7 +47,7 @@ const IBDP: React.FC = () => {
             <div className="syllabus-intro">
                 <div className="syllabus-intro-container">
                     <div className="syllabus-intro-title">
-                        IBDP (Year 12-13)
+                        IBDP <span>(Year 12-13)</span>
                     </div>
                 </div>
             </div>

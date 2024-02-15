@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { formatStringWithClass } from './Utils';
 
-import Shelf_Image from '../images/drawings/student/student_illustration.png';
+import Shelf_Image from '../images/drawings/student/student_illustration_compressed.png';
 
 export type BannerItemType = {
     title: string;
@@ -139,7 +139,7 @@ const ShelfBanner: React.FC<ShelfBannerProp> = ({ content }) => {
         <div className="shelf-banner-wrapper">
             {renderShelf()}
             <div className="shelf-block-image">
-                <img src={Shelf_Image}/>
+                <img src={Shelf_Image} loading="lazy"/>
             </div>
             {renderBanner()}
         </div>

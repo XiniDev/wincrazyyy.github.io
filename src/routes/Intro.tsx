@@ -4,8 +4,8 @@ import { formatString } from './Utils';
 import Counter from './Counter';
 import LazyBackground from './LazyBackground';
 
-import Banner from '../images/drawings/banners/Winson_Website_Banner.png'
-import Banner_Compressed from '../images/drawings/banners/Winson_Website_Banner_Compressed.png'
+import Banner from '../images/drawings/banners/Winson_Website_Banner_Compressed_2.png'
+import Banner_Compressed from '../images/drawings/banners/Winson_Website_Banner_Compressed_3.png'
 
 type IntroProp = {
     openForm: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -34,10 +34,10 @@ const Intro: React.FC<IntroProp> = ({ openForm, logo, hours }) => {
         }, 300);
         const timeout2 = setTimeout(() => {
             setFadeDivs((prev) => [prev[0], true, prev[2]]);
-        }, 1200);
+        }, 1000);
         const timeout3 = setTimeout(() => {
             setFadeDivs((prev) => [prev[0], prev[1], true]);
-        }, 2000);
+        }, 1500);
       
         return () => {
             clearTimeout(timeout1);
@@ -67,13 +67,13 @@ const Intro: React.FC<IntroProp> = ({ openForm, logo, hours }) => {
     return (
         <div className="homepage-intro">
             <div className="homepage-bkg"></div>
-            {/* <div className={`homepage-intro-background ${fadeDivs[2] ? 'homepage-fade-bkg visible' : 'homepage-fade-bkg'}`}></div> */}
-            <LazyBackground
+            <div className={`homepage-intro-background ${fadeDivs[2] ? 'homepage-fade-bkg visible' : 'homepage-fade-bkg'}`}></div>
+            {/* <LazyBackground
                 src={Banner}
                 placeholder={Banner_Compressed}
                 className={`homepage-intro-background ${fadeDivs[2] ? 'homepage-fade-bkg visible' : 'homepage-fade-bkg'}`}
             >
-            </LazyBackground>
+            </LazyBackground> */}
             <div className="homepage-intro-container">
                 <div className={`homepage-triangle ${fadeDivs[2] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade triangle') : 'homepage-intro-fade'}`}></div>
                 <div className={`homepage-rect-mobile ${fadeDivs[2] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}></div>
