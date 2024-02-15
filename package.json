@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate-sitemap": "ts-node --esm src/scripts/generateSitemap.ts"
+    "generate-sitemap": "node --loader ts-node/esm src/scripts/generateSitemap.ts"
   },
   "eslintConfig": {
     "extends": [
