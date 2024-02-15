@@ -56,7 +56,7 @@ const Reviews: React.FC<ReviewsProp> = ({ reviews }) => {
             htmlReviewBox.push(
                 <div className="reviews-box">
                     <div className="reviews-description">
-                        {reviews[i].description}
+                        {formatString(reviews[i].description)}
                     </div>
                     <div className="reviews-name">
                         {reviews[i].name}
