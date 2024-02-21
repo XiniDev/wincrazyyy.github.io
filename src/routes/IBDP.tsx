@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import FixedFooter from './FixedFooter';
 
 import RotList from './RotList';
 import IAProfile from './IAProfile';
@@ -62,6 +63,7 @@ const IBDP: React.FC = () => {
             <Exam exam={examContent}/>
             <StudentsFrom schools={schools}/>
             <Footer openForm={openForm}/>
+            <FixedFooter openForm={openForm}/>
         </div>
     );
 }

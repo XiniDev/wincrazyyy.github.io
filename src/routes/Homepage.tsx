@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import FixedFooter from './FixedFooter';
 import Intro from './Intro';
 import ShelfBanner from './ShelfBanner';
 import Carousel from './Carousel';
@@ -9,15 +10,15 @@ import Reviews from './Reviews';
 
 import Logo from '../images/drawings/logo/logo_transparent.png';
 
-import shelfBannerData from '../json/shelfBannerData.json';
+import homepageData from '../json/homepageData.json';
 import pricingData from '../json/pricingData.json';
 import reviewsData from '../json/reviewsData.json';
 
 const Homepage: React.FC = () => {
-    const shelfBanner = shelfBannerData.content;
+    const shelfBanner = homepageData.sbContent;
     const pricing = pricingData.pricing;
     const reviews = reviewsData.reviews;
-    const hours = 12900;
+    const hours = homepageData.counter;
 
     const [formActive, setFormActive] = useState(false);
 
@@ -44,6 +45,7 @@ const Homepage: React.FC = () => {
                 </div>
             </div>
             <Footer openForm={openForm}/>
+            <FixedFooter openForm={openForm}/>
         </div>
     );
 }

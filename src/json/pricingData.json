@@ -2,41 +2,41 @@
     "pricing": [
         {
             "name": "Starter",
-            "price": 200,
+            "price": 1280,
             "perX": 1,
             "highlight": false,
             "pricingOffers": [
-                { "offer": "Limited online correspondence", "check": 1 },
-                { "offer": "8 short questions with **step by step solutions** provided weekly", "check": 1 },
-                { "offer": "No lessons arranged", "check": 0 }
+                { "offer": "Online correspondence", "check": 1 },
+                { "offer": "8 short questions with **step by step solutions**", "check": 1 },
+                { "offer": "1 online lesson of 60 minutes", "check": 1 }
             ]
         },
         {
             "name": "Premium",
-            "price": 6480,
+            "price": 4480,
             "perX": 4,
             "highlight": true,
             "pricingOffers": [
                 { "offer": "Online correspondence", "check": 1 },
                 { "offer": "20 short questions and 4 long questions with **step by step solutions** provided weekly", "check": 1 },
-                { "offer": "4 online lessons of 90 minutes", "check": 1 },
+                { "offer": "4 online lessons of 60 minutes", "check": 1 },
                 { "offer": "Detailed summary by topic", "check": 1 },
-                { "offer": "Math IA topic setup & guidance until completion", "check": 1 },
+                { "offer": "Math IA topic setup", "check": 1 },
                 { "offer": "Expected 1 grade improvement or better (e.g. from 5 to 6 in IBDP or from B to A in A-Level)", "check": 1 },
                 { "offer": "Rebate of up to **HKD 1200** per student referred", "check": 5 }
             ]
         },
         {
             "name": "Elite",
-            "price": 14880,
+            "price": 7680,
             "perX": 8,
             "highlight": false,
             "pricingOffers": [
                 { "offer": "**Priority** online correspondence", "check": 2 },
                 { "offer": "**Unlimited access** to tailor made past paper practice with **step by step solutions**", "check": 2 },
-                { "offer": "8 online lessons of 90 minutes with **custom lesson time allocation**", "check": 2 },
+                { "offer": "8 online lessons of 60 minutes with **custom lesson time allocation**", "check": 2 },
                 { "offer": "Detailed summary by topic", "check": 1 },
-                { "offer": "Math IA topic setup & guidance until completion", "check": 1 },
+                { "offer": "Math IA topic setup & guidance until completion", "check": 2 },
                 { "offer": "Expected **2 grades improvement or better** (e.g. from 5 to 7 in IBDP or from B to A* in A-Level)", "check": 2 },
                 { "offer": "School mock exam prediction", "check": 4 },
                 { "offer": "Goodnotes 6 one-time payment sponsorship", "check": 3 },

@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-
-import TwitterShareButton from './TwitterShareButton'
-
-import Book_Now from '../images/drawings/stickers/Book_Now_Compressed.png';
+import { Link } from 'react-router-dom';
 
 type FooterProp = {
     openForm: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -18,35 +15,44 @@ const Footer: React.FC<FooterProp> = ({ openForm }) => {
     const handleMouseLeave = () => {
         setHovered(null);
     }
-
-    const [footerVisible, setFooterVisible] = useState(false);
-
-    const footerClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
-        if (footerVisible) {
-            setFooterVisible(false);
-        } else {
-            setFooterVisible(true);
-        }
-    };
-
     return (
-        <div className={`footer ${footerVisible ? 'visible' : ''}`}>
-            <div
-                className={`footer-share ${hovered == 'share' ? 'hovered' : ''}`}
-                onMouseEnter={() => handleMouseEnter('share')}
-                onMouseLeave={handleMouseLeave}
-                onClick={(e) => openForm(e)}
-            >
-                <TwitterShareButton />
-            </div>
-            <div
-                className={`footer-signup ${hovered == 'signup' ? 'hovered' : ''}`}
-                onMouseEnter={() => handleMouseEnter('signup')}
-                onMouseLeave={handleMouseLeave}
-                onClick={(e) => openForm(e)}
-            >
-                <img src={Book_Now}></img>
+        <div className="footer">
+            <div className="footer-container">
+                <div className="footer-title">
+                    Explore WSMATH
+                </div>
+                <div className="footer-links">
+                    <Link
+                        to ="/"
+                        className="footer-link"
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        to ="/ibdp"
+                        className="footer-link"
+                    >
+                        IBDP
+                    </Link>
+                    <Link
+                        to ="/a-level"
+                        className="footer-link"
+                    >
+                        A-Level
+                    </Link>
+                    <Link
+                        to ="/igcse"
+                        className="footer-link"
+                    >
+                        IGCSE
+                    </Link>
+                    <div
+                        className="footer-link"
+                        onClick ={(e) => openForm(e)}
+                    >
+                        Book a Lesson!
+                    </div>
+                </div>
             </div>
         </div>
     );

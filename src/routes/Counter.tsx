@@ -8,7 +8,7 @@ type CounterProp = {
 
 const Counter: React.FC<CounterProp> = ({ fadeDiv, hideDiv, hours }) => {
     const [count, setCount] = useState(0);
-    const duration = 1300;
+    const duration = hours / 10;
 
     useEffect(() => {
         const startTime = Date.now();

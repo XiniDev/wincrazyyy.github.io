@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { formatString } from './Utils';
 
 import Counter from './Counter';
-import LazyBackground from './LazyBackground';
 
 import Banner from '../images/drawings/banners/Winson_Website_Banner_Compressed_2.png'
 import Banner_Compressed from '../images/drawings/banners/Winson_Website_Banner_Compressed_3.png'
@@ -68,19 +67,13 @@ const Intro: React.FC<IntroProp> = ({ openForm, logo, hours }) => {
         <div className="homepage-intro">
             <div className="homepage-bkg"></div>
             <div className={`homepage-intro-background ${fadeDivs[2] ? 'homepage-fade-bkg visible' : 'homepage-fade-bkg'}`}></div>
-            {/* <LazyBackground
-                src={Banner}
-                placeholder={Banner_Compressed}
-                className={`homepage-intro-background ${fadeDivs[2] ? 'homepage-fade-bkg visible' : 'homepage-fade-bkg'}`}
-            >
-            </LazyBackground> */}
             <div className="homepage-intro-container">
                 <div className={`homepage-triangle ${fadeDivs[2] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade triangle') : 'homepage-intro-fade'}`}></div>
                 <div className={`homepage-rect-mobile ${fadeDivs[2] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}></div>
+                <div className={`homepage-intro-img ${fadeDivs[0] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade imgVisible') : 'homepage-intro-fade'}`}>
+                    <img src={logo}></img>
+                </div>
                 <div className="homepage-intro-textdiv">
-                    <div className={`homepage-intro-img ${fadeDivs[0] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}>
-                        <img src={logo}></img>
-                    </div>
                     <Counter fadeDiv={fadeDivs[0]} hideDiv={hideDivs} hours={hours}/>
                     <div className={`homepage-intro-title homepage-text-shadow ${fadeDivs[0] ? (hideDivs ? 'homepage-intro-fade' : 'homepage-intro-fade visible') : 'homepage-intro-fade'}`}>
                         <span>W</span>INSON <span>S</span>IU

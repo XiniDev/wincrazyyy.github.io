@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import FixedFooter from './FixedFooter';
 import RotList from './RotList';
 import Exam from './Exam';
 
@@ -37,6 +38,7 @@ const ALevel: React.FC = () => {
             </div>
             <Exam exam={examContent}/>
             <Footer openForm={openForm}/>
+            <FixedFooter openForm={openForm}/>
         </div>
     );
 }

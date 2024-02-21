@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Chevron from '../images/chevron.png';
 
@@ -98,9 +99,9 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
                     ))}
                 </div>
                 <div className="carousel-image-wrapper">
-                    <div onClick={(e) => openForm(e)} className="carousel-image">
+                    <Link to ="/ibdp" className="carousel-image">
                         <img src={Carousel_1} loading="lazy"/>
-                    </div>
+                    </Link>
                     <div className="carousel-image">
                         <img src={Carousel_2} loading="lazy"/>
                     </div>

@@ -105,8 +105,7 @@ const Pricing: React.FC<PricingProp> = ({ openForm, pricing }) => {
     const renderPriceBox = (title: string, price: number, per: number, highlight: boolean, pricingOffers: PricingOfferType[], active: boolean) => {
         const htmlPricingOffers = handlePricingOffers(pricingOffers);
         
-        let perStr = "/WK";
-        if (per != 1) perStr = `/${per}L`;
+        let perStr = `/${per}L`;
 
         return (
             <>
