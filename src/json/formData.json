@@ -60,9 +60,9 @@
         ],
         "pricing": "Pricing Option",
         "pricingOptions": [
-            { "value": "starter", "label": "Starter (HKD 200 per week)" },
-            { "value": "premium", "label": "Premium (HKD 6480 per 4 lessons)" },
-            { "value": "elite", "label": "Elite (HKD 14880 per 8 lessons)" }
+            { "value": "starter", "label": "Starter (HKD 1280 per lesson)" },
+            { "value": "premium", "label": "Premium (HKD 4480 per 4 lessons)" },
+            { "value": "elite", "label": "Elite (HKD 7680 per 8 lessons)" }
         ]
     },
     "miscForm": {

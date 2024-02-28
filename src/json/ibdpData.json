@@ -106,16 +106,16 @@
             ],
             [
                 {
-                    "gradeFrom": "6",
+                    "gradeFrom": "7",
                     "gradeTo": "7",
-                    "names": [ "Jenny Huang (2020)", "Kitty Lam (2020)", "Rachel Lee (2020)" ],
+                    "names": [ "Rachel (2020)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
-                    "gradeFrom": "5",
+                    "gradeFrom": "4",
                     "gradeTo": "7",
-                    "names": [ "Chloe Cheng (2020)", "Alexandra Wong (2022)", "Huen (2023)" ],
+                    "names": [ "Jenny Huang (2020)", "Chloe Cheng (2020)", "Huen (2023)" ],
                     "highlight": false,
                     "remarks": ""
                 },
@@ -124,7 +124,14 @@
                     "gradeTo": "7",
                     "names": [ "Sharon Deng (2023)" ],
                     "highlight": true,
-                    "remarks": "in 1.5 month"
+                    "remarks": "in 1.5 months"
+                },
+                {
+                    "gradeFrom": "2",
+                    "gradeTo": "7",
+                    "names": [ "Alexandra Wong (2022)", "Kitty Lam (2020)" ],
+                    "highlight": true,
+                    "remarks": ""
                 },
                 {
                     "gradeFrom": "4",
