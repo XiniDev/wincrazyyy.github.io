@@ -2,7 +2,7 @@
     "pricing": [
         {
             "name": "Starter",
-            "price": 1280,
+            "price": 680,
             "perX": 1,
             "highlight": false,
             "pricingOffers": [
@@ -13,7 +13,7 @@
         },
         {
             "name": "Premium",
-            "price": 4480,
+            "price": 3480,
             "perX": 4,
             "highlight": true,
             "pricingOffers": [
@@ -23,7 +23,7 @@
                 { "offer": "Detailed summary by topic", "check": 1 },
                 { "offer": "IBDP Math IA topic setup", "check": 1 },
                 { "offer": "Expected 1 grade improvement or better (e.g. from 5 to 6 in IBDP or from B to A in A-Level)", "check": 1 },
-                { "offer": "Rebate of up to **HKD 1200** per student referred", "check": 5 }
+                { "offer": "Rebate of up to **HKD 1000** per student referred", "check": 5 }
             ]
         },
         {
