@@ -21,36 +21,41 @@ const Footer: React.FC<FooterProp> = ({ openForm }) => {
                 <div className="footer-title">
                     Explore WSMATH
                 </div>
-                <div className="footer-links">
-                    <Link
-                        to ="/"
-                        className="footer-link"
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        to ="/ibdp"
-                        className="footer-link"
-                    >
-                        IBDP
-                    </Link>
-                    <Link
-                        to ="/a-level"
-                        className="footer-link"
-                    >
-                        A-Level
-                    </Link>
-                    <Link
-                        to ="/igcse"
-                        className="footer-link"
-                    >
-                        IGCSE
-                    </Link>
-                    <div
-                        className="footer-link"
-                        onClick ={(e) => openForm(e)}
-                    >
-                        Book a Lesson!
+                <div className="footer-body">
+                    <div>
+                        &copy; 2024 WSMath
+                    </div>
+                    <div className="footer-links">
+                        <Link
+                            to ="/"
+                            className="footer-link"
+                        >
+                            Home
+                        </Link>
+                        <Link
+                            to ="/ibdp"
+                            className="footer-link"
+                        >
+                            IBDP
+                        </Link>
+                        <Link
+                            to ="/a-level"
+                            className="footer-link"
+                        >
+                            A-Level
+                        </Link>
+                        <Link
+                            to ="/igcse"
+                            className="footer-link"
+                        >
+                            IGCSE
+                        </Link>
+                        <div
+                            className="footer-link"
+                            onClick ={(e) => openForm(e)}
+                        >
+                            Book a Lesson!
+                        </div>
                     </div>
                 </div>
             </div>

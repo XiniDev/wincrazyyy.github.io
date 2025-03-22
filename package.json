@@ -17,11 +17,12 @@
     "react-scripts": "5.0.1",
     "react-select": "^5.8.0",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "wincrazyyy.github.io": "file:"
   },
   "scripts": {
     "predeploy": "npm run build && npm run generate-sitemap",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -r https://github.com/wincrazyyy/wincrazyyy.github.io.git",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
