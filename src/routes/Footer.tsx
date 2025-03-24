@@ -23,7 +23,7 @@ const Footer: React.FC<FooterProp> = ({ openForm }) => {
                 </div>
                 <div className="footer-body">
                     <div>
-                        &copy; 2024 WSMath
+                        &copy; 2025 WSMath
                     </div>
                     <div className="footer-links">
                         <Link
