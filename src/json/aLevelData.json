@@ -1,8 +1,8 @@
 {
     "3points": [
-        "2008 - 2023 **Past Paper questions** sorted by topic",
+        "2008 - 2024 **Past Paper questions** sorted by topic",
         "One student entered **University of Cambridge** with **two A*s in Math**",
-        "All students achieved **Grade A* or A**"
+        "Over 55% students achieved **A***"
     ],
     "exam": {
         "title": "Grade ~~Improvements~~ Graph",
@@ -18,7 +18,7 @@
                 {
                     "gradeFrom": "F",
                     "gradeTo": "A*",
-                    "names": [ "**Bill Ting (2021)**", "Michelle Chan (2021)" ],
+                    "names": [ "**Bill Ting (2021)**", "Michelle (2021)", "Bill Zhang (2024)" ],
                     "highlight": true,
                     "remarks": ""
                 }
@@ -27,7 +27,7 @@
                 {
                     "gradeFrom": "B",
                     "gradeTo": "A*",
-                    "names": [ "Michelle Chan (2021)" ],
+                    "names": [ "Michelle (2021)" ],
                     "highlight": false,
                     "remarks": ""
                 },
@@ -41,7 +41,14 @@
                 {
                     "gradeFrom": "F",
                     "gradeTo": "A",
-                    "names": [ "Quintin Leung (2023)" ],
+                    "names": [ "Quintin (2023)", "Ken (2024)", "Coco (2024)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "E",
+                    "gradeTo": "B",
+                    "names": [ "Sophie (2023)", "Jennie (2024)" ],
                     "highlight": false,
                     "remarks": ""
                 }
@@ -62,9 +69,9 @@
                     "university": "University of Melbourne"
                 },
                 {
-                    "description": "Winson老师的上课风格轻松无压力，且教书模式灵活变通，将複杂的题目简单化是老师的强项之一，独树一帜的拆题及解题步骤使我获益匪浅。为学生个人化定製的By Topic Past Paper可以大幅度且针对性地加强某一单元的熟练度，也提高了学生闲暇之馀的刷题效率。Winson老师是我在学习IGCSE时认识的，经过半年的上课，我的IGCSE Math从B提升到了A*，并在之后的一年时间助我获得了A-Level Pure Math A*。",
-                    "name": "Bill Zhang (2023)",
-                    "university": ""
+                    "description": "Winson老师的上课风格轻松无压力，且教书模式灵活变通，将複杂的题目简单化是老师的强项之一，独树一帜的拆题及解题步骤使我获益匪浅。为学生个人化定製的By Topic Past Paper可以大幅度且针对性地加强某一单元的熟练度，也提高了学生闲暇之馀的刷题效率。Winson老师是我在学习IGCSE时认识的，经过半年的上课，我的IGCSE Math从B提升到了A*，并在之后的一年时间助我获得了A-Level Math A*。在我高中的最后一年，更是一鼓作气取得了A-Level Further Math A*。",
+                    "name": "Bill Zhang (2024)",
+                    "university": "The University of Hong Kong"
                 }
             ]
         ]

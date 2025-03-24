@@ -1,6 +1,6 @@
 {
     "3points": [
-        "2014 - 2023 **Past Paper questions** sorted by topic",
+        "2014 - 2024 **Past Paper questions** sorted by topic",
         "Two students improved from **Grade F to A in a year**",
         "All students achieved **Grade B or above**"
     ],
@@ -49,35 +49,35 @@
                 {
                     "gradeFrom": "B",
                     "gradeTo": "A*",
-                    "names": [ "Jacky Nie (2021)", "Catherine Li (2021)", "Bill Zhang (2022)", "James (2022)" ],
+                    "names": [ "Jacky (2021)", "Catherine (2021)", "Bill Zhang (2022)", "James (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "C",
                     "gradeTo": "A",
-                    "names": [ "Jessica (2019)", "Ken Chen (2022)", "Evelyn Zhang (2023)" ],
+                    "names": [ "Jessica (2019)", "Ken (2022)", "Evelyn (2023)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "E",
                     "gradeTo": "A",
-                    "names": [ "Gordon Lo (2023)" ],
+                    "names": [ "Gordon (2023)", "Nicole (2024)","Jewel (2024)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "F",
                     "gradeTo": "A",
-                    "names": [ "Cissie Ching (2023)", "Kelly Li (2023)" ],
+                    "names": [ "Cissie (2023)", "Kelly (2023)" ],
                     "highlight": true,
                     "remarks": "in 1 year"
                 },
                 {
                     "gradeFrom": "D",
                     "gradeTo": "B",
-                    "names": [ "Kitty (2018)", "Geaena (2019)", "Alice (2019)", "Casey (2023)" ],
+                    "names": [ "Kitty (2018)", "Geaena (2019)", "Alice (2019)", "Casey (2023)", "Jewel (2024)" ],
                     "highlight": false,
                     "remarks": ""
                 }

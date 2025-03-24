@@ -1,8 +1,8 @@
 {
     "3points": [
-        "2008 - 2023 **Past Paper questions** sorted by topic",
+        "2008 - 2024 **Past Paper questions** sorted **by topic** and **by level**",
         "One AASL student improved from **Grade 3 to 7 in 1.5 months**",
-        "Over 50% students achieved **Grade 7**"
+        "Over 46% students achieved **Grade 7**"
     ],
     "iaProfile": {
         "title": "~~Internal Assessment (~~IA~~)~~ Guidance",
@@ -12,7 +12,7 @@
                 "**Customizes IA topics** to align with individual student interests",
                 "Integrates knowledge **beyond standard curriculum** for enhanced grades",
                 "Guides students to produce **high-quality, unique essays** efficiently within lesson time",
-                "Achieved **successful outcomes for over 50 students** from 2020 to 2023",
+                "Achieved **successful outcomes for over 60 students** from 2020 to 2024",
                 "**Effectively boosts Predicted Grades** and makes a positive impression on teachers",
                 "**Minimized the need for extra work outside of lessons**"
             ],
@@ -43,63 +43,70 @@
                 {
                     "gradeFrom": "7",
                     "gradeTo": "7",
-                    "names": [ "Mickey (2018)", "Mary Guan (2022)" ],
+                    "names": [ "Mickey (2018)", "Mary (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "6",
                     "gradeTo": "7",
-                    "names": [ "Taylor (2019)", "Vera Jing (2021)", "Ivy Liu (2021)", "Cici Jin (2022)", "Alice Gao (2022)" ],
+                    "names": [ "Taylor (2019)", "Vera (2021)", "Ivy (2021)", "Cici (2022)", "Alice (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "5",
                     "gradeTo": "7",
-                    "names": [ "Janice (2021)", "Hebe Jim (2021)", "Joy Angela Sun (2022)", "Ethan Chan (2022)" ],
+                    "names": [ "Janice (2021)", "Hebe (2021)", "Joy (2022)", "Ethan (2022)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "1",
+                    "gradeTo": "7",
+                    "names": [ "James (2024)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "5",
                     "gradeTo": "6",
-                    "names": [ "Evelyn Lin (2018)", "Anthony Leung (2019)" ],
+                    "names": [ "Evelyn (2018)", "Anthony (2019)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "3",
                     "gradeTo": "6",
-                    "names": [ "Lucia Zhu (2018)", "Fiona (2022)" ],
+                    "names": [ "Lucia (2018)", "Fiona (2022)" ],
                     "highlight": true,
                     "remarks": "both in 3 months"
                 },
                 {
                     "gradeFrom": "2",
                     "gradeTo": "6",
-                    "names": [ "Jasmine Yang (2023)" ],
+                    "names": [ "Jasmine (2023)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "3",
                     "gradeTo": "5",
-                    "names": [ "Kelly (2018)", "Owen (2021)" ],
+                    "names": [ "Kelly (2018)", "Owen (2021)", "Ricky (2024)" ],
                     "highlight": false,
-                    "remarks": "both in 1 month"
+                    "remarks": ""
                 },
                 {
                     "gradeFrom": "2",
                     "gradeTo": "5",
-                    "names": [ "Justin (2020)", "Judy Wei (2021)", "Sam (2022)" ],
+                    "names": [ "Justin (2020)", "Judy (2021)", "Tin (2022)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "1",
                     "gradeTo": "4",
-                    "names": [ "Vivian Chen (2018)" ],
+                    "names": [ "Vivian (2018)" ],
                     "highlight": false,
                     "remarks": "in 5 months"
                 }
@@ -115,45 +122,53 @@
                 {
                     "gradeFrom": "4",
                     "gradeTo": "7",
-                    "names": [ "Jenny Huang (2020)", "Chloe Cheng (2020)", "Huen (2023)" ],
+                    "names": [ "Jenny (2020)", "Chloe (2020)", "CL (2023)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "3",
                     "gradeTo": "7",
-                    "names": [ "Sharon Deng (2023)" ],
+                    "names": [ "Sharon (2023)" ],
                     "highlight": true,
                     "remarks": "in 1.5 months"
                 },
                 {
-                    "gradeFrom": "2",
+                    "gradeFrom": "1",
                     "gradeTo": "7",
-                    "names": [ "Alexandra Wong (2022)", "Kitty Lam (2020)" ],
+                    "names": [ "Alexandra (2022)", "Kitty (2020)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "4",
                     "gradeTo": "6",
-                    "names": [ "Aidan Cheung (2019)", "David Zhang (2020)", "Jasmine Hung (2023)" ],
+                    "names": [ "Aidan (2019)", "David (2020)", "Jasmine (2023)" ],
+                    "highlight": false,
+                    "remarks": ""
+                },
+                {
+                    "gradeFrom": "1",
+                    "gradeTo": "6",
+                    "names": [ "Kathy (2024)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "2",
                     "gradeTo": "5",
-                    "names": [ "Connie (2021)" ],
+                    "names": [ "Connie (2021)", "Alan (2024)", "Netis (2024)" ],
                     "highlight": false,
                     "remarks": ""
                 },
                 {
                     "gradeFrom": "1",
                     "gradeTo": "4",
-                    "names": [ "Dora (2021)" ],
+                    "names": [ "Dora (2021)", "Victoria (2024)", "Annie (2024)" ],
                     "highlight": false,
                     "remarks": ""
                 }
+
             ]
         ],
         "signatureReview": [
