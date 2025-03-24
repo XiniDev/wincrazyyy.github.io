@@ -37,7 +37,7 @@ const FixedFooter: React.FC<FixedFooterProp> = ({ openForm }) => {
                 className={`fixed-footer-signup ${hovered == 'signup' ? 'hovered' : ''}`}
                 onMouseEnter={() => handleMouseEnter('signup')}
                 onMouseLeave={handleMouseLeave}
-                onClick={(e) => window.open("https://wa.me/85293199914?text=Hi%20Winson%20Siu,%20I'm%20interested%20in%20your%20math%20tutoring%20service!", "_blank")}
+                onClick={(e) => window.open("https://wa.me/85293199914?text=Hi%20Winson%20Siu,%20I'm%20interested%20in%20your%20Math%20tutoring%20service!", "_blank")}
             >
                 <img alt="Chat on WhatsApp" src={WhatsApp_Button}/>
             </div>
