@@ -24,14 +24,14 @@ const FixedFooter: React.FC<FixedFooterProp> = ({ openForm }) => {
 
     return (
         <div className={`fixed-footer ${fixedFooterVisible ? 'visible' : ''}`}>
-            <div
+            {/* <div
                 className={`fixed-footer-share ${hovered == 'share' ? 'hovered' : ''}`}
                 onMouseEnter={() => handleMouseEnter('share')}
                 onMouseLeave={handleMouseLeave}
                 onClick={(e) => openForm(e)}
             >
                 <TwitterShareButton />
-            </div>
+            </div> */}
             <div
                 aria-label="Chat on WhatsApp"
                 className={`fixed-footer-signup ${hovered == 'signup' ? 'hovered' : ''}`}
