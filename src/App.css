@@ -2892,6 +2892,8 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .footer-links {
@@ -2963,6 +2965,14 @@
     /* width: 100px; */
     width: 250px;
     height: auto;
+}
+
+@media only screen and (max-width: 1600px) {
+    .fixed-footer-signup > img {
+        /* width: 100px; */
+        width: 150px;
+        height: auto;
+    }
 }
 
 /* form */
