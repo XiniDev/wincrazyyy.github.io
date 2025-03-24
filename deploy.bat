@@ -1,8 +1,6 @@
 @echo off
 REM build and generate sitemap
-echo Running deploy...
 call npm run deploy
-echo Deploy done.
 
 REM ensure sitemap.xml won't cause merge conflicts
 git config merge.ours.driver true
