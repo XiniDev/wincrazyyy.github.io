@@ -2926,6 +2926,22 @@
     }
 }
 
+@media only screen and (max-width: 900px) {
+    .footer-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-link {
+        height: 60px;
+        justify-content: flex-start;
+    }
+}
+
 /* fixed-footer */
 
 .fixed-footer {
@@ -2972,6 +2988,12 @@
         /* width: 100px; */
         width: 150px;
         height: auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .fixed-footer-share {
+        display: none;
     }
 }
 
