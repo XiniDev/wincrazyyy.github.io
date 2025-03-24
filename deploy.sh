@@ -3,6 +3,8 @@
 # exit immediately if any command fails
 set -e
 
+cd "$(dirname "$0")"
+
 # build and generate sitemap
 npm run deploy
 
