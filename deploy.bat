@@ -13,7 +13,7 @@ REM pull latest from source/master
 git pull source master
 
 REM commit your changes
-git commit -m "update"
+git commit -m "update" || echo "No changes to commit."
 
 REM push to remote master
 git push -u source master
