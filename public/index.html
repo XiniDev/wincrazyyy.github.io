@@ -53,32 +53,35 @@
 
         <!-- YME Chat Widget Snippet -->
         <script>
-            (function(n,o,t,i,f){
-                n[i]={};                          
-                var m=["init","setOpts"];
-                n[i]._c=[];
-                m.forEach(me => n[i][me] = function(){
-                    n[i]._c.push([me, arguments]);
-                });
+            (function(n, o, t, i, f) {
+                n[i] = {};
+                var m = ['init', 'setOpts'];
+                n[i]._c = [];
+                m.forEach((me) => (n[i][me] = function() {
+                    n[i]._c.push([me, arguments])
+                }), );
                 var elt = o.createElement(f);
-                elt.type = "text/javascript";
+                elt.type = 'text/javascript';
                 elt.async = true;
-                elt.src = t;                      
+                elt.src = t;
                 var before = o.getElementsByTagName(f)[0];
-                before.parentNode.insertBefore(elt,before);
-            })(window, document,
-                "https://care-admin.topkee.top/embed/embed.umd.min.js",
-                "tkcare", "script"
-            );
+                before.parentNode.insertBefore(elt, before)
+            })(window, document, 'https://care-admin.topkee.top/embed/embed.umd.min.js', 'tkcare', 'script');
             tkcare.init({
-                group_id:     "1135",
-                script_sub_id:"",
-                locale:       "en",
-                customize_lang:{
-                    open_messenger_txt:"Chat On Web"
+                group_id: '1135',
+                script_sub_id:'',
+                locale: 'en',
+                customize_lang: {
+                    open_messenger_txt: 'Chat On Web'
+                },
+                initedCallback: function() {
+                    if (window.ET) {
+                        tkcare.setExternalId(ET.getClid());
+                        window.ET.setExternalId('yme',tkcare.getIdentifyId());
+                    }
                 }
             });
-        </script>
+        </script>        
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

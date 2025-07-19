@@ -29,30 +29,45 @@ const Footer: React.FC<FooterProp> = ({ openForm }) => {
                         <Link
                             to ="/"
                             className="footer-link"
+                            onClick={() => {
+                                window.ET?.track("ClickButton", { description: "footer home page" });
+                            }}
                         >
                             Home
                         </Link>
                         <Link
                             to ="/ibdp"
                             className="footer-link"
+                            onClick={() => {
+                                window.ET?.track("ClickButton", { description: "footer ibdp page" });
+                            }}
                         >
                             IBDP
                         </Link>
                         <Link
                             to ="/a-level"
                             className="footer-link"
+                            onClick={() => {
+                                window.ET?.track("ClickButton", { description: "footer a-level page" });
+                            }}
                         >
                             A-Level
                         </Link>
                         <Link
                             to ="/igcse"
                             className="footer-link"
+                            onClick={() => {
+                                window.ET?.track("ClickButton", { description: "footer igcse page" });
+                            }}
                         >
                             IGCSE
                         </Link>
                         <div
                             className="footer-link"
-                            onClick ={(e) => openForm(e)}
+                            onClick ={(e) => {
+                                openForm(e);
+                                window.ET?.track("ClickButton", { description: "footer booking" });
+                            }}
                         >
                             Book a Lesson!
                         </div>

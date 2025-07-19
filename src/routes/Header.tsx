@@ -106,6 +106,9 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                         className={`header-link ${hovered == 'home' ? 'hovered' : ''} ${menuOpen ? 'open' : ''}`}
                         onMouseEnter={() => handleMouseEnter('home')}
                         onMouseLeave={handleMouseLeave}
+                        onClick={() => {
+                            window.ET?.track("ClickButton", { description: "header home page" });
+                        }}
                     >
                         Home
                     </Link>
@@ -114,6 +117,9 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                         className={`header-link ${hovered == 'ibdp' ? 'hovered' : ''} ${menuOpen ? 'open' : ''}`}
                         onMouseEnter={() => handleMouseEnter('ibdp')}
                         onMouseLeave={handleMouseLeave}
+                        onClick={() => {
+                            window.ET?.track("ClickButton", { description: "header ibdp page" });
+                        }}
                     >
                         IBDP
                     </Link>
@@ -122,6 +128,9 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                         className={`header-link ${hovered == 'a-level' ? 'hovered' : ''} ${menuOpen ? 'open' : ''}`}
                         onMouseEnter={() => handleMouseEnter('a-level')}
                         onMouseLeave={handleMouseLeave}
+                        onClick={() => {
+                            window.ET?.track("ClickButton", { description: "header a-level page" });
+                        }}
                     >
                         A-Level
                     </Link>
@@ -130,6 +139,9 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                         className={`header-link ${hovered == 'igcse' ? 'hovered' : ''} ${menuOpen ? 'open' : ''}`}
                         onMouseEnter={() => handleMouseEnter('igcse')}
                         onMouseLeave={handleMouseLeave}
+                        onClick={() => {
+                            window.ET?.track("ClickButton", { description: "header igcse page" });
+                        }}
                     >
                         IGCSE
                     </Link>
@@ -137,7 +149,10 @@ const Header: React.FC<HeaderProp> = ({ formActive, setFormActive }) => {
                         className={`header-link ${hovered == 'signup' ? 'hovered' : ''} ${menuOpen ? 'open' : ''}`}
                         onMouseEnter={() => handleMouseEnter('signup')}
                         onMouseLeave={handleMouseLeave}
-                        onClick ={(e) => openForm(e)}
+                        onClick ={(e) => {
+                            openForm(e);
+                            window.ET?.track("ClickButton", { description: "header booking" });
+                        }}
                     >
                         Book a Lesson!
                     </div>

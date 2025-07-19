@@ -185,6 +185,8 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive, formData }) => {
                 headers: { "Content-Type": "application/json" },
                 body:    JSON.stringify(topkeePayload),
             });
+
+            window.ET?.track("ClickButton", { description: "form submit" });
         } catch (error) {
             console.log(error);
         };

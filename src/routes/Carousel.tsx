@@ -99,13 +99,25 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
                     ))}
                 </div>
                 <div className="carousel-image-wrapper">
-                    <Link to ="/ibdp" className="carousel-image">
+                    <Link
+                        to ="/ibdp"
+                        className="carousel-image"
+                        onClick={() => {
+                            window.ET?.track("ClickButton", { description: "carousel ibdp page" });
+                        }}
+                    >
                         <img src={Carousel_1} loading="lazy"/>
                     </Link>
                     <div className="carousel-image">
                         <img src={Carousel_2} loading="lazy"/>
                     </div>
-                    <div onClick={(e) => openForm(e)} className="carousel-image">
+                    <div
+                        onClick={(e) => {
+                            openForm(e);
+                            window.ET?.track("ClickButton", { description: "carousel booking" });
+                        }}
+                        className="carousel-image"
+                    >
                         <img src={Carousel_3} loading="lazy"/>
                     </div>
                 </div>

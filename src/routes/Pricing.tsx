@@ -119,7 +119,10 @@ const Pricing: React.FC<PricingProp> = ({ openForm, pricing }) => {
                     {htmlPricingOffers}
                     <div
                         className={`pricing-button ${highlight ? 'pricing-button-highlight' : ''}`}
-                        onClick={(e) => openForm(e)}
+                        onClick={(e) => {
+                            openForm(e);
+                            window.ET?.track("ClickButton", { description: "pricing booking" });
+                        }}
                     >
                         Book Now
                     </div>
