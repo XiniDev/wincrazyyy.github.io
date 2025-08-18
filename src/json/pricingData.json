@@ -2,7 +2,7 @@
     "pricing": [
         {
             "name": "Starter",
-            "price":800,
+            "price":1000,
             "perX": 1,
             "highlight": false,
             "pricingOffers": [
@@ -13,7 +13,7 @@
         },
         {
             "name": "Premium",
-            "price": 3200,
+            "price": 3800,
             "perX": 4,
             "highlight": true,
             "pricingOffers": [
@@ -28,7 +28,7 @@
         },
         {
             "name": "Elite",
-            "price": 6400,
+            "price": 7200,
             "perX": 8,
             "highlight": false,
             "pricingOffers": [
