@@ -55,11 +55,6 @@ const INITIAL_DATA = {
     referral: "",
 }
 
-// key is secure
-const TOPKEE_ENDPOINT = 
-  'https://sg.fn.topkee.com/source-565495410377357395' +
-  '?api_key=Q4DZSVW37zzaAxcxMh3Gy3rkD2Oq4qmmmoZ1mYy1VzU';
-
 const Form: React.FC<FormProp> = ({ formActive, setFormActive, formData }) => {
     const userFormData = formData.userForm;
     const syllabusFormData = formData.syllabusForm;
@@ -67,14 +62,6 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive, formData }) => {
 
     // Init EmailJS
     useEffect(() => emailjs.init("gib2jZLcxQapdRDOq"), []);
-
-    // Grab anonymous_id from ET
-    const [anonId, setAnonId] = useState<string>("");
-    useEffect(() => {
-      if (window.ET?.getAnonymousId) {
-        setAnonId(window.ET.getAnonymousId());
-      }
-    }, []);
 
     const closeForm = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
@@ -121,26 +108,6 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive, formData }) => {
     
             alert("Successfully registered, we will get back to you as soon as possible!");
 
-            // CDP
-            if (window.ET && typeof window.ET.track === "function") {
-                window.ET.track("SubmitForm", {
-                    lead_source:    "Book a Lesson",
-                    user_id:        "",
-                    contact_method: data.contactMethod,
-                    contact_id:     `${data.countryCode}-${data.contact}`,
-                    first_name:     data.firstName,
-                    last_name:      data.lastName,
-                    school_name:    data.schoolName,
-                    tutoring:       data.syllabus,
-                    curriculum:     data.subSyllabus,
-                    pricing:        data.pricing,
-                    app:            data.noteTaking,
-                    current_result: data.currResult,
-                    expected_result:data.expResult,
-                    referral_name:  data.referral,
-                });
-            }
-
             const mappedPricing = pricingData.pricing.map(item => ({
                 name: (item.name).toLowerCase(),
                 price: item.price,
@@ -159,34 +126,6 @@ const Form: React.FC<FormProp> = ({ formActive, setFormActive, formData }) => {
                 'transaction_id': `${data.firstName}-${data.lastName}-${data.contact}`
             });
 
-            // POST to Topkee
-            const topkeePayload = {
-                event:        "SubmitForm",
-                anonymous_id: anonId,
-                properties: {
-                lead_source:    "Book a Lesson",
-                contact_method: data.contactMethod,
-                contact_id:     `${data.countryCode}-${data.contact}`,
-                first_name:     data.firstName,
-                last_name:      data.lastName,
-                school_name:    data.schoolName,
-                tutoring:       data.syllabus,
-                curriculum:     data.subSyllabus,
-                pricing:        data.pricing,
-                app:            data.noteTaking,
-                current_result: data.currResult,
-                expected_result:data.expResult,
-                referral_name:  data.referral,
-                }
-            };
-
-            await fetch(TOPKEE_ENDPOINT, {
-                method:  "POST",
-                headers: { "Content-Type": "application/json" },
-                body:    JSON.stringify(topkeePayload),
-            });
-
-            window.ET?.track("ClickButton", { description: "form submit" });
         } catch (error) {
             console.log(error);
         };

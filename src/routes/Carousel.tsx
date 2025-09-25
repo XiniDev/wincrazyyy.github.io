@@ -102,9 +102,6 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
                     <Link
                         to ="/ibdp"
                         className="carousel-image"
-                        onClick={() => {
-                            window.ET?.track("ClickButton", { description: "carousel ibdp page" });
-                        }}
                     >
                         <img src={Carousel_1} loading="lazy"/>
                     </Link>
@@ -112,10 +109,6 @@ const Carousel: React.FC<CarouselProp> = ({ openForm }) => {
                         <img src={Carousel_2} loading="lazy"/>
                     </div>
                     <div
-                        onClick={(e) => {
-                            openForm(e);
-                            window.ET?.track("ClickButton", { description: "carousel booking" });
-                        }}
                         className="carousel-image"
                     >
                         <img src={Carousel_3} loading="lazy"/>
